@@ -1,4 +1,4 @@
-source("R/scrape_ace_event.R")
+source(file.path("..", "..", "R", "scrape_ace_event.R"))
 
 test_that("ACE numeric strings parse across locale formats", {
   expect_equal(ace_number("$60,10"), 60.10)
