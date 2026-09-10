@@ -32,6 +32,17 @@ rank_match_key <- function(rank, program) {
   dplyr::if_else(is_coe_split, stringr::str_remove(clean, "[AB]$"), clean)
 }
 
+event_rank_id <- function(country, year, program, process_group, rank_key) {
+  paste(
+    dplyr::coalesce(as.character(country), ""),
+    dplyr::coalesce(as.character(year), ""),
+    dplyr::coalesce(as.character(program), ""),
+    dplyr::coalesce(as.character(process_group), ""),
+    dplyr::coalesce(as.character(rank_key), ""),
+    sep = "|"
+  )
+}
+
 harmonize_ace_tables <- function(raw_tables) {
   competition <- raw_tables |>
     dplyr::filter(stage == "competition") |>
@@ -55,9 +66,14 @@ harmonize_ace_tables <- function(raw_tables) {
       match_key = dplyr::if_else(
         program == "NW",
         paste(farm_key, sprintf("%.2f", score), sep = "|"),
-        rank_match_key(rank, program)
+        rank_key
       )
     )
+
+  competition_rank_ids <- event_rank_id(
+    competition$country, competition$year, competition$program,
+    competition$process_group, competition$rank_key
+  )
 
   auction <- raw_tables |>
     dplyr::filter(stage == "auction") |>
@@ -82,7 +98,22 @@ harmonize_ace_tables <- function(raw_tables) {
       match_key = dplyr::if_else(
         program == "NW",
         paste(farm_key, sprintf("%.2f", score), sep = "|"),
-        rank_match_key(rank, program)
+        rank_key
+      )
+    ) |>
+    dplyr::mutate(
+      exact_rank_exists = event_rank_id(
+        country, year, program, process_group, rank_key
+      ) %in% competition_rank_ids,
+      base_rank_key = rank_match_key(rank, program),
+      base_rank_exists = event_rank_id(
+        country, year, program, process_group, base_rank_key
+      ) %in% competition_rank_ids,
+      match_key = dplyr::case_when(
+        program == "NW" ~ match_key,
+        exact_rank_exists ~ rank_key,
+        base_rank_exists ~ base_rank_key,
+        TRUE ~ rank_key
       )
     )
 
