@@ -20,6 +20,10 @@ lots <- readr::read_csv(data_path, show_col_types = FALSE)
 has_data <- nrow(lots) > 0 && any(!is.na(lots$final_bid_usd_lb))
 entries <- lots |> distinct(entry_id, .keep_all = TRUE)
 reported <- lots |> filter(auction_result_status == "reported")
+safe_stat <- function(x, fun, min_n = 1L) {
+  if (sum(!is.na(x)) < min_n) return(NA_real_)
+  fun(x, na.rm = TRUE)
+}
 ```
 
 ## Overview
@@ -42,6 +46,20 @@ cat(if (has_data) comma(nrow(entries)) else "—")
 ### Reported bids
 ```{r}
 cat(if (has_data) comma(nrow(reported)) else "—")
+```
+:::
+
+::: {.valuebox icon="globe-americas" color="info"}
+### Producing countries
+```{r}
+cat(if (has_data) comma(n_distinct(lots$country)) else "—")
+```
+:::
+
+::: {.valuebox icon="calendar3" color="warning"}
+### Auction years
+```{r}
+cat(if (has_data) comma(n_distinct(lots$year)) else "—")
 ```
 :::
 
@@ -73,20 +91,20 @@ if (has_data) {
 :::
 
 ::: {.card}
-### Bid statistics by program
+### Bid statistics by event and program
 ```{r}
 if (has_data) {
   lots |>
-    group_by(program) |>
+    group_by(country, year, program) |>
     summarise(
       `Auction lots` = n(),
       `Coffee entries` = n_distinct(entry_id),
       `Reported bids` = sum(!is.na(final_bid_usd_lb)),
-      `Mean bid (USD/lb)` = mean(final_bid_usd_lb, na.rm = TRUE),
-      `Bid variance` = if (sum(!is.na(final_bid_usd_lb)) > 1) var(final_bid_usd_lb, na.rm = TRUE) else NA_real_,
-      `Median bid (USD/lb)` = median(final_bid_usd_lb, na.rm = TRUE),
-      `Minimum bid` = min(final_bid_usd_lb, na.rm = TRUE),
-      `Maximum bid` = max(final_bid_usd_lb, na.rm = TRUE),
+      `Mean bid (USD/lb)` = safe_stat(final_bid_usd_lb, mean),
+      `Bid variance` = safe_stat(final_bid_usd_lb, var, min_n = 2L),
+      `Median bid (USD/lb)` = safe_stat(final_bid_usd_lb, median),
+      `Minimum bid` = safe_stat(final_bid_usd_lb, min),
+      `Maximum bid` = safe_stat(final_bid_usd_lb, max),
       .groups = "drop"
     ) |>
     mutate(across(where(is.numeric), ~round(.x, 2))) |>
@@ -94,22 +112,22 @@ if (has_data) {
 }
 ```
 
-Brazil 2024 is descriptive evidence from one event. The raw COE–NW gap combines score selection, program rules and market valuation; it is not yet a causal premium.
+These event-level summaries are descriptive. Raw differences across countries, years, COE/NW programs and processes combine score selection, auction rules, sample composition and market valuation; they are not causal premiums.
 :::
 
 ::: {.card}
-### Bid statistics by process
+### Bid statistics by event and process
 ```{r}
 if (has_data) {
   lots |>
-    group_by(program, process_group) |>
+    group_by(country, year, program, process_group) |>
     summarise(
       `Reported bids` = sum(!is.na(final_bid_usd_lb)),
-      `Mean (USD/lb)` = mean(final_bid_usd_lb, na.rm = TRUE),
-      `Variance` = if (sum(!is.na(final_bid_usd_lb)) > 1) var(final_bid_usd_lb, na.rm = TRUE) else NA_real_,
-      `Median (USD/lb)` = median(final_bid_usd_lb, na.rm = TRUE),
-      `Minimum` = min(final_bid_usd_lb, na.rm = TRUE),
-      `Maximum` = max(final_bid_usd_lb, na.rm = TRUE),
+      `Mean (USD/lb)` = safe_stat(final_bid_usd_lb, mean),
+      `Variance` = safe_stat(final_bid_usd_lb, var, min_n = 2L),
+      `Median (USD/lb)` = safe_stat(final_bid_usd_lb, median),
+      `Minimum` = safe_stat(final_bid_usd_lb, min),
+      `Maximum` = safe_stat(final_bid_usd_lb, max),
       .groups = "drop"
     ) |>
     mutate(across(where(is.numeric), ~round(.x, 2))) |>
@@ -133,14 +151,19 @@ Price dispersion is not automatically differentiation. The empirical models firs
 ```{r}
 if (has_data) {
   composition <- entries |>
-    count(year, process_group) |>
-    group_by(year) |>
+    mutate(event = paste(country, year)) |>
+    count(event, process_group) |>
+    group_by(event) |>
     mutate(share = n / sum(n)) |>
     ungroup()
-  plot_ly(composition, x = ~year, y = ~share, color = ~process_group, type = "bar") |>
-    layout(barmode = "stack", yaxis = list(title = "Share of coffee entries", tickformat = ".0%"))
+  plot_ly(composition, x = ~event, y = ~share, color = ~process_group, type = "bar") |>
+    layout(
+      barmode = "stack",
+      xaxis = list(title = "Country and auction year"),
+      yaxis = list(title = "Share of coffee entries", tickformat = ".0%")
+    )
 } else {
-  cat("The pilot will begin with Brazil 2024: Washed + Honey, Natural and Experimental.")
+  cat("No validated competition composition is available yet.")
 }
 ```
 :::
@@ -159,7 +182,7 @@ The dashboard will report breadth, recognition, price separation, buyer matching
 if (has_data) {
   lots |>
     filter(!is.na(buyer), buyer != "") |>
-    count(buyer, process_group, sort = TRUE) |>
+    count(country, year, buyer, process_group, sort = TRUE) |>
     datatable(options = list(pageLength = 12), rownames = FALSE)
 } else {
   cat("Buyer matching becomes available after auction and competition tables are joined and validated.")
