@@ -1,0 +1,136 @@
+---
+title: "Market Sedimentation in Specialty Coffee"
+author: "Guil Botler"
+format:
+  dashboard:
+    orientation: rows
+    scrolling: true
+execute:
+  echo: false
+---
+
+```{r}
+library(tidyverse)
+library(plotly)
+library(DT)
+library(scales)
+
+data_path <- "data/processed/auction_lots.csv"
+lots <- readr::read_csv(data_path, show_col_types = FALSE)
+has_data <- nrow(lots) > 0 && any(!is.na(lots$final_bid_usd_lb))
+```
+
+## Overview
+
+::: {.valuebox icon="cup-hot" color="primary"}
+### Observed lots
+```{r}
+if (has_data) comma(nrow(lots)) else "Awaiting validated extraction"
+```
+:::
+
+::: {.valuebox icon="globe-americas" color="secondary"}
+### Producing countries
+```{r}
+if (has_data) n_distinct(lots$country) else "—"
+```
+:::
+
+::: {.valuebox icon="calendar3" color="success"}
+### Auction years
+```{r}
+if (has_data) paste(min(lots$year), max(lots$year), sep = "–") else "—"
+```
+:::
+
+::: {.card}
+### Scope
+
+This dashboard measures the emergence and persistence of differentiated signals inside COE/NW auctions. Because public auction data contain selected finalists, the dashboard does not equate this sample with the whole coffee market or claim by itself to identify escape from a low-quality pooling equilibrium.
+:::
+
+## Price signals
+
+::: {.card}
+### Score and final bid
+```{r}
+if (has_data) {
+  plot_ly(
+    lots |> filter(!is.na(score), !is.na(final_bid_usd_lb)),
+    x = ~score, y = ~final_bid_usd_lb, color = ~process_group,
+    text = ~paste(farm, variety, process, sep = "<br>"),
+    type = "scatter", mode = "markers"
+  ) |>
+    layout(xaxis = list(title = "Jury score"), yaxis = list(title = "Final bid (USD/lb)", type = "log"))
+} else {
+  cat("No validated auction observations yet. Run `targets::tar_make()` locally.")
+}
+```
+:::
+
+::: {.card}
+### Conditional interpretation
+
+Price dispersion is not automatically differentiation. The empirical models first condition on score, auction, lot size and scarcity; only then do process, variety, origin and buyer matching enter as candidate organizing signals.
+:::
+
+## Differentiation and innovation
+
+::: {.card}
+### Process composition
+```{r}
+if (has_data) {
+  composition <- lots |>
+    count(year, process_group) |>
+    group_by(year) |>
+    mutate(share = n / sum(n)) |>
+    ungroup()
+  plot_ly(composition, x = ~year, y = ~share, color = ~process_group, type = "bar") |>
+    layout(barmode = "stack", yaxis = list(title = "Share of listed lots", tickformat = ".0%"))
+} else {
+  cat("The pilot will begin with Brazil 2024: Washed + Honey, Natural and Experimental.")
+}
+```
+:::
+
+::: {.card}
+### Sedimentation scorecard
+
+The dashboard will report breadth, recognition, price separation, buyer matching, reproduction and innovation persistence separately. A new label is not called innovation merely because it appears once.
+:::
+
+## Buyer matching
+
+::: {.card}
+### Buyer–attribute table
+```{r}
+if (has_data) {
+  lots |>
+    filter(!is.na(buyer), buyer != "") |>
+    count(buyer, process_group, sort = TRUE) |>
+    datatable(options = list(pageLength = 12), rownames = FALSE)
+} else {
+  cat("Buyer matching becomes available after auction and competition tables are joined and validated.")
+}
+```
+:::
+
+## Data and methods
+
+::: {.card}
+### Analytical data
+```{r}
+datatable(lots, options = list(pageLength = 10, scrollX = TRUE), rownames = FALSE)
+```
+:::
+
+::: {.card}
+### Interpretation rules
+
+- International coffee prices are used as benchmarks, not as the main instrumental variable.
+- COE and NW are analyzed separately before pooling.
+- Missing auction outcomes are never coded automatically as zero.
+- Raw labels are preserved alongside later canonical taxonomies.
+- Descriptive coefficients are not presented as causal effects.
+:::
+
