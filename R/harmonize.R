@@ -26,6 +26,12 @@ normalize_rank <- function(x) {
     stringr::str_replace_all("[^A-Z0-9]+", "")
 }
 
+rank_match_key <- function(rank, program) {
+  clean <- normalize_rank(rank)
+  is_coe_split <- program == "COE" & stringr::str_detect(clean, "^[0-9]+[AB]$")
+  dplyr::if_else(is_coe_split, stringr::str_remove(clean, "[AB]$"), clean)
+}
+
 harmonize_ace_tables <- function(raw_tables) {
   competition <- raw_tables |>
     dplyr::filter(stage == "competition") |>
@@ -45,10 +51,11 @@ harmonize_ace_tables <- function(raw_tables) {
       farm_key = normalize_key_text(farm),
       variety_key = normalize_key_text(variety),
       rank_key = normalize_rank(rank),
+      split_key = program == "COE" & stringr::str_detect(rank_key, "^[0-9]+[AB]$"),
       match_key = dplyr::if_else(
         program == "NW",
         paste(farm_key, sprintf("%.2f", score), sep = "|"),
-        rank_key
+        rank_match_key(rank, program)
       )
     )
 
@@ -71,25 +78,40 @@ harmonize_ace_tables <- function(raw_tables) {
       farm_key = normalize_key_text(farm),
       variety_key = normalize_key_text(variety),
       rank_key = normalize_rank(rank),
+      split_key = program == "COE" & stringr::str_detect(rank_key, "^[0-9]+[AB]$"),
       match_key = dplyr::if_else(
         program == "NW",
         paste(farm_key, sprintf("%.2f", score), sep = "|"),
-        rank_key
+        rank_match_key(rank, program)
       )
     )
 
   key_vars <- c(
     "country", "year", "program", "process_group", "match_key"
   )
+  competition_duplicates <- competition |>
+    dplyr::count(dplyr::across(dplyr::all_of(key_vars))) |>
+    dplyr::filter(n > 1) |>
+    dplyr::mutate(stage = "competition")
+
+  auction_duplicates <- auction |>
+    dplyr::group_by(dplyr::across(dplyr::all_of(key_vars))) |>
+    dplyr::summarise(
+      n = dplyr::n(),
+      split_rows = sum(split_key, na.rm = TRUE),
+      distinct_ranks = dplyr::n_distinct(rank_key),
+      .groups = "drop"
+    ) |>
+    dplyr::filter(
+      n > 1,
+      !(n == 2L & split_rows == 2L & distinct_ranks == 2L)
+    ) |>
+    dplyr::select(-split_rows, -distinct_ranks) |>
+    dplyr::mutate(stage = "auction")
+
   duplicates <- dplyr::bind_rows(
-    competition |>
-      dplyr::count(dplyr::across(dplyr::all_of(key_vars))) |>
-      dplyr::filter(n > 1) |>
-      dplyr::mutate(stage = "competition"),
-    auction |>
-      dplyr::count(dplyr::across(dplyr::all_of(key_vars))) |>
-      dplyr::filter(n > 1) |>
-      dplyr::mutate(stage = "auction")
+    competition_duplicates,
+    auction_duplicates
   )
   if (nrow(duplicates) > 0L) {
     detail <- utils::capture.output(
@@ -109,7 +131,7 @@ harmonize_ace_tables <- function(raw_tables) {
     suffix = c("_competition", "_auction")
   ) |>
     dplyr::mutate(
-      rank = dplyr::coalesce(rank_competition, rank_auction),
+      rank = dplyr::coalesce(rank_auction, rank_competition),
       score = dplyr::coalesce(score_competition, score_auction),
       farm = dplyr::coalesce(farm_competition, farm_auction),
       variety = dplyr::coalesce(variety_competition, variety_auction),
