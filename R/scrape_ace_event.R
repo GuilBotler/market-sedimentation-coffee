@@ -45,6 +45,7 @@ standardize_ace_table <- function(table_node, table_id, country, year, source_ur
     janitor::clean_names()
 
   names_upper <- toupper(names(out))
+  if (!all(c("RANK", "SCORE") %in% names_upper)) return(tibble::tibble())
   stage <- if (any(stringr::str_detect(names_upper, "FINAL_BID|COMPANY_NAME|TOTAL_VALUE"))) "auction" else "competition"
 
   out |>
