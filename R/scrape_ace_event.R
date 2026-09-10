@@ -21,7 +21,7 @@ ace_number <- function(x) {
     }
     suppressWarnings(as.numeric(z))
   }
-  vapply(x, clean_one, numeric(1))
+  unname(vapply(x, clean_one, numeric(1)))
 }
 
 nearest_heading <- function(node, level) {
