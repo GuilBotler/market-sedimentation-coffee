@@ -73,7 +73,7 @@ if (has_data) {
 :::
 
 ::: {.card}
-### Pilot price profile
+### Bid statistics by program
 ```{r}
 if (has_data) {
   lots |>
@@ -82,6 +82,8 @@ if (has_data) {
       `Auction lots` = n(),
       `Coffee entries` = n_distinct(entry_id),
       `Reported bids` = sum(!is.na(final_bid_usd_lb)),
+      `Mean bid (USD/lb)` = mean(final_bid_usd_lb, na.rm = TRUE),
+      `Bid variance` = if (sum(!is.na(final_bid_usd_lb)) > 1) var(final_bid_usd_lb, na.rm = TRUE) else NA_real_,
       `Median bid (USD/lb)` = median(final_bid_usd_lb, na.rm = TRUE),
       `Minimum bid` = min(final_bid_usd_lb, na.rm = TRUE),
       `Maximum bid` = max(final_bid_usd_lb, na.rm = TRUE),
@@ -93,6 +95,29 @@ if (has_data) {
 ```
 
 Brazil 2024 is descriptive evidence from one event. The raw COE–NW gap combines score selection, program rules and market valuation; it is not yet a causal premium.
+:::
+
+::: {.card}
+### Bid statistics by process
+```{r}
+if (has_data) {
+  lots |>
+    group_by(program, process_group) |>
+    summarise(
+      `Reported bids` = sum(!is.na(final_bid_usd_lb)),
+      `Mean (USD/lb)` = mean(final_bid_usd_lb, na.rm = TRUE),
+      `Variance` = if (sum(!is.na(final_bid_usd_lb)) > 1) var(final_bid_usd_lb, na.rm = TRUE) else NA_real_,
+      `Median (USD/lb)` = median(final_bid_usd_lb, na.rm = TRUE),
+      `Minimum` = min(final_bid_usd_lb, na.rm = TRUE),
+      `Maximum` = max(final_bid_usd_lb, na.rm = TRUE),
+      .groups = "drop"
+    ) |>
+    mutate(across(where(is.numeric), ~round(.x, 2))) |>
+    datatable(options = list(pageLength = 10, scrollX = TRUE), rownames = FALSE)
+}
+```
+
+Variance is the sample variance of observed final bids within each group. Missing auction outcomes are excluded rather than assigned a zero price.
 :::
 
 ::: {.card}
