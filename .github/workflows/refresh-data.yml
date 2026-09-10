@@ -5,6 +5,10 @@ on:
   push:
     paths:
       - .github/workflows/refresh-data.yml
+      - R/**
+      - _targets.R
+      - data-raw/source_registry.csv
+      - tests/**
 
 permissions:
   contents: write
