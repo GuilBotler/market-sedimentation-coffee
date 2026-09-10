@@ -26,6 +26,10 @@ harmonize_ace_tables <- function(raw_tables) {
       region = pick_column(dplyr::cur_data(), c("region")),
       source_url,
       observed_competition = TRUE
+    ) |>
+    dplyr::mutate(
+      farm_key = normalize_key_text(farm),
+      variety_key = normalize_key_text(variety)
     )
 
   auction <- raw_tables |>
@@ -42,9 +46,16 @@ harmonize_ace_tables <- function(raw_tables) {
       buyer = pick_column(dplyr::cur_data(), c("company_name", "buyer")),
       source_url,
       observed_auction = TRUE
+    ) |>
+    dplyr::mutate(
+      farm_key = normalize_key_text(farm),
+      variety_key = normalize_key_text(variety)
     )
 
-  key_vars <- c("country", "year", "program", "process_group", "rank")
+  key_vars <- c(
+    "country", "year", "program", "process_group", "rank",
+    "farm_key", "variety_key"
+  )
   duplicates <- dplyr::bind_rows(
     competition |> dplyr::count(dplyr::across(dplyr::all_of(key_vars))) |> dplyr::filter(n > 1),
     auction |> dplyr::count(dplyr::across(dplyr::all_of(key_vars))) |> dplyr::filter(n > 1)
