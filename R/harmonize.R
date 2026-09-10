@@ -27,8 +27,8 @@ harmonize_ace_tables <- function(raw_tables) {
       country, year, program, process_group,
       rank = as.character(pick_column(dplyr::cur_data(), c("rank"))),
       score = ace_number(pick_column(dplyr::cur_data(), c("score"))),
-      farm = pick_column(dplyr::cur_data(), c("farm_cws", "farm")),
-      producer = pick_column(dplyr::cur_data(), c("farmer_representative", "producer")),
+      farm = pick_column(dplyr::cur_data(), c("farm_cws", "farm_name", "farm")),
+      producer = pick_column(dplyr::cur_data(), c("farmer_representative", "farmer", "producer")),
       process = pick_column(dplyr::cur_data(), c("process")),
       variety = pick_column(dplyr::cur_data(), c("variety")),
       region = pick_column(dplyr::cur_data(), c("region")),
@@ -46,7 +46,7 @@ harmonize_ace_tables <- function(raw_tables) {
       country, year, program, process_group,
       rank = as.character(pick_column(dplyr::cur_data(), c("rank"))),
       score = ace_number(pick_column(dplyr::cur_data(), c("score"))),
-      farm = pick_column(dplyr::cur_data(), c("farm_cws", "farm")),
+      farm = pick_column(dplyr::cur_data(), c("farm_cws", "farm_name", "farm")),
       variety = pick_column(dplyr::cur_data(), c("variety")),
       weight_lb = ace_number(pick_column(dplyr::cur_data(), c("weight_lb", "weight_lbs"))),
       final_bid_usd_lb = ace_number(pick_column(dplyr::cur_data(), c("final_bid_lb", "final_bid_usd_lb"))),
@@ -120,12 +120,12 @@ harmonize_ace_tables <- function(raw_tables) {
     dplyr::filter(is.na(observed_competition) | is.na(observed_auction))
   if (nrow(unmatched) > 0L) {
     detail <- unmatched |>
-      dplyr::transmute(
-        country, year, program, process_group, rank,
-        farm, variety,
-        competition = !is.na(observed_competition),
-        auction = !is.na(observed_auction)
+      dplyr::mutate(
+        missing_side = dplyr::if_else(
+          is.na(observed_competition), "competition", "auction"
+        )
       ) |>
+      dplyr::count(country, year, program, process_group, missing_side) |>
       utils::capture.output()
     stop(
       paste(
