@@ -28,6 +28,9 @@ jobs:
             any::plotly
             any::DT
             any::scales
+            any::testthat
+      - name: Run parser tests
+        run: Rscript tests/testthat.R
       - uses: quarto-dev/quarto-actions/render@v2
       - uses: actions/upload-pages-artifact@v3
         with:
