@@ -27,21 +27,21 @@ reported <- lots |> filter(auction_result_status == "reported")
 ::: {.valuebox icon="cup-hot" color="primary"}
 ### Auction lots
 ```{r}
-if (has_data) comma(nrow(lots)) else "Awaiting validated extraction"
+cat(if (has_data) comma(nrow(lots)) else "Awaiting validated extraction")
 ```
 :::
 
 ::: {.valuebox icon="layers" color="secondary"}
 ### Coffee entries
 ```{r}
-if (has_data) comma(nrow(entries)) else "—"
+cat(if (has_data) comma(nrow(entries)) else "—")
 ```
 :::
 
 ::: {.valuebox icon="currency-dollar" color="success"}
 ### Reported bids
 ```{r}
-if (has_data) comma(nrow(reported)) else "—"
+cat(if (has_data) comma(nrow(reported)) else "—")
 ```
 :::
 
