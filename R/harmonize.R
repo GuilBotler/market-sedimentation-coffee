@@ -24,7 +24,8 @@ harmonize_ace_tables <- function(raw_tables) {
       process = pick_column(dplyr::cur_data(), c("process")),
       variety = pick_column(dplyr::cur_data(), c("variety")),
       region = pick_column(dplyr::cur_data(), c("region")),
-      source_url
+      source_url,
+      observed_competition = TRUE
     )
 
   auction <- raw_tables |>
@@ -39,7 +40,8 @@ harmonize_ace_tables <- function(raw_tables) {
       final_bid_usd_lb = ace_number(pick_column(dplyr::cur_data(), c("final_bid_lb", "final_bid_usd_lb"))),
       total_value_usd = ace_number(pick_column(dplyr::cur_data(), c("total_value"))),
       buyer = pick_column(dplyr::cur_data(), c("company_name", "buyer")),
-      source_url
+      source_url,
+      observed_auction = TRUE
     )
 
   key_vars <- c("country", "year", "program", "process_group", "rank")
@@ -68,8 +70,12 @@ harmonize_ace_tables <- function(raw_tables) {
     dplyr::select(
       lot_id, country, year, program, process_group, rank, score, farm,
       producer, process, variety, region, weight_lb, final_bid_usd_lb,
-      total_value_usd, buyer, source_url
+      total_value_usd, buyer, observed_competition, observed_auction, source_url
     )
+
+  unmatched <- joined |>
+    dplyr::filter(is.na(observed_competition) | is.na(observed_auction))
+  if (nrow(unmatched) > 0L) stop("Competition-to-auction joins are incomplete; review lot keys.")
 
   required_missing <- joined |>
     dplyr::filter(
