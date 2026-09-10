@@ -64,7 +64,12 @@ harmonize_ace_tables <- function(raw_tables) {
       source_url = dplyr::coalesce(source_url_competition, source_url_auction),
       lot_id = purrr::pmap_chr(
         list(country, year, program, process_group, rank, farm),
-        ~ digest::digest(paste(..., sep = "|"), algo = "xxhash64")
+        function(country, year, program, process_group, rank, farm) {
+          digest::digest(
+            paste(country, year, program, process_group, rank, farm, sep = "|"),
+            algo = "xxhash64"
+          )
+        }
       )
     ) |>
     dplyr::select(
