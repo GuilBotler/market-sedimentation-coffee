@@ -25,7 +25,7 @@ harmonize_ace_tables <- function(raw_tables) {
     dplyr::filter(stage == "competition") |>
     dplyr::transmute(
       country, year, program, process_group,
-      rank = as.character(pick_column(dplyr::cur_data(), c("rank"))),
+      rank = as.character(pick_column(dplyr::cur_data(), c("rank", "ranking"))),
       score = ace_number(pick_column(dplyr::cur_data(), c("score"))),
       farm = pick_column(dplyr::cur_data(), c("farm_cws", "farm_name", "farm")),
       producer = pick_column(dplyr::cur_data(), c("farmer_representative", "farmer", "producer")),
@@ -37,32 +37,43 @@ harmonize_ace_tables <- function(raw_tables) {
     ) |>
     dplyr::mutate(
       farm_key = normalize_key_text(farm),
-      variety_key = normalize_key_text(variety)
+      variety_key = normalize_key_text(variety),
+      rank_key = normalize_rank(rank),
+      match_key = dplyr::if_else(
+        program == "NW",
+        paste(farm_key, sprintf("%.2f", score), sep = "|"),
+        rank_key
+      )
     )
 
   auction <- raw_tables |>
     dplyr::filter(stage == "auction") |>
     dplyr::transmute(
       country, year, program, process_group,
-      rank = as.character(pick_column(dplyr::cur_data(), c("rank"))),
+      rank = as.character(pick_column(dplyr::cur_data(), c("rank", "ranking"))),
       score = ace_number(pick_column(dplyr::cur_data(), c("score"))),
       farm = pick_column(dplyr::cur_data(), c("farm_cws", "farm_name", "farm")),
       variety = pick_column(dplyr::cur_data(), c("variety")),
       weight_lb = ace_number(pick_column(dplyr::cur_data(), c("weight_lb", "weight_lbs"))),
-      final_bid_usd_lb = ace_number(pick_column(dplyr::cur_data(), c("final_bid_lb", "final_bid_usd_lb"))),
-      total_value_usd = ace_number(pick_column(dplyr::cur_data(), c("total_value"))),
-      buyer = pick_column(dplyr::cur_data(), c("company_name", "buyer")),
+      final_bid_usd_lb = ace_number(pick_column(dplyr::cur_data(), c("final_bid_lb", "final_bid_usd_lb", "price_per_lb"))),
+      total_value_usd = ace_number(pick_column(dplyr::cur_data(), c("total_value", "total_price"))),
+      buyer = pick_column(dplyr::cur_data(), c("company_name", "buyer", "winner")),
       source_url,
       observed_auction = TRUE
     ) |>
     dplyr::mutate(
       farm_key = normalize_key_text(farm),
-      variety_key = normalize_key_text(variety)
+      variety_key = normalize_key_text(variety),
+      rank_key = normalize_rank(rank),
+      match_key = dplyr::if_else(
+        program == "NW",
+        paste(farm_key, sprintf("%.2f", score), sep = "|"),
+        rank_key
+      )
     )
 
   key_vars <- c(
-    "country", "year", "program", "process_group", "rank",
-    "farm_key", "variety_key"
+    "country", "year", "program", "process_group", "match_key"
   )
   duplicates <- dplyr::bind_rows(
     competition |> dplyr::count(dplyr::across(dplyr::all_of(key_vars))) |> dplyr::filter(n > 1),
@@ -77,6 +88,7 @@ harmonize_ace_tables <- function(raw_tables) {
     suffix = c("_competition", "_auction")
   ) |>
     dplyr::mutate(
+      rank = dplyr::coalesce(rank_competition, rank_auction),
       score = dplyr::coalesce(score_competition, score_auction),
       farm = dplyr::coalesce(farm_competition, farm_auction),
       variety = dplyr::coalesce(variety_competition, variety_auction),

@@ -41,6 +41,7 @@ classify_program <- function(section_heading) {
 standardize_ace_table <- function(table_node, table_id, country, year, source_url) {
   section <- nearest_heading(table_node, "h4")
   process_group <- nearest_heading(table_node, "h2")
+  program <- classify_program(section)
   raw <- rvest::html_table(table_node, header = FALSE, fill = TRUE, trim = TRUE)
   if (nrow(raw) < 2L) return(tibble::tibble())
 
@@ -49,14 +50,25 @@ standardize_ace_table <- function(table_node, table_id, country, year, source_ur
   names(out) <- janitor::make_clean_names(headers)
 
   names_upper <- toupper(names(out))
-  if (!all(c("RANK", "SCORE") %in% names_upper)) return(tibble::tibble())
-  stage <- if (any(stringr::str_detect(names_upper, "FINAL_BID|COMPANY_NAME|TOTAL_VALUE"))) "auction" else "competition"
+  if (!"SCORE" %in% names_upper) return(tibble::tibble())
+  if (!any(c("RANK", "RANKING") %in% names_upper)) {
+    if (identical(program, "NW")) {
+      out$rank <- "NW"
+      names_upper <- toupper(names(out))
+    } else {
+      return(tibble::tibble())
+    }
+  }
+  stage <- if (any(stringr::str_detect(
+    names_upper,
+    "FINAL_BID|PRICE_PER_LB|COMPANY_NAME|WINNER|BUYER|TOTAL_VALUE|TOTAL_PRICE"
+  ))) "auction" else "competition"
 
   out |>
     dplyr::mutate(
       country = country,
       year = as.integer(year),
-      program = classify_program(section),
+      program = program,
       stage = stage,
       process_group = stringr::str_squish(process_group),
       source_url = source_url,
