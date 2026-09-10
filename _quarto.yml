@@ -1,0 +1,22 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Market Sedimentation in Specialty Coffee"
+  site-url: "https://guilbotler.github.io/market-sedimentation-coffee/"
+  repo-url: "https://github.com/GuilBotler/market-sedimentation-coffee"
+  repo-actions: [source, issue]
+
+format:
+  dashboard:
+    theme: cosmo
+    orientation: rows
+    scrolling: true
+    nav-buttons: [github]
+
+execute:
+  freeze: auto
+  warning: false
+  message: false
+
