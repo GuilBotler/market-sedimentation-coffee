@@ -65,13 +65,39 @@ standardize_ace_table <- function(table_node, table_id, country, year, source_ur
     )
 }
 
-scrape_ace_event <- function(country, year, source_url, user_agent) {
+ace_page_document <- function(source_url, user_agent) {
   response <- httr2::request(source_url) |>
     httr2::req_user_agent(user_agent) |>
     httr2::req_retry(max_tries = 3) |>
     httr2::req_perform()
 
   page <- response |> httr2::resp_body_html()
+  if (length(rvest::html_elements(page, "table")) > 0L) return(page)
+
+  slug <- source_url |>
+    stringr::str_remove("/+$") |>
+    basename()
+  api_url <- stringr::str_replace(
+    source_url,
+    "/[^/]+/?$",
+    "/wp-json/wp/v2/pages"
+  )
+  api_response <- httr2::request(api_url) |>
+    httr2::req_url_query(slug = slug, per_page = 1, `_fields` = "content,link") |>
+    httr2::req_user_agent(user_agent) |>
+    httr2::req_retry(max_tries = 3) |>
+    httr2::req_perform() |>
+    httr2::resp_body_json(simplifyVector = FALSE)
+
+  if (length(api_response) == 0L || is.null(api_response[[1]]$content$rendered)) {
+    stop("No HTML tables found and WordPress page lookup failed: ", source_url)
+  }
+
+  xml2::read_html(api_response[[1]]$content$rendered)
+}
+
+scrape_ace_event <- function(country, year, source_url, user_agent) {
+  page <- ace_page_document(source_url, user_agent)
   nodes <- rvest::html_elements(page, "table")
   if (length(nodes) == 0L) stop("No HTML tables found: ", source_url)
 
