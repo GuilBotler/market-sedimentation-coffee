@@ -118,7 +118,23 @@ harmonize_ace_tables <- function(raw_tables) {
 
   unmatched <- joined |>
     dplyr::filter(is.na(observed_competition) | is.na(observed_auction))
-  if (nrow(unmatched) > 0L) stop("Competition-to-auction joins are incomplete; review lot keys.")
+  if (nrow(unmatched) > 0L) {
+    detail <- unmatched |>
+      dplyr::transmute(
+        country, year, program, process_group, rank,
+        farm = dplyr::coalesce(farm_competition, farm_auction),
+        variety = dplyr::coalesce(variety_competition, variety_auction),
+        competition = !is.na(observed_competition),
+        auction = !is.na(observed_auction)
+      ) |>
+      utils::capture.output()
+    stop(
+      paste(
+        c("Competition-to-auction joins are incomplete; review lot keys.", detail),
+        collapse = "\n"
+      )
+    )
+  }
 
   required_missing <- joined |>
     dplyr::filter(
