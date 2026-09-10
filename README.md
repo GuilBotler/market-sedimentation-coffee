@@ -51,7 +51,8 @@ quarto render
 
 Raw HTML snapshots are not committed. Collection is manual/on-demand in the pilot to avoid unnecessary requests and to keep source changes auditable. The dashboard is rebuilt on GitHub only when the repository changes.
 
-## Status
+## Pilot status
 
-This is a research scaffold. No empirical result should be interpreted until extraction and joins pass the validation rules in `docs/data_dictionary.md`.
+The Brazil 2024 extraction passes the parser, join and value-reconciliation checks. It contains 38 auction lots representing 35 competition entries, with 37 reported bids. Three winning entries were divided into A/B sale lots; the analytical table preserves both the sale-unit `lot_id` and the underlying `entry_id`.
 
+The pilot is descriptive and covers one event. It validates the measurement architecture but does not yet establish persistence, causal premiums or the conditions for market sedimentation.
