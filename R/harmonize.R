@@ -1,7 +1,13 @@
 pick_column <- function(data, candidates, default = NA_character_) {
   hit <- intersect(candidates, names(data))
   if (length(hit) == 0L) return(rep(default, nrow(data)))
-  data[[hit[[1]]]]
+  out <- as.character(data[[hit[[1]]]])
+  if (length(hit) > 1L) {
+    for (column in hit[-1]) {
+      out <- dplyr::coalesce(out, as.character(data[[column]]))
+    }
+  }
+  out
 }
 
 normalize_key_text <- function(x) {

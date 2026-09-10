@@ -10,3 +10,8 @@ test_that("split ranks map to a common entry rank", {
   entry_rank <- dplyr::if_else(split, stringr::str_remove(clean, "[AB]$"), clean)
   expect_equal(entry_rank, c("1", "1", "2"))
 })
+
+test_that("column aliases coalesce row by row across event schemas", {
+  data <- tibble::tibble(rank = c("1A", NA), ranking = c(NA, "2"))
+  expect_equal(pick_column(data, c("rank", "ranking")), c("1A", "2"))
+})
