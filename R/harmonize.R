@@ -76,10 +76,25 @@ harmonize_ace_tables <- function(raw_tables) {
     "country", "year", "program", "process_group", "match_key"
   )
   duplicates <- dplyr::bind_rows(
-    competition |> dplyr::count(dplyr::across(dplyr::all_of(key_vars))) |> dplyr::filter(n > 1),
-    auction |> dplyr::count(dplyr::across(dplyr::all_of(key_vars))) |> dplyr::filter(n > 1)
+    competition |>
+      dplyr::count(dplyr::across(dplyr::all_of(key_vars))) |>
+      dplyr::filter(n > 1) |>
+      dplyr::mutate(stage = "competition"),
+    auction |>
+      dplyr::count(dplyr::across(dplyr::all_of(key_vars))) |>
+      dplyr::filter(n > 1) |>
+      dplyr::mutate(stage = "auction")
   )
-  if (nrow(duplicates) > 0L) stop("Non-unique lot keys require manual review.")
+  if (nrow(duplicates) > 0L) {
+    detail <- utils::capture.output(
+      print(
+        duplicates |>
+          dplyr::arrange(country, year, program, process_group, stage, match_key),
+        n = Inf
+      )
+    )
+    stop(paste(c("Non-unique lot keys require manual review.", detail), collapse = "\n"))
+  }
 
   joined <- dplyr::full_join(
     competition,
