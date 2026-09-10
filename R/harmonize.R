@@ -71,6 +71,17 @@ harmonize_ace_tables <- function(raw_tables) {
       total_value_usd, buyer, source_url
     )
 
+  required_missing <- joined |>
+    dplyr::filter(
+      is.na(country) | is.na(year) | is.na(program) | is.na(rank) |
+        is.na(score) | is.na(source_url)
+    )
+  if (nrow(required_missing) > 0L) stop("Required lot fields are missing; review table classification.")
+
+  if (any(joined$score < 0 | joined$score > 100, na.rm = TRUE)) {
+    stop("Scores outside 0–100 indicate a parsing error.")
+  }
+
   bad_value <- joined |>
     dplyr::filter(
       !is.na(total_value_usd), !is.na(weight_lb), !is.na(final_bid_usd_lb),
@@ -80,4 +91,3 @@ harmonize_ace_tables <- function(raw_tables) {
 
   joined
 }
-
