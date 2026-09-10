@@ -122,8 +122,7 @@ harmonize_ace_tables <- function(raw_tables) {
     detail <- unmatched |>
       dplyr::transmute(
         country, year, program, process_group, rank,
-        farm = dplyr::coalesce(farm_competition, farm_auction),
-        variety = dplyr::coalesce(variety_competition, variety_auction),
+        farm, variety,
         competition = !is.na(observed_competition),
         auction = !is.na(observed_auction)
       ) |>
