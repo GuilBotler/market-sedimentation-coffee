@@ -38,7 +38,7 @@ classify_program <- function(section_heading) {
   )
 }
 
-standardize_ace_table <- function(table_node, country, year, source_url, table_id) {
+standardize_ace_table <- function(table_node, table_id, country, year, source_url) {
   section <- nearest_heading(table_node, "h4")
   process_group <- nearest_heading(table_node, "h2")
   out <- rvest::html_table(table_node, fill = TRUE) |>
@@ -79,4 +79,3 @@ scrape_ace_event <- function(country, year, source_url, user_agent) {
     source_url = source_url
   )
 }
-
