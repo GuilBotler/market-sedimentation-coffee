@@ -24,7 +24,10 @@ list(
   tar_target(models, fit_baseline_models(auction_lots)),
   tar_target(
     processed_csv,
-    readr::write_csv(auction_lots, config$processed_csv),
+    {
+      readr::write_csv(auction_lots, config$processed_csv)
+      config$processed_csv
+    },
     format = "file"
   )
 )
