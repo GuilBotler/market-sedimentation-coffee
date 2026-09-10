@@ -18,28 +18,30 @@ library(scales)
 data_path <- "data/processed/auction_lots.csv"
 lots <- readr::read_csv(data_path, show_col_types = FALSE)
 has_data <- nrow(lots) > 0 && any(!is.na(lots$final_bid_usd_lb))
+entries <- lots |> distinct(entry_id, .keep_all = TRUE)
+reported <- lots |> filter(auction_result_status == "reported")
 ```
 
 ## Overview
 
 ::: {.valuebox icon="cup-hot" color="primary"}
-### Observed lots
+### Auction lots
 ```{r}
 if (has_data) comma(nrow(lots)) else "Awaiting validated extraction"
 ```
 :::
 
-::: {.valuebox icon="globe-americas" color="secondary"}
-### Producing countries
+::: {.valuebox icon="layers" color="secondary"}
+### Coffee entries
 ```{r}
-if (has_data) n_distinct(lots$country) else "—"
+if (has_data) comma(nrow(entries)) else "—"
 ```
 :::
 
-::: {.valuebox icon="calendar3" color="success"}
-### Auction years
+::: {.valuebox icon="currency-dollar" color="success"}
+### Reported bids
 ```{r}
-if (has_data) paste(min(lots$year), max(lots$year), sep = "–") else "—"
+if (has_data) comma(nrow(reported)) else "—"
 ```
 :::
 
@@ -47,6 +49,8 @@ if (has_data) paste(min(lots$year), max(lots$year), sep = "–") else "—"
 ### Scope
 
 This dashboard measures the emergence and persistence of differentiated signals inside COE/NW auctions. Because public auction data contain selected finalists, the dashboard does not equate this sample with the whole coffee market or claim by itself to identify escape from a low-quality pooling equilibrium.
+
+The unit distinction is explicit: an **auction lot** is a sale unit; a **coffee entry** is the underlying competition entry. Split lots such as 1A/1B share one `entry_id` and count once in composition measures.
 :::
 
 ## Price signals
@@ -57,8 +61,8 @@ This dashboard measures the emergence and persistence of differentiated signals 
 if (has_data) {
   plot_ly(
     lots |> filter(!is.na(score), !is.na(final_bid_usd_lb)),
-    x = ~score, y = ~final_bid_usd_lb, color = ~process_group,
-    text = ~paste(farm, variety, process, sep = "<br>"),
+    x = ~score, y = ~final_bid_usd_lb, color = ~program, symbol = ~process_group,
+    text = ~paste(farm, process_group, variety, process, sep = "<br>"),
     type = "scatter", mode = "markers"
   ) |>
     layout(xaxis = list(title = "Jury score"), yaxis = list(title = "Final bid (USD/lb)", type = "log"))
@@ -66,6 +70,29 @@ if (has_data) {
   cat("No validated auction observations yet. Run `targets::tar_make()` locally.")
 }
 ```
+:::
+
+::: {.card}
+### Pilot price profile
+```{r}
+if (has_data) {
+  lots |>
+    group_by(program) |>
+    summarise(
+      `Auction lots` = n(),
+      `Coffee entries` = n_distinct(entry_id),
+      `Reported bids` = sum(!is.na(final_bid_usd_lb)),
+      `Median bid (USD/lb)` = median(final_bid_usd_lb, na.rm = TRUE),
+      `Minimum bid` = min(final_bid_usd_lb, na.rm = TRUE),
+      `Maximum bid` = max(final_bid_usd_lb, na.rm = TRUE),
+      .groups = "drop"
+    ) |>
+    mutate(across(where(is.numeric), ~round(.x, 2))) |>
+    datatable(options = list(dom = "t"), rownames = FALSE)
+}
+```
+
+Brazil 2024 is descriptive evidence from one event. The raw COE–NW gap combines score selection, program rules and market valuation; it is not yet a causal premium.
 :::
 
 ::: {.card}
@@ -80,13 +107,13 @@ Price dispersion is not automatically differentiation. The empirical models firs
 ### Process composition
 ```{r}
 if (has_data) {
-  composition <- lots |>
+  composition <- entries |>
     count(year, process_group) |>
     group_by(year) |>
     mutate(share = n / sum(n)) |>
     ungroup()
   plot_ly(composition, x = ~year, y = ~share, color = ~process_group, type = "bar") |>
-    layout(barmode = "stack", yaxis = list(title = "Share of listed lots", tickformat = ".0%"))
+    layout(barmode = "stack", yaxis = list(title = "Share of coffee entries", tickformat = ".0%"))
 } else {
   cat("The pilot will begin with Brazil 2024: Washed + Honey, Natural and Experimental.")
 }
@@ -133,4 +160,3 @@ datatable(lots, options = list(pageLength = 10, scrollX = TRUE), rownames = FALS
 - Raw labels are preserved alongside later canonical taxonomies.
 - Descriptive coefficients are not presented as causal effects.
 :::
-

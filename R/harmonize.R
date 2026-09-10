@@ -12,6 +12,14 @@ normalize_key_text <- function(x) {
     stringr::str_squish()
 }
 
+normalize_rank <- function(x) {
+  x |>
+    as.character() |>
+    stringi::stri_trans_general("Latin-ASCII") |>
+    stringr::str_to_upper() |>
+    stringr::str_replace_all("[^A-Z0-9]+", "")
+}
+
 harmonize_ace_tables <- function(raw_tables) {
   competition <- raw_tables |>
     dplyr::filter(stage == "competition") |>
@@ -73,6 +81,9 @@ harmonize_ace_tables <- function(raw_tables) {
       farm = dplyr::coalesce(farm_competition, farm_auction),
       variety = dplyr::coalesce(variety_competition, variety_auction),
       source_url = dplyr::coalesce(source_url_competition, source_url_auction),
+      rank_clean = normalize_rank(rank),
+      split_lot = program == "COE" & stringr::str_detect(rank_clean, "^[0-9]+[AB]$"),
+      entry_rank = dplyr::if_else(split_lot, stringr::str_remove(rank_clean, "[AB]$"), rank_clean),
       lot_id = purrr::pmap_chr(
         list(country, year, program, process_group, rank, farm),
         function(country, year, program, process_group, rank, farm) {
@@ -81,12 +92,28 @@ harmonize_ace_tables <- function(raw_tables) {
             algo = "xxhash64"
           )
         }
+      ),
+      entry_id = purrr::pmap_chr(
+        list(country, year, program, process_group, entry_rank, farm, variety),
+        function(country, year, program, process_group, entry_rank, farm, variety) {
+          digest::digest(
+            paste(country, year, program, process_group, entry_rank, farm, variety, sep = "|"),
+            algo = "xxhash64"
+          )
+        }
+      ),
+      auction_result_status = dplyr::case_when(
+        !is.na(final_bid_usd_lb) & !is.na(weight_lb) & !is.na(total_value_usd) ~ "reported",
+        is.na(final_bid_usd_lb) & is.na(weight_lb) & is.na(total_value_usd) & (is.na(buyer) | buyer == "") ~ "not_reported",
+        TRUE ~ "partial"
       )
     ) |>
     dplyr::select(
-      lot_id, country, year, program, process_group, rank, score, farm,
+      lot_id, entry_id, split_lot, country, year, program, process_group,
+      rank, entry_rank, score, farm,
       producer, process, variety, region, weight_lb, final_bid_usd_lb,
-      total_value_usd, buyer, observed_competition, observed_auction, source_url
+      total_value_usd, buyer, auction_result_status,
+      observed_competition, observed_auction, source_url
     )
 
   unmatched <- joined |>

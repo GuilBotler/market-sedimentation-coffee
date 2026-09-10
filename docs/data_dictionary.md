@@ -4,12 +4,15 @@
 
 | Variable | Type | Definition |
 |---|---:|---|
-| `lot_id` | character | Stable hash/key from country, year, program, process group, rank and normalized farm |
+| `lot_id` | character | Stable identifier for the auction sale unit |
+| `entry_id` | character | Stable identifier for the underlying competition entry; shared by split lots such as 1A/1B |
+| `split_lot` | logical | Whether the auction lot is an A/B split of one competition entry |
 | `country` | character | Producing country |
 | `year` | integer | Competition/auction year |
 | `program` | character | `COE`, `NW`, or explicit pilot program |
 | `process_group` | character | Page section such as Natural, Experimental or Washed + Honey |
 | `rank` | character | Published rank; retained as text because values may contain A/B or symbols |
+| `entry_rank` | character | Normalized rank used to identify the underlying entry; A/B suffix and symbols removed |
 | `score` | double | Published jury score |
 | `farm` | character | Farm or washing-station name |
 | `producer` | character | Farmer or representative, when published |
@@ -20,6 +23,7 @@
 | `final_bid_usd_lb` | double | Final bid in USD per pound |
 | `total_value_usd` | double | Published or validated total lot value |
 | `buyer` | character | Published company/buying-group string |
+| `auction_result_status` | character | `reported`, `not_reported`, or `partial`; does not infer that an unreported result is an unsold lot |
 | `source_url` | character | Exact ACE page used |
 
 ## Provenance fields added during scaling
@@ -49,4 +53,3 @@ The analytical table will distinguish:
 - manually reviewed joins.
 
 This prevents a missing bid from being coded automatically as zero.
-

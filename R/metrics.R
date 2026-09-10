@@ -10,14 +10,31 @@ effective_number <- function(x, weights = NULL) {
 }
 
 differentiation_metrics <- function(lots) {
-  lots |>
+  entries <- lots |>
+    dplyr::group_by(country, year, program, entry_id) |>
+    dplyr::summarise(
+      process = dplyr::first(process),
+      variety = dplyr::first(variety),
+      weight_lb = if (all(is.na(weight_lb))) NA_real_ else sum(weight_lb, na.rm = TRUE),
+      .groups = "drop"
+    )
+
+  lot_outcomes <- lots |>
     dplyr::group_by(country, year, program) |>
     dplyr::summarise(
-      lots = dplyr::n(),
+      auction_lots = dplyr::n(),
+      median_bid_usd_lb = if (all(is.na(final_bid_usd_lb))) NA_real_ else median(final_bid_usd_lb, na.rm = TRUE),
+      .groups = "drop"
+    )
+
+  entries |>
+    dplyr::group_by(country, year, program) |>
+    dplyr::summarise(
+      entries = dplyr::n(),
       effective_processes = effective_number(process),
       effective_varieties = effective_number(variety),
       effective_processes_weighted = effective_number(process, weight_lb),
-      median_bid_usd_lb = median(final_bid_usd_lb, na.rm = TRUE),
       .groups = "drop"
-    )
+    ) |>
+    dplyr::left_join(lot_outcomes, by = c("country", "year", "program"))
 }
