@@ -1,2 +1,1 @@
-lot_id,country,year,program,process_group,rank,score,farm,producer,process,variety,region,weight_lb,final_bid_usd_lb,total_value_usd,buyer,source_url
-
+lot_id,country,year,program,process_group,rank,score,farm,producer,process,variety,region,weight_lb,final_bid_usd_lb,total_value_usd,buyer,observed_competition,observed_auction,source_url
