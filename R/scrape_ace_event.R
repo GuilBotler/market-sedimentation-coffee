@@ -41,8 +41,12 @@ classify_program <- function(section_heading) {
 standardize_ace_table <- function(table_node, table_id, country, year, source_url) {
   section <- nearest_heading(table_node, "h4")
   process_group <- nearest_heading(table_node, "h2")
-  out <- rvest::html_table(table_node, fill = TRUE) |>
-    janitor::clean_names()
+  raw <- rvest::html_table(table_node, header = FALSE, fill = TRUE, trim = TRUE)
+  if (nrow(raw) < 2L) return(tibble::tibble())
+
+  headers <- as.character(unlist(raw[1, ], use.names = FALSE))
+  out <- raw[-1, , drop = FALSE]
+  names(out) <- janitor::make_clean_names(headers)
 
   names_upper <- toupper(names(out))
   if (!all(c("RANK", "SCORE") %in% names_upper)) return(tibble::tibble())
