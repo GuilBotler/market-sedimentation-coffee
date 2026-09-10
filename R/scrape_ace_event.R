@@ -10,14 +10,14 @@ ace_number <- function(x) {
       comma_last <- max(gregexpr(",", z, fixed = TRUE)[[1]])
       dot_last <- max(gregexpr(".", z, fixed = TRUE)[[1]])
       if (comma_last > dot_last) {
-        z <- stringr::str_replace_all(z, fixed("."), "")
-        z <- stringr::str_replace(z, fixed(","), ".")
+        z <- stringr::str_replace_all(z, stringr::fixed("."), "")
+        z <- stringr::str_replace(z, stringr::fixed(","), ".")
       } else {
-        z <- stringr::str_replace_all(z, fixed(","), "")
+        z <- stringr::str_replace_all(z, stringr::fixed(","), "")
       }
     } else if (has_comma) {
       digits_after <- nchar(z) - stringr::str_locate(z, ",")[1, 1]
-      z <- if (digits_after <= 2L) stringr::str_replace(z, fixed(","), ".") else stringr::str_replace_all(z, fixed(","), "")
+      z <- if (digits_after <= 2L) stringr::str_replace(z, stringr::fixed(","), ".") else stringr::str_replace_all(z, stringr::fixed(","), "")
     }
     suppressWarnings(as.numeric(z))
   }
