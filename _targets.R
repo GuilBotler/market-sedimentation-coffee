@@ -15,7 +15,11 @@ list(
   tar_target(source_audit, collection$audit),
   tar_target(
     commodity_prices,
-    world_bank_commodity_prices(config$world_bank_monthly_url, start_year = 1999L)
+    collect_market_benchmarks(
+      config$world_bank_monthly_url,
+      config$fred_wine_url,
+      start_year = 1999L
+    )
   ),
   tar_target(metrics, differentiation_metrics(auction_lots)),
   tar_target(models, fit_baseline_models(auction_lots)),

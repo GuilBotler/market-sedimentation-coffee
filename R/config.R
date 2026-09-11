@@ -9,6 +9,10 @@ project_config <- function() {
       "74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/",
       "CMO-Historical-Data-Monthly.xlsx"
     ),
+    fred_wine_url = paste0(
+      "https://fred.stlouisfed.org/graph/fredgraph.csv?",
+      "id=PCU3121303121300"
+    ),
     user_agent = paste0(
       "market-sedimentation-coffee/0.1 ",
       "(academic research; https://github.com/GuilBotler/market-sedimentation-coffee)"

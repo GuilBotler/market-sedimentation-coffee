@@ -18,6 +18,34 @@ normalize_key_text <- function(x) {
     stringr::str_squish()
 }
 
+canonical_process_family <- function(process, process_group) {
+  detail <- normalize_key_text(process)
+  heading <- normalize_key_text(process_group)
+  combined <- paste(detail, heading)
+
+  dplyr::case_when(
+    stringr::str_detect(
+      combined,
+      "experimental|anaerob|ferment|carbonic|maceration|maceracion|thermal shock|yeast"
+    ) ~ "Experimental",
+    stringr::str_detect(
+      detail,
+      "honey|miel|pulped|depulped|demucilag|semi washed|semi lavado|semi lavado"
+    ) ~ "Honey / pulped natural",
+    stringr::str_detect(detail, "natural|dry") ~ "Natural",
+    stringr::str_detect(detail, "washed|lavado|wet") ~ "Washed",
+    stringr::str_detect(heading, "washed") &
+      !stringr::str_detect(heading, "natural|honey") ~ "Washed",
+    stringr::str_detect(heading, "natural") &
+      !stringr::str_detect(heading, "honey") ~ "Natural",
+    stringr::str_detect(heading, "honey") &
+      !stringr::str_detect(heading, "natural") ~ "Honey / pulped natural",
+    stringr::str_detect(heading, "natural") &
+      stringr::str_detect(heading, "honey") ~ "Natural / honey (grouped)",
+    TRUE ~ "Not reported"
+  )
+}
+
 normalize_rank <- function(x) {
   x |>
     as.character() |>
@@ -192,6 +220,12 @@ harmonize_ace_tables <- function(raw_tables) {
         !is.na(final_bid_usd_lb) & !is.na(weight_lb) & !is.na(total_value_usd) ~ "reported",
         is.na(final_bid_usd_lb) & is.na(weight_lb) & is.na(total_value_usd) & (is.na(buyer) | buyer == "") ~ "not_reported",
         TRUE ~ "partial"
+      ),
+      process_family = canonical_process_family(process, process_group),
+      process_classification_source = dplyr::case_when(
+        !is.na(process) & stringr::str_squish(process) != "" ~ "reported process",
+        !is.na(process_group) & stringr::str_squish(process_group) != "" ~ "ACE table heading",
+        TRUE ~ "not reported"
       )
     ) |>
     dplyr::select(
@@ -199,7 +233,8 @@ harmonize_ace_tables <- function(raw_tables) {
       rank, entry_rank, score, farm,
       producer, process, variety, region, weight_lb, final_bid_usd_lb,
       total_value_usd, buyer, auction_result_status,
-      observed_competition, observed_auction, source_url
+      observed_competition, observed_auction, process_family,
+      process_classification_source, source_url
     )
 
   unmatched <- joined |>
