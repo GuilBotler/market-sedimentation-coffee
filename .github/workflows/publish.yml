@@ -28,6 +28,7 @@ jobs:
             any::plotly
             any::DT
             any::scales
+            any::crosstalk
             any::testthat
       - name: Run parser tests
         run: Rscript tests/testthat.R

@@ -37,18 +37,19 @@ jobs:
             any::digest
             any::fixest
             any::testthat
+            any::readxl
       - name: Test parsers
         run: Rscript tests/testthat.R
       - name: Build validated data
         run: Rscript -e 'targets::tar_make()'
       - name: Commit generated analytical table
         run: |
-          if git diff --quiet -- data/processed/auction_lots.csv; then
+          if git diff --quiet -- data/processed/auction_lots.csv data/processed/source_audit.csv data/processed/commodity_prices.csv; then
             echo "No data changes"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/processed/auction_lots.csv
-          git commit -m "Refresh validated ACE auction data"
+          git add data/processed/auction_lots.csv data/processed/source_audit.csv data/processed/commodity_prices.csv
+          git commit -m "Refresh validated auction and commodity data"
           git push
