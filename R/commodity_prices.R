@@ -31,7 +31,14 @@ world_bank_commodity_prices <- function(source_url, start_year = 1999L) {
     dplyr::mutate(
       period = as.character(period),
       year = suppressWarnings(as.integer(stringr::str_sub(period, 1, 4))),
-      month = suppressWarnings(as.integer(stringr::str_sub(period, 6, 7))),
+      month = suppressWarnings(as.integer(stringr::str_sub(period, 6, 7)))
+    ) |>
+    dplyr::filter(
+      !is.na(year),
+      dplyr::between(month, 1L, 12L),
+      year >= start_year
+    ) |>
+    dplyr::mutate(
       date = as.Date(sprintf("%04d-%02d-01", year, month)),
       series = dplyr::recode(
         series,
@@ -44,7 +51,7 @@ world_bank_commodity_prices <- function(source_url, start_year = 1999L) {
       market_scope = "Global commodity benchmark",
       source_url = source_url
     ) |>
-    dplyr::filter(year >= start_year, !is.na(date), !is.na(value)) |>
+    dplyr::filter(!is.na(value)) |>
     dplyr::select(date, year, month, series, value, unit, market_scope, source_url)
 }
 
@@ -54,7 +61,10 @@ fred_wine_price_index <- function(source_url, start_year = 1999L) {
   date_column <- intersect(c("observation_date", "date"), names(raw))
   value_column <- intersect(c("pcu3121303121300"), names(raw))
   if (length(date_column) != 1L || length(value_column) != 1L) {
-    stop("FRED wine index columns changed.")
+    stop(
+      "FRED wine index columns changed. Found: ",
+      paste(names(raw), collapse = ", ")
+    )
   }
 
   raw |>
