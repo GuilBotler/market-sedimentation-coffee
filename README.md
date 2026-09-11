@@ -30,9 +30,11 @@ _targets.R                 Reproducible pipeline
 .github/workflows/         Dashboard publication on push
 ```
 
-## First pilot
+## Current expansion
 
-The first event is Brazil 2024. Its public ACE page reports separate competition and auction tables for Washed + Honey, Natural and Experimental coffees, plus National Winner results. The pilot tests extraction, taxonomy, joins and measurement before scaling to the historical country-year panel.
+The validated pilot began with Brazil 2024. The source registry now covers 66 candidate country–year events from 2020 through 2025 across Brazil, Colombia, Costa Rica, Ecuador, El Salvador, Ethiopia, Guatemala, Honduras, Indonesia, Mexico, Nicaragua, Peru, Taiwan and Thailand. Each event is admitted only if its published competition and auction tables pass the same validation contract. Failed pages remain visible in `source_audit.csv` with an exclusion reason.
+
+The dashboard also retrieves monthly World Bank prices for Arabica, Robusta and cocoa. Wine is represented separately by the U.S. winery producer price index from BLS/FRED because wine has no homogeneous global spot price comparable to those commodities.
 
 ## Run locally
 
@@ -49,10 +51,12 @@ Render the dashboard:
 quarto render
 ```
 
-Raw HTML snapshots are not committed. Collection is manual/on-demand in the pilot to avoid unnecessary requests and to keep source changes auditable. The dashboard is rebuilt on GitHub only when the repository changes.
+Raw HTML snapshots are not committed. Collection runs on demand when the source registry or parser changes, and every attempted event is audited. The dashboard is rebuilt on GitHub when the repository changes.
 
-## Pilot status
+## Validated baseline
 
 The Brazil 2024 extraction passes the parser, join and value-reconciliation checks. It contains 38 auction lots representing 35 competition entries, with 37 reported bids. Three winning entries were divided into A/B sale lots; the analytical table preserves both the sale-unit `lot_id` and the underlying `entry_id`.
 
-The pilot is descriptive and covers one event. It validates the measurement architecture but does not yet establish persistence, causal premiums or the conditions for market sedimentation.
+The initial five-event baseline contains 186 auction lots representing 175 competition entries across Brazil, Costa Rica, El Salvador and Ethiopia in 2023–2024. The expanded refresh adds every additional event that satisfies the contract; sample size and exclusions are reported by the dashboard rather than assumed in advance.
+
+The evidence remains descriptive. More years make persistence measurable, but do not by themselves establish causal premiums or the sufficient conditions for market sedimentation.

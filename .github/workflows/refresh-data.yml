@@ -44,7 +44,7 @@ jobs:
         run: Rscript -e 'targets::tar_make()'
       - name: Commit generated analytical table
         run: |
-          if git diff --quiet -- data/processed/auction_lots.csv data/processed/source_audit.csv data/processed/commodity_prices.csv; then
+          if [ -z "$(git status --porcelain -- data/processed/auction_lots.csv data/processed/source_audit.csv data/processed/commodity_prices.csv)" ]; then
             echo "No data changes"
             exit 0
           fi

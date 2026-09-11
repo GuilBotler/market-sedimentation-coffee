@@ -16,7 +16,9 @@
 | `score` | double | Published jury score |
 | `farm` | character | Farm or washing-station name |
 | `producer` | character | Farmer or representative, when published |
-| `process` | character | Published process text; canonical field will be added separately |
+| `process` | character | Published process text, preserved without replacement |
+| `process_family` | character | Transparent analytical taxonomy: Washed, Natural, Honey/pulped natural, Experimental, grouped Natural/Honey, or Not reported |
+| `process_classification_source` | character | Whether the taxonomy uses the reported process, the ACE table heading, or no published classification |
 | `variety` | character | Published variety text; multi-variety lots remain explicit |
 | `region` | character | Published region |
 | `weight_lb` | double | Auction lot weight in pounds |
@@ -53,3 +55,15 @@ The analytical table will distinguish:
 - manually reviewed joins.
 
 This prevents a missing bid from being coded automatically as zero.
+
+## External benchmark table
+
+`commodity_prices.csv` stores a long monthly table with `date`, `year`, `month`, `series`, `value`, `unit`, `market_scope`, and `source_url`.
+
+- Arabica, Robusta and cocoa are World Bank Pink Sheet prices in USD/kg.
+- Wine is the BLS/FRED U.S. winery producer price index (December 1998 = 100), not a global commodity spot price.
+- The dashboard rebases all four series to a common 2020 average only for visual comparison. Raw units remain available and are never treated as interchangeable price levels.
+
+## Source audit table
+
+`source_audit.csv` records every registered country–year, its inclusion status, lot and entry counts, reported bids, elapsed collection time, and the exact failure message when an event does not satisfy the contract.

@@ -30,7 +30,7 @@ canonical_process_family <- function(process, process_group) {
     ) ~ "Experimental",
     stringr::str_detect(
       detail,
-      "honey|miel|pulped|depulped|demucilag|semi washed|semi lavado|semi lavado"
+      "honey|miel|pulped|depulped|demucilag|semi washed|semi lavado"
     ) ~ "Honey / pulped natural",
     stringr::str_detect(detail, "natural|dry") ~ "Natural",
     stringr::str_detect(detail, "washed|lavado|wet") ~ "Washed",
