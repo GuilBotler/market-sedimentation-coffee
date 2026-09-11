@@ -32,12 +32,7 @@ world_bank_commodity_prices <- function(source_url, start_year = 1999L) {
       period = as.character(period),
       year = suppressWarnings(as.integer(stringr::str_sub(period, 1, 4))),
       month = suppressWarnings(as.integer(stringr::str_sub(period, 6, 7))),
-      date_text = dplyr::if_else(
-        !is.na(year) & !is.na(month) & dplyr::between(month, 1L, 12L),
-        sprintf("%04d-%02d-01", year, month),
-        NA_character_
-      ),
-      date = as.Date(date_text),
+      date = as.Date(sprintf("%04d-%02d-01", year, month)),
       series = dplyr::recode(
         series,
         cocoa = "Cocoa — World Bank",
@@ -54,18 +49,21 @@ world_bank_commodity_prices <- function(source_url, start_year = 1999L) {
 }
 
 fred_wine_price_index <- function(source_url, start_year = 1999L) {
-  raw <- readr::read_csv(source_url, show_col_types = FALSE, na = c(".", "NA"))
-  if (!all(c("DATE", "PCU3121303121300") %in% names(raw))) {
+  raw <- readr::read_csv(source_url, show_col_types = FALSE, na = c(".", "NA")) |>
+    janitor::clean_names()
+  date_column <- intersect(c("observation_date", "date"), names(raw))
+  value_column <- intersect(c("pcu3121303121300"), names(raw))
+  if (length(date_column) != 1L || length(value_column) != 1L) {
     stop("FRED wine index columns changed.")
   }
 
   raw |>
     dplyr::transmute(
-      date = as.Date(DATE),
+      date = as.Date(.data[[date_column]]),
       year = as.integer(format(date, "%Y")),
       month = as.integer(format(date, "%m")),
       series = "Wine & brandy — US winery PPI",
-      value = suppressWarnings(as.numeric(PCU3121303121300)),
+      value = suppressWarnings(as.numeric(.data[[value_column]])),
       unit = "Index (Dec 1998=100)",
       market_scope = "United States producer price index",
       source_url = source_url
