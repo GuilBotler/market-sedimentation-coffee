@@ -1,4 +1,11 @@
 build_v2_audit <- function(raw, competition, auction, process_coverage, process_shares) {
+  raw_competition_counts <- raw |>
+    dplyr::filter(download_status == "success", stage == "competition") |>
+    dplyr::count(event_id, country, year, event_name, name = "raw_rows")
+
+  clean_competition_counts <- competition |>
+    dplyr::count(event_id, country, year, event_name, name = "entries")
+
   list(
     download = raw |>
       dplyr::group_by(event_id, country, year, event_name, event_type, source_url,
@@ -8,6 +15,18 @@ build_v2_audit <- function(raw, competition, auction, process_coverage, process_
         auction_rows = sum(stage == "auction", na.rm = TRUE), .groups = "drop"
       ),
     process_coverage = process_coverage,
+    entry_reduction = dplyr::full_join(
+      raw_competition_counts,
+      clean_competition_counts,
+      by = c("event_id", "country", "year", "event_name")
+    ) |>
+      dplyr::mutate(
+        raw_rows = tidyr::replace_na(raw_rows, 0L),
+        entries = tidyr::replace_na(entries, 0L),
+        removed = raw_rows - entries,
+        retention_rate = dplyr::if_else(raw_rows > 0L, entries / raw_rows, NA_real_)
+      ) |>
+      dplyr::arrange(dplyr::desc(abs(removed)), country, year, event_name),
     duplicate_entries = competition |>
       dplyr::count(event_id, program, entry_key) |> dplyr::filter(n > 1),
     duplicate_lots = auction |>

@@ -23,5 +23,9 @@ V2 changes:
 - Each downloaded event is cached separately in `data/raw/events_v2`, so an
   interrupted run resumes without downloading completed pages again.
 - Event-level process shares are preserved before country-year aggregation.
+- `data/audit/v2/entry_reduction.csv` reports raw competition rows, retained
+  entries, removed rows, and the retention rate for every event. This makes
+  A/B consolidation and presentation-table duplication auditable instead of
+  treating the V1-V2 sample difference as unexplained.
 
 Do not replace the main `_targets.R` until the V2 audit is reviewed.
