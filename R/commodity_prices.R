@@ -56,7 +56,16 @@ world_bank_commodity_prices <- function(source_url, start_year = 1999L) {
 }
 
 fred_wine_price_index <- function(source_url, start_year = 1999L) {
-  raw <- readr::read_csv(source_url, show_col_types = FALSE, na = c(".", "NA")) |>
+  path <- tempfile(fileext = ".csv")
+  on.exit(unlink(path), add = TRUE)
+
+  httr2::request(source_url) |>
+    httr2::req_user_agent("market-sedimentation-coffee/0.2 academic research") |>
+    httr2::req_options(http_version = 2L) |>
+    httr2::req_retry(max_tries = 5, retry_on_failure = TRUE) |>
+    httr2::req_perform(path = path)
+
+  raw <- readr::read_csv(path, show_col_types = FALSE, na = c(".", "NA")) |>
     janitor::clean_names()
   date_column <- intersect(c("observation_date", "date"), names(raw))
   value_column <- intersect(c("pcu3121303121300"), names(raw))
