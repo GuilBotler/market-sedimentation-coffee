@@ -1,0 +1,42 @@
+suppressPackageStartupMessages({
+  library(tidyverse); library(rvest); library(xml2); library(httr2)
+  library(janitor); library(stringi); library(cli); library(digest)
+})
+
+required <- c("R/read_source_registry.R", "R/scrape_ace_event.R", "R/harmonize.R")
+missing <- required[!file.exists(required)]
+if (length(missing)) stop("Run from repository root. Missing: ", paste(missing, collapse = ", "))
+purrr::walk(required, sys.source, envir = .GlobalEnv)
+modules <- list.files("R/expansion_v2", pattern = "\\.[Rr]$", full.names = TRUE)
+if (!length(modules)) stop("No V2 modules found in R/expansion_v2")
+purrr::walk(modules, sys.source, envir = .GlobalEnv)
+
+purrr::walk(c("data/raw", "data/processed/v2", "data/audit/v2"),
+            dir.create, recursive = TRUE, showWarnings = FALSE)
+current <- read_source_registry("data-raw/source_registry.csv")
+historical <- discover_ace_archive(1999L, 2019L)
+readr::write_csv(historical, "data/audit/v2/historical_candidates.csv")
+if (anyNA(historical$country)) warning("Unidentified countries remain in historical_candidates.csv")
+registry_v2 <- combine_source_registries(current, dplyr::filter(historical, !is.na(country)))
+readr::write_csv(registry_v2, "data-raw/source_registry_v2.csv")
+
+raw_v2 <- collect_ace_raw_v2(registry_v2)
+saveRDS(raw_v2, "data/raw/ace_all_tables_v2.rds")
+readr::write_csv(raw_v2, "data/raw/ace_all_tables_v2.csv")
+stages <- split_ace_stages_v2(raw_v2)
+competition_v2 <- harmonize_competition_v2(stages$competition)
+auction_v2 <- harmonize_auction_v2(stages$auction)
+coverage_v2 <- build_process_coverage_v2(competition_v2)
+event_shares_v2 <- build_process_shares_v2(competition_v2)
+country_year_shares_v2 <- aggregate_country_year_process(event_shares_v2)
+
+saveRDS(competition_v2, "data/processed/v2/competition_entries.rds")
+saveRDS(auction_v2, "data/processed/v2/auction_lots.rds")
+readr::write_csv(competition_v2, "data/processed/v2/competition_entries.csv")
+readr::write_csv(auction_v2, "data/processed/v2/auction_lots.csv")
+readr::write_csv(coverage_v2, "data/processed/v2/process_coverage.csv")
+readr::write_csv(event_shares_v2, "data/processed/v2/process_shares_event.csv")
+readr::write_csv(country_year_shares_v2, "data/processed/v2/process_shares_country_year.csv")
+audit_v2 <- build_v2_audit(raw_v2, competition_v2, auction_v2, coverage_v2, event_shares_v2)
+write_v2_audit(audit_v2)
+message("V2 expansion completed. Review data/audit/v2 before analysis.")
