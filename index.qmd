@@ -99,7 +99,7 @@ An **auction lot** is a sale unit; a **coffee entry** is the underlying competit
 ```{r}
 if (has_data) {
   shared_lots <- SharedData$new(lots, key = ~lot_id, group = "auction-explorer")
-  controls <- div(
+  controls <- htmltools::div(
     filter_select(
       "country_filter", "Producing origins", shared_lots, ~country,
       multiple = TRUE
@@ -117,7 +117,7 @@ if (has_data) {
       multiple = TRUE
     )
   )
-  bscols(widths = c(3, 9), controls, div(
+  bscols(widths = c(3, 9), controls, htmltools::div(
     "Filters in this panel affect the scatter plot and lot table below. ",
     "Use the Plotly toolbar to zoom, select and download a PNG."
   ))
@@ -188,7 +188,7 @@ if (has_data) {
     group = "process-evolution"
   )
 
-  process_controls <- div(
+  process_controls <- htmltools::div(
     filter_select(
       "process_country_filter", "Producing origins", shared_process, ~country,
       multiple = TRUE
