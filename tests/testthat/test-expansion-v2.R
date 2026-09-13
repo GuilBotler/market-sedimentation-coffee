@@ -56,3 +56,29 @@ test_that("sparse duplicate summaries are detected from coffee overlap", {
   expect_equal(detected$source_table_id, 5L)
   expect_equal(detected$overlap_rate, 1)
 })
+
+
+testthat::test_that("nonpositive published score sentinels become missing", {
+  raw <- tibble::tibble(
+    event_id = "score-sentinel",
+    event_name = "Brazil 2002",
+    event_type = "COE Pulped Natural",
+    country = "Brazil",
+    year = 2002L,
+    program = "COE",
+    process_group = NA_character_,
+    source_table_id = 1L,
+    stage = "competition",
+    rank = "1",
+    score = "-1.00",
+    farm_cws = "Example farm",
+    process = NA_character_,
+    variety = NA_character_,
+    source_url = "https://example.com"
+  )
+
+  result <- harmonize_competition_v2(raw)
+
+  testthat::expect_true(is.na(result$score))
+  testthat::expect_equal(nrow(result), 1L)
+})
