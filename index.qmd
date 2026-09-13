@@ -165,29 +165,29 @@ country_year <- competition |>
   summarise(events = n_distinct(event_id), entries = n(),
             farms = n_distinct(farm_key[farm_key != "" & !is.na(farm_key)]),
             process_coverage = mean(process_classification_source != "not reported"),
-            .groups = "drop") |>
-  mutate(key = paste(country, year, program, sep = "|"))
+    .groups = "drop")
 
-shared_participation <- SharedData$new(country_year, key = ~key,
-                                       group = "participation")
-controls <- htmltools::div(
-  filter_select("part_country", "Origins", shared_participation, ~country,
-                multiple = TRUE),
-  filter_slider("part_year", "Years", shared_participation, ~year, step = 1),
-  filter_select("part_program", "Programs", shared_participation, ~program,
-                multiple = TRUE)
-)
-p <- plot_ly(shared_participation, x = ~year, y = ~entries, color = ~country,
-             linetype = ~program, type = "scatter", mode = "lines+markers",
-             text = ~paste(country, program, paste0("Entries: ", entries),
-                           paste0("Events: ", events),
-                           paste0("Process coverage: ", percent(process_coverage)),
-                           sep = "<br>")) |>
-  layout(xaxis = list(title = "Year", dtick = 1),
-         yaxis = list(title = "Published competition entries"),
-         legend = list(orientation = "h")) |>
+p <- ggplot(
+  country_year,
+  aes(
+    year, entries, color = program, group = program,
+    text = paste(
+      country, program, paste0("Entries: ", entries),
+      paste0("Events: ", events),
+      paste0("Process coverage: ", percent(process_coverage)), sep = "<br>"
+    )
+  )
+) +
+  geom_line() +
+  geom_point() +
+  facet_wrap(vars(country), ncol = 3, scales = "free_y") +
+  scale_x_continuous(breaks = scales::breaks_pretty(4)) +
+  labs(x = "Year", y = "Published competition entries", color = "Program") +
+  theme_minimal(base_size = 10) +
+  theme(legend.position = "top", panel.grid.minor = element_blank())
+
+ggplotly(p, tooltip = "text", height = 1450) |>
   plot_config("country-year-participation")
-bscols(widths = c(3, 9), controls, p)
 ```
 :::
 
@@ -197,37 +197,40 @@ bscols(widths = c(3, 9), controls, p)
 ### Composition with classification provenance
 ```{r}
 process_data <- competition |>
+  filter(classification_group == "Entry or table reported") |>
   count(country, year, program, classification_group, process_family,
         name = "entries") |>
   group_by(country, year, program, classification_group) |>
-  mutate(share = entries / sum(entries),
-         key = paste(country, year, program, classification_group,
-                     process_family, sep = "|")) |>
+  mutate(share = entries / sum(entries)) |>
   ungroup()
 
-shared_process <- SharedData$new(process_data, key = ~key, group = "process")
-process_controls <- htmltools::div(
-  filter_select("proc_country", "Origins", shared_process, ~country,
-                multiple = TRUE),
-  filter_slider("proc_year", "Years", shared_process, ~year, step = 1),
-  filter_select("proc_program", "Programs", shared_process, ~program,
-                multiple = TRUE),
-  filter_select("proc_source", "Classification provenance", shared_process,
-                ~classification_group, multiple = TRUE)
-)
-pp <- plot_ly(shared_process, x = ~year, y = ~share, color = ~process_family,
-              linetype = ~country, type = "scatter", mode = "lines+markers",
-              text = ~paste(country, program, classification_group,
-                            process_family, paste0("Entries: ", entries),
-                            percent(share, accuracy = 0.1), sep = "<br>")) |>
-  layout(xaxis = list(title = "Year", dtick = 1),
-         yaxis = list(title = "Share within provenance group", tickformat = ".0%"),
-         legend = list(orientation = "h")) |>
+pp <- ggplot(
+  process_data,
+  aes(
+    year, share, color = process_family,
+    group = interaction(program, process_family),
+    linetype = program,
+    text = paste(
+      country, program, process_family, paste0("Entries: ", entries),
+      percent(share, accuracy = 0.1), sep = "<br>"
+    )
+  )
+) +
+  geom_line() +
+  geom_point() +
+  facet_wrap(vars(country), ncol = 3) +
+  scale_x_continuous(breaks = scales::breaks_pretty(4)) +
+  scale_y_continuous(labels = percent) +
+  labs(x = "Year", y = "Share of reported entries", color = "Process",
+       linetype = "Program") +
+  theme_minimal(base_size = 10) +
+  theme(legend.position = "top", panel.grid.minor = element_blank())
+
+ggplotly(pp, tooltip = "text", height = 1450) |>
   plot_config("process-specialization")
-bscols(widths = c(3, 9), process_controls, pp)
 ```
 
-Use **Entry or table reported** for the main specialization analysis. **Event-restricted category** identifies explicit Natural or Pulped Natural events, mainly in Brazil; it documents institutional categories, not producer-choice shares from an open multi-process competition.
+This chart uses only **Entry or table reported** observations. **Event-restricted category** remains in the coverage panel because it documents institutional categories, not producer-choice shares from an open multi-process competition.
 :::
 
 ::: {.card}
@@ -252,29 +255,29 @@ plot_ly(source_year, x = ~year, y = ~share, color = ~classification_group,
 ### Score and final bid—matched V2 observations
 ```{r}
 priced <- matched_lots |>
-  filter(!is.na(final_bid_usd_lb), !is.na(score_display)) |>
-  mutate(key = lot_key)
-shared_prices <- SharedData$new(priced, key = ~key, group = "prices")
-price_controls <- htmltools::div(
-  filter_select("price_country", "Origins", shared_prices, ~country,
-                multiple = TRUE),
-  filter_slider("price_year", "Years", shared_prices, ~year, step = 1),
-  filter_select("price_program", "Programs", shared_prices, ~program,
-                multiple = TRUE),
-  filter_select("price_process", "Processes", shared_prices, ~process_family,
-                multiple = TRUE)
-)
-sp <- plot_ly(shared_prices, x = ~score_display, y = ~final_bid_usd_lb,
-              color = ~country, symbol = ~process_family,
-              type = "scatter", mode = "markers",
-              text = ~paste(country, year, farm_display, process_family,
-                            variety_display, paste0("Score: ", score_display),
-                            paste0("USD/lb: ", final_bid_usd_lb), sep = "<br>")) |>
-  layout(xaxis = list(title = "Jury score"),
-         yaxis = list(title = "Final bid (USD/lb)", type = "log"),
-         legend = list(orientation = "h")) |>
+  filter(!is.na(final_bid_usd_lb), !is.na(score_display))
+
+sp <- ggplot(
+  priced,
+  aes(
+    score_display, final_bid_usd_lb, color = process_family, shape = program,
+    text = paste(
+      country, year, farm_display, process_family, variety_display,
+      paste0("Score: ", score_display),
+      paste0("USD/lb: ", final_bid_usd_lb), sep = "<br>"
+    )
+  )
+) +
+  geom_point(alpha = 0.7) +
+  facet_wrap(vars(country), ncol = 3, scales = "free_y") +
+  scale_y_log10(labels = label_dollar(prefix = "$")) +
+  labs(x = "Jury score", y = "Final bid (USD/lb)", color = "Process",
+       shape = "Program") +
+  theme_minimal(base_size = 10) +
+  theme(legend.position = "top", panel.grid.minor = element_blank())
+
+ggplotly(sp, tooltip = "text", height = 1450) |>
   plot_config("score-final-bid")
-bscols(widths = c(3, 9), price_controls, sp)
 ```
 :::
 
@@ -308,13 +311,23 @@ if (nrow(benchmarks) > 0) {
               .groups = "drop") |>
     left_join(arabica, by = "year") |>
     mutate(ratio = median_bid / arabica_usd_lb)
-  plot_ly(ratio, x = ~year, y = ~ratio, color = ~country,
-          linetype = ~program, type = "scatter", mode = "lines+markers",
-          text = ~paste(country, program, paste0("Lots: ", priced_lots),
-                        paste0(round(ratio, 1), "×"), sep = "<br>")) |>
-    layout(xaxis = list(title = "Auction year", dtick = 1),
-           yaxis = list(title = "Median auction bid / Arabica benchmark"),
-           legend = list(orientation = "h")) |>
+  rp <- ggplot(
+    ratio,
+    aes(
+      year, ratio, color = program, group = program,
+      text = paste(country, program, paste0("Lots: ", priced_lots),
+                   paste0(round(ratio, 1), "×"), sep = "<br>")
+    )
+  ) +
+    geom_line() +
+    geom_point() +
+    facet_wrap(vars(country), ncol = 3, scales = "free_y") +
+    scale_x_continuous(breaks = scales::breaks_pretty(4)) +
+    labs(x = "Auction year", y = "Median bid / Arabica", color = "Program") +
+    theme_minimal(base_size = 10) +
+    theme(legend.position = "top", panel.grid.minor = element_blank())
+
+  ggplotly(rp, tooltip = "text", height = 1450) |>
     plot_config("specialty-benchmark-ratio")
 }
 ```
