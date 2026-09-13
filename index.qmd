@@ -252,7 +252,7 @@ plot_ly(source_year, x = ~year, y = ~share, color = ~classification_group,
 ## Prices and differentiated-market benchmark
 
 ::: {.card}
-### Score and final bid—matched V2 observations
+### Score and final bid—selected finalists by country
 ```{r}
 priced <- matched_lots |>
   filter(!is.na(final_bid_usd_lb), !is.na(score_display))
@@ -269,7 +269,11 @@ sp <- ggplot(
   )
 ) +
   geom_point(alpha = 0.7) +
-  facet_wrap(vars(country), ncol = 3, scales = "free_y") +
+  facet_wrap(vars(country), ncol = 3, scales = "free") +
+  scale_x_continuous(
+    breaks = scales::breaks_pretty(4),
+    expand = expansion(mult = c(0.08, 0.08))
+  ) +
   scale_y_log10(labels = label_dollar(prefix = "$")) +
   labs(x = "Jury score", y = "Final bid (USD/lb)", color = "Process",
        shape = "Program") +
@@ -279,6 +283,8 @@ sp <- ggplot(
 ggplotly(sp, tooltip = "text", height = 1450) |>
   plot_config("score-final-bid")
 ```
+
+Scores are concentrated around 80–90 because the public ACE tables contain selected finalists rather than all submitted coffees. Each country therefore uses its own observed score range in this figure. The axis is expanded visually, but the underlying scores are unchanged.
 :::
 
 ::: {.card}
