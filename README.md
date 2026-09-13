@@ -86,12 +86,12 @@ source("scripts/run_expansion_v2.R")
 ```
 
 The audited local execution found 213 successful source pages and one failed
-page (Thailand 2022, HTTP 404). It produced 5,446 unique competition entries
+page (Thailand 2022, HTTP 404). It produced 5,442 unique competition entries
 in 204 events and 6,373 auction lots in 213 events, spanning 17 origins and
 1999-2025. These figures describe extraction coverage, not a homogeneous
 estimation sample. Process is observed at row level for 2,214 entries, inferred
 from an explicitly process-restricted ACE event title for 599 entries, and not
-reported for 2,633 entries. Those three measurement classes must remain
+reported for 2,629 entries. Those three measurement classes must remain
 separate in analysis.
 
 The current empirical strategy is documented in
