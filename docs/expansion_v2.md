@@ -27,5 +27,9 @@ V2 changes:
   entries, removed rows, and the retention rate for every event. This makes
   A/B consolidation and presentation-table duplication auditable instead of
   treating the V1-V2 sample difference as unexplained.
+- Sparse summary tables are removed only when at least five identifiable
+  coffees and at least 80% of the sparse table's `farm + score` identities
+  reappear in a richer table from the same event. Every detected table is
+  written to `data/audit/v2/sparse_summary_tables.csv`.
 
 Do not replace the main `_targets.R` until the V2 audit is reviewed.

@@ -15,6 +15,7 @@ build_v2_audit <- function(raw, competition, auction, process_coverage, process_
         auction_rows = sum(stage == "auction", na.rm = TRUE), .groups = "drop"
       ),
     process_coverage = process_coverage,
+    sparse_summary_tables = identify_sparse_summary_tables_v2(raw),
     entry_reduction = dplyr::full_join(
       raw_competition_counts,
       clean_competition_counts,

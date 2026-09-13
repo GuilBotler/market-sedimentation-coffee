@@ -38,3 +38,21 @@ test_that("V2 audit reports raw-to-entry reduction by event", {
   expect_equal(audit$entry_reduction$removed, 1L)
   expect_equal(audit$entry_reduction$retention_rate, 0.5)
 })
+
+test_that("sparse duplicate summaries are detected from coffee overlap", {
+  detailed <- tibble::tibble(
+    event_id = "a", source_table_id = 1L, stage = "competition",
+    farm = paste("Farm", 1:6), score = 90 + 1:6 / 10,
+    process = "Natural", variety = "Geisha"
+  )
+  summary <- detailed |>
+    dplyr::mutate(
+      source_table_id = 5L,
+      process = NA_character_, variety = NA_character_
+    )
+  detected <- identify_sparse_summary_tables_v2(
+    dplyr::bind_rows(detailed, summary)
+  )
+  expect_equal(detected$source_table_id, 5L)
+  expect_equal(detected$overlap_rate, 1)
+})
