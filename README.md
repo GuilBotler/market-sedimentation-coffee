@@ -22,9 +22,11 @@ The international coffee price is a benchmark and premium denominator, not the p
 
 ```text
 R/                         Collection, harmonization, metrics and models
+R/expansion_v2/            Historical ACE collection and audit modules
 data-raw/source_registry.csv  Auditable list of source pages
 data/processed/            Generated analytical data
 docs/                      Empirical strategy and data dictionary
+scripts/run_expansion_v2.R Historical expansion runner (1999-2025)
 index.qmd                  Quarto dashboard
 _targets.R                 Reproducible pipeline
 .github/workflows/         Dashboard publication on push
@@ -60,3 +62,26 @@ The Brazil 2024 extraction passes the parser, join and value-reconciliation chec
 The initial five-event baseline contains 186 auction lots representing 175 competition entries across Brazil, Costa Rica, El Salvador and Ethiopia in 2023–2024. The expanded refresh adds every additional event that satisfies the contract; sample size and exclusions are reported by the dashboard rather than assumed in advance.
 
 The evidence remains descriptive. More years make persistence measurable, but do not by themselves establish causal premiums or the sufficient conditions for market sedimentation.
+
+## Historical expansion V2
+
+The V2 collector is kept beside the validated pipeline so the historical work
+remains reproducible without silently replacing the stricter matched sample.
+Run it from the repository root with:
+
+```r
+source("scripts/run_expansion_v2.R")
+```
+
+The audited local execution found 213 successful source pages and one failed
+page (Thailand 2022, HTTP 404). It produced 5,446 unique competition entries
+in 204 events and 6,373 auction lots in 213 events, spanning 17 origins and
+1999-2025. These figures describe extraction coverage, not a homogeneous
+estimation sample. Process is observed at row level for 2,214 entries, inferred
+from an explicitly process-restricted ACE event title for 599 entries, and not
+reported for 2,633 entries. Those three measurement classes must remain
+separate in analysis.
+
+The current empirical strategy is documented in
+[`docs/empirical_strategy_v2.md`](docs/empirical_strategy_v2.md), with a PDF
+version in [`docs/empirical_strategy_v2.pdf`](docs/empirical_strategy_v2.pdf).

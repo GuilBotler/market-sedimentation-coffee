@@ -8,16 +8,19 @@ _site/
 _freeze/
 data-raw/html/
 data-raw/cache/
+data/raw/events_v2/
+data/raw/ace_all_tables_v2.csv
+data/raw/ace_all_tables_v2.rds
 data/processed/*.rds
 data/processed/*.parquet
 !data/processed/auction_lots.csv
+data/processed/v2/*.rds
 _targets/
 _targets.RData
 
-
+data/raw/
 /.quarto/
 **/*.quarto_ipynb
-data/raw/
 
 *.Rhistory
 *.RData
