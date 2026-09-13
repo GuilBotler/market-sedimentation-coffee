@@ -101,7 +101,14 @@ harmonize_competition_v2 <- function(data) {
       variety = pick_column(data, c("variety", "varietal", "variedad", "variedade")),
       region = pick_column(data, "region"), source_url
     ) |>
-    dplyr::mutate(program = tidyr::replace_na(program, "COE")) |>
+    dplyr::mutate(
+      score = dplyr::if_else(
+        !is.na(score) & score <= 0,
+        NA_real_,
+        score
+      ),
+      program = tidyr::replace_na(program, "COE")
+    ) |>
     apply_known_source_corrections() |>
     dplyr::mutate(
       row_process_family = canonical_process_family_v2(process, process_group),
