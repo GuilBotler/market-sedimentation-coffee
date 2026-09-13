@@ -1,9 +1,13 @@
 test_that("dashboard V2 inputs preserve their analytical units", {
   competition <- readr::read_csv(
-    "data/processed/v2/competition_entries.csv", show_col_types = FALSE
+    testthat::test_path("..", "..", "data", "processed", "v2",
+                        "competition_entries.csv"),
+    show_col_types = FALSE
   )
   auctions <- readr::read_csv(
-    "data/processed/v2/auction_lots.csv", show_col_types = FALSE
+    testthat::test_path("..", "..", "data", "processed", "v2",
+                        "auction_lots.csv"),
+    show_col_types = FALSE
   )
 
   expect_true(all(c(
