@@ -1,284 +1,284 @@
 country,year,source_url,status,auction_lots,coffee_entries,reported_bids,message,elapsed_seconds
 Brazil,2020,https://allianceforcoffeeexcellence.org/brazil-2020/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country  year program process_group missing_side     n
-  <chr>   <int> <chr>   <chr>         <chr>        <int>
-1 Brazil   2020 COE     <NA>          competition     31
-2 Brazil   2020 NW      <NA>          competition      4",0.6451888084411621
+  [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Brazil   [4m2[24m020 COE     [31mNA[39m            competition     31
+[38;5;250m2[39m Brazil   [4m2[24m020 NW      [31mNA[39m            competition      4",1.7595093250274658
 Colombia,2020,https://allianceforcoffeeexcellence.org/colombia-2020/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 1 × 6
+[38;5;246m# A tibble: 1 × 6[39m
   country   year program process_group missing_side     n
-  <chr>    <int> <chr>   <chr>         <chr>        <int>
-1 Colombia  2020 COE     <NA>          competition     26",0.17106318473815918
+  [3m[38;5;246m<chr>[39m[23m    [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Colombia  [4m2[24m020 COE     [31mNA[39m            competition     26",0.6371197700500488
 Costa Rica,2020,https://allianceforcoffeeexcellence.org/costa-rica-2020/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country     year program process_group missing_side     n
-  <chr>      <int> <chr>   <chr>         <chr>        <int>
-1 Costa Rica  2020 COE     <NA>          competition     29
-2 Costa Rica  2020 NW      <NA>          competition      9",0.19885778427124023
+  [3m[38;5;246m<chr>[39m[23m      [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Costa Rica  [4m2[24m020 COE     [31mNA[39m            competition     29
+[38;5;250m2[39m Costa Rica  [4m2[24m020 NW      [31mNA[39m            competition      9",0.6100523471832275
 El Salvador,2020,https://allianceforcoffeeexcellence.org/el-salvador-2020/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country      year program process_group missing_side     n
-  <chr>       <int> <chr>   <chr>         <chr>        <int>
-1 El Salvador  2020 COE     <NA>          competition     24
-2 El Salvador  2020 NW      <NA>          competition     11",0.1825883388519287
+  [3m[38;5;246m<chr>[39m[23m       [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m El Salvador  [4m2[24m020 COE     [31mNA[39m            competition     24
+[38;5;250m2[39m El Salvador  [4m2[24m020 NW      [31mNA[39m            competition     11",0.45819759368896484
 Ethiopia,2020,https://allianceforcoffeeexcellence.org/ethiopia-2020/,excluded,0,0,0,"Non-unique lot keys require manual review.
-# A tibble: 1 × 7
+[38;5;246m# A tibble: 1 × 7[39m
   country   year program process_group match_key     n stage  
-  <chr>    <int> <chr>   <chr>         <chr>     <int> <chr>  
-1 Ethiopia  2020 NW      <NA>          NA|85.79      3 auction",0.14584612846374512
+  [3m[38;5;246m<chr>[39m[23m    [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m  
+[38;5;250m1[39m Ethiopia  [4m2[24m020 NW      [31mNA[39m            NA|85.79      3 auction",0.74066162109375
 Guatemala,2020,https://allianceforcoffeeexcellence.org/guatemala-2020/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country    year program process_group missing_side     n
-  <chr>     <int> <chr>   <chr>         <chr>        <int>
-1 Guatemala  2020 COE     <NA>          competition     32
-2 Guatemala  2020 NW      <NA>          competition      9",0.1870882511138916
+  [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Guatemala  [4m2[24m020 COE     [31mNA[39m            competition     32
+[38;5;250m2[39m Guatemala  [4m2[24m020 NW      [31mNA[39m            competition      9",0.494037389755249
 Nicaragua,2020,https://allianceforcoffeeexcellence.org/nicaragua-2020/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country    year program process_group missing_side     n
-  <chr>     <int> <chr>   <chr>         <chr>        <int>
-1 Nicaragua  2020 COE     <NA>          competition     19
-2 Nicaragua  2020 NW      <NA>          competition     13",0.17894649505615234
+  [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Nicaragua  [4m2[24m020 COE     [31mNA[39m            competition     19
+[38;5;250m2[39m Nicaragua  [4m2[24m020 NW      [31mNA[39m            competition     13",0.5944831371307373
 Peru,2020,https://allianceforcoffeeexcellence.org/peru-2020/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country  year program process_group missing_side     n
-  <chr>   <int> <chr>   <chr>         <chr>        <int>
-1 Peru     2020 COE     <NA>          competition     26
-2 Peru     2020 NW      <NA>          competition      9",0.1721038818359375
+  [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Peru     [4m2[24m020 COE     [31mNA[39m            competition     26
+[38;5;250m2[39m Peru     [4m2[24m020 NW      [31mNA[39m            competition      9",0.6151201725006104
 Brazil,2021,https://allianceforcoffeeexcellence.org/brazil-2021/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country  year program process_group missing_side     n
-  <chr>   <int> <chr>   <chr>         <chr>        <int>
-1 Brazil   2021 COE     <NA>          competition      1
-2 Brazil   2021 NW      <NA>          competition      1",0.2500159740447998
+  [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Brazil   [4m2[24m021 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Brazil   [4m2[24m021 NW      [31mNA[39m            competition      1",0.69753265380859375
 Colombia,2021,https://allianceforcoffeeexcellence.org/colombia-2021/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 1 × 6
+[38;5;246m# A tibble: 1 × 6[39m
   country   year program process_group missing_side     n
-  <chr>    <int> <chr>   <chr>         <chr>        <int>
-1 Colombia  2021 COE     <NA>          competition      1",0.1991581916809082
+  [3m[38;5;246m<chr>[39m[23m    [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Colombia  [4m2[24m021 COE     [31mNA[39m            competition      1",0.6570382118225098
 Costa Rica,2021,https://allianceforcoffeeexcellence.org/costa-rica-2021/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 1 × 6
+[38;5;246m# A tibble: 1 × 6[39m
   country     year program process_group missing_side     n
-  <chr>      <int> <chr>   <chr>         <chr>        <int>
-1 Costa Rica  2021 COE     <NA>          competition      1",0.2131197452545166
+  [3m[38;5;246m<chr>[39m[23m      [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Costa Rica  [4m2[24m021 COE     [31mNA[39m            competition      1",0.5078637599945068
 Ecuador,2021,https://allianceforcoffeeexcellence.org/ecuador-2021/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country  year program process_group missing_side     n
-  <chr>   <int> <chr>   <chr>         <chr>        <int>
-1 Ecuador  2021 COE     <NA>          competition      1
-2 Ecuador  2021 NW      <NA>          competition      1",0.24109888076782227
+  [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Ecuador  [4m2[24m021 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Ecuador  [4m2[24m021 NW      [31mNA[39m            competition      1",0.6885414123535156
 El Salvador,2021,https://allianceforcoffeeexcellence.org/el-salvador-2021/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country      year program process_group missing_side     n
-  <chr>       <int> <chr>   <chr>         <chr>        <int>
-1 El Salvador  2021 COE     <NA>          competition      1
-2 El Salvador  2021 NW      <NA>          competition      1",0.2558305263519287
+  [3m[38;5;246m<chr>[39m[23m       [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m El Salvador  [4m2[24m021 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m El Salvador  [4m2[24m021 NW      [31mNA[39m            competition      1",0.6376385688781738
 Ethiopia,2021,https://allianceforcoffeeexcellence.org/ethiopia-2021/,excluded,0,0,0,"Non-unique lot keys require manual review.
-# A tibble: 2 × 7
+[38;5;246m# A tibble: 2 × 7[39m
   country   year program process_group match_key     n stage      
-  <chr>    <int> <chr>   <chr>         <chr>     <int> <chr>      
-1 Ethiopia  2021 NW      <NA>          NA|86.88      2 auction    
-2 Ethiopia  2021 NW      <NA>          NA|86.88      2 competition",0.23899340629577637
+  [3m[38;5;246m<chr>[39m[23m    [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m      
+[38;5;250m1[39m Ethiopia  [4m2[24m021 NW      [31mNA[39m            NA|86.88      2 auction    
+[38;5;250m2[39m Ethiopia  [4m2[24m021 NW      [31mNA[39m            NA|86.88      2 competition",0.5376765727996826
 Guatemala,2021,https://allianceforcoffeeexcellence.org/guatemala-2021/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country    year program process_group missing_side     n
-  <chr>     <int> <chr>   <chr>         <chr>        <int>
-1 Guatemala  2021 COE     <NA>          competition      1
-2 Guatemala  2021 NW      <NA>          competition      1",0.2734682559967041
+  [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Guatemala  [4m2[24m021 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Guatemala  [4m2[24m021 NW      [31mNA[39m            competition      1",0.6431777477264404
 Honduras,2021,https://allianceforcoffeeexcellence.org/honduras-2021/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country   year program process_group missing_side     n
-  <chr>    <int> <chr>   <chr>         <chr>        <int>
-1 Honduras  2021 COE     <NA>          competition      1
-2 Honduras  2021 NW      <NA>          competition      1",0.24285483360290527
+  [3m[38;5;246m<chr>[39m[23m    [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Honduras  [4m2[24m021 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Honduras  [4m2[24m021 NW      [31mNA[39m            competition      1",0.7716131210327148
 Indonesia,2021,https://allianceforcoffeeexcellence.org/indonesia-2021/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country    year program process_group missing_side     n
-  <chr>     <int> <chr>   <chr>         <chr>        <int>
-1 Indonesia  2021 COE     <NA>          competition      1
-2 Indonesia  2021 NW      <NA>          competition      1",0.2409963607788086
+  [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Indonesia  [4m2[24m021 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Indonesia  [4m2[24m021 NW      [31mNA[39m            competition      1",0.6509301662445068
 Mexico,2021,https://allianceforcoffeeexcellence.org/mexico-2021/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country  year program process_group missing_side     n
-  <chr>   <int> <chr>   <chr>         <chr>        <int>
-1 Mexico   2021 COE     <NA>          competition      1
-2 Mexico   2021 NW      <NA>          competition      1",0.25699853897094727
+  [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Mexico   [4m2[24m021 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Mexico   [4m2[24m021 NW      [31mNA[39m            competition      1",0.8264431953430176
 Nicaragua,2021,https://allianceforcoffeeexcellence.org/nicaragua-2021/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 3 × 6
+[38;5;246m# A tibble: 3 × 6[39m
   country    year program process_group missing_side     n
-  <chr>     <int> <chr>   <chr>         <chr>        <int>
-1 Nicaragua  2021 COE     <NA>          competition      1
-2 Nicaragua  2021 NW      <NA>          auction          1
-3 Nicaragua  2021 NW      <NA>          competition      1",0.23808979988098145
+  [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Nicaragua  [4m2[24m021 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Nicaragua  [4m2[24m021 NW      [31mNA[39m            auction          1
+[38;5;250m3[39m Nicaragua  [4m2[24m021 NW      [31mNA[39m            competition      1",0.6830179691314697
 Peru,2021,https://allianceforcoffeeexcellence.org/peru-2021/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country  year program process_group missing_side     n
-  <chr>   <int> <chr>   <chr>         <chr>        <int>
-1 Peru     2021 COE     <NA>          competition      1
-2 Peru     2021 NW      <NA>          competition      1",0.24367165565490723
+  [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Peru     [4m2[24m021 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Peru     [4m2[24m021 NW      [31mNA[39m            competition      1",0.7168006896972656
 Brazil,2022,https://allianceforcoffeeexcellence.org/brazil-2022/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country  year program process_group missing_side     n
-  <chr>   <int> <chr>   <chr>         <chr>        <int>
-1 Brazil   2022 COE     <NA>          competition      1
-2 Brazil   2022 NW      <NA>          auction          2",0.21705389022827148
+  [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Brazil   [4m2[24m022 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Brazil   [4m2[24m022 NW      [31mNA[39m            auction          2",0.8105123043060303
 Colombia,2022,https://allianceforcoffeeexcellence.org/colombia-2022/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 1 × 6
+[38;5;246m# A tibble: 1 × 6[39m
   country   year program process_group missing_side     n
-  <chr>    <int> <chr>   <chr>         <chr>        <int>
-1 Colombia  2022 COE     <NA>          competition      1",0.19820141792297363
+  [3m[38;5;246m<chr>[39m[23m    [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Colombia  [4m2[24m022 COE     [31mNA[39m            competition      1",0.5636436939239502
 Costa Rica,2022,https://allianceforcoffeeexcellence.org/costa-rica-2022/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country     year program process_group missing_side     n
-  <chr>      <int> <chr>   <chr>         <chr>        <int>
-1 Costa Rica  2022 COE     <NA>          competition      1
-2 Costa Rica  2022 NW      <NA>          competition      1",0.23598694801330566
+  [3m[38;5;246m<chr>[39m[23m      [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Costa Rica  [4m2[24m022 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Costa Rica  [4m2[24m022 NW      [31mNA[39m            competition      1",0.6676356792449951
 Ecuador,2022,https://allianceforcoffeeexcellence.org/ecuador-2022/,excluded,0,0,0,"Non-unique lot keys require manual review.
-# A tibble: 4 × 7
+[38;5;246m# A tibble: 4 × 7[39m
   country  year program process_group match_key     n stage      
-  <chr>   <int> <chr>   <chr>         <chr>     <int> <chr>      
-1 Ecuador  2022 COE     <NA>          18            3 competition
-2 Ecuador  2022 COE     <NA>          3             2 competition
-3 Ecuador  2022 COE     <NA>          5             3 competition
-4 Ecuador  2022 COE     <NA>          9             2 competition",0.165191650390625
+  [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m      
+[38;5;250m1[39m Ecuador  [4m2[24m022 COE     [31mNA[39m            18            3 competition
+[38;5;250m2[39m Ecuador  [4m2[24m022 COE     [31mNA[39m            3             2 competition
+[38;5;250m3[39m Ecuador  [4m2[24m022 COE     [31mNA[39m            5             3 competition
+[38;5;250m4[39m Ecuador  [4m2[24m022 COE     [31mNA[39m            9             2 competition",0.5470404624938965
 El Salvador,2022,https://allianceforcoffeeexcellence.org/el-salvador-2022/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country      year program process_group missing_side     n
-  <chr>       <int> <chr>   <chr>         <chr>        <int>
-1 El Salvador  2022 COE     <NA>          competition      1
-2 El Salvador  2022 NW      <NA>          competition      1",0.23923015594482422
+  [3m[38;5;246m<chr>[39m[23m       [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m El Salvador  [4m2[24m022 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m El Salvador  [4m2[24m022 NW      [31mNA[39m            competition      1",0.5357229709625244
 Ethiopia,2022,https://allianceforcoffeeexcellence.org/ethiopia-2022/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 3 × 6
+[38;5;246m# A tibble: 3 × 6[39m
   country   year program process_group missing_side     n
-  <chr>    <int> <chr>   <chr>         <chr>        <int>
-1 Ethiopia  2022 COE     <NA>          competition      1
-2 Ethiopia  2022 NW      <NA>          auction         10
-3 Ethiopia  2022 NW      <NA>          competition     11",0.26117444038391113
+  [3m[38;5;246m<chr>[39m[23m    [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Ethiopia  [4m2[24m022 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Ethiopia  [4m2[24m022 NW      [31mNA[39m            auction         10
+[38;5;250m3[39m Ethiopia  [4m2[24m022 NW      [31mNA[39m            competition     11",0.7715272903442383
 Guatemala,2022,https://allianceforcoffeeexcellence.org/guatemala-2022/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country    year program process_group missing_side     n
-  <chr>     <int> <chr>   <chr>         <chr>        <int>
-1 Guatemala  2022 COE     <NA>          competition      1
-2 Guatemala  2022 NW      <NA>          competition      1",0.2464301586151123
+  [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Guatemala  [4m2[24m022 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Guatemala  [4m2[24m022 NW      [31mNA[39m            competition      1",0.6194906234741211
 Honduras,2022,https://allianceforcoffeeexcellence.org/honduras-2022/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country   year program process_group missing_side     n
-  <chr>    <int> <chr>   <chr>         <chr>        <int>
-1 Honduras  2022 COE     <NA>          competition      1
-2 Honduras  2022 NW      <NA>          competition      1",0.3769216537475586
+  [3m[38;5;246m<chr>[39m[23m    [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Honduras  [4m2[24m022 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Honduras  [4m2[24m022 NW      [31mNA[39m            competition      1",0.6837620735168457
 Indonesia,2022,https://allianceforcoffeeexcellence.org/indonesia-2022/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country    year program process_group missing_side     n
-  <chr>     <int> <chr>   <chr>         <chr>        <int>
-1 Indonesia  2022 COE     <NA>          competition      1
-2 Indonesia  2022 NW      <NA>          auction         12",0.19949769973754883
+  [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Indonesia  [4m2[24m022 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Indonesia  [4m2[24m022 NW      [31mNA[39m            auction         12",0.6460487842559814
 Mexico,2022,https://allianceforcoffeeexcellence.org/mexico-2022/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country  year program process_group missing_side     n
-  <chr>   <int> <chr>   <chr>         <chr>        <int>
-1 Mexico   2022 COE     <NA>          competition      1
-2 Mexico   2022 NW      <NA>          competition      1",0.25618577003479004
+  [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Mexico   [4m2[24m022 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Mexico   [4m2[24m022 NW      [31mNA[39m            competition      1",0.46428966522216797
 Nicaragua,2022,https://allianceforcoffeeexcellence.org/nicaragua-2022/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 3 × 6
+[38;5;246m# A tibble: 3 × 6[39m
   country    year program process_group missing_side     n
-  <chr>     <int> <chr>   <chr>         <chr>        <int>
-1 Nicaragua  2022 COE     <NA>          competition      1
-2 Nicaragua  2022 NW      <NA>          auction         11
-3 Nicaragua  2022 NW      <NA>          competition      6",0.22975897789001465
+  [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Nicaragua  [4m2[24m022 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Nicaragua  [4m2[24m022 NW      [31mNA[39m            auction         11
+[38;5;250m3[39m Nicaragua  [4m2[24m022 NW      [31mNA[39m            competition      6",0.5768043994903564
 Peru,2022,https://allianceforcoffeeexcellence.org/peru-2022/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country  year program process_group missing_side     n
-  <chr>   <int> <chr>   <chr>         <chr>        <int>
-1 Peru     2022 COE     <NA>          competition      1
-2 Peru     2022 NW      <NA>          auction          5",0.2112739086151123
-Thailand,2022,https://allianceforcoffeeexcellence.org/thailand-2022/,excluded,0,0,0,HTTP 404 Not Found.,1.9414854049682617
-Brazil,2023,https://allianceforcoffeeexcellence.org/brazil-2023/,included,36,36,36,NA,0.32482337951660156
+  [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Peru     [4m2[24m022 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Peru     [4m2[24m022 NW      [31mNA[39m            auction          5",0.6080625057220459
+Thailand,2022,https://allianceforcoffeeexcellence.org/thailand-2022/,excluded,0,0,0,[1m[22mHTTP 404 Not Found.,2.302325963973999
+Brazil,2023,https://allianceforcoffeeexcellence.org/brazil-2023/,included,36,36,36,NA,0.804236888885498
 Colombia,2023,https://allianceforcoffeeexcellence.org/colombia-2023/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 1 × 6
+[38;5;246m# A tibble: 1 × 6[39m
   country   year program process_group missing_side     n
-  <chr>    <int> <chr>   <chr>         <chr>        <int>
-1 Colombia  2023 COE     <NA>          competition      1",0.1854701042175293
-Costa Rica,2023,https://allianceforcoffeeexcellence.org/costa-rica-2023/,included,36,33,0,NA,0.22319793701171875
-Ecuador,2023,https://allianceforcoffeeexcellence.org/ecuador-2023/,included,19,16,19,NA,0.13926482200622559
+  [3m[38;5;246m<chr>[39m[23m    [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Colombia  [4m2[24m023 COE     [31mNA[39m            competition      1",0.8074953556060791
+Costa Rica,2023,https://allianceforcoffeeexcellence.org/costa-rica-2023/,included,36,33,0,NA,0.6618678569793701
+Ecuador,2023,https://allianceforcoffeeexcellence.org/ecuador-2023/,included,19,16,19,NA,0.7123305797576904
 El Salvador,2023,https://allianceforcoffeeexcellence.org/el-salvador-2023/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 1 × 6
+[38;5;246m# A tibble: 1 × 6[39m
   country      year program process_group missing_side     n
-  <chr>       <int> <chr>   <chr>         <chr>        <int>
-1 El Salvador  2023 NW      <NA>          auction          2",0.24172043800354004
-Guatemala,2023,https://allianceforcoffeeexcellence.org/guatemala-2023/,included,34,31,0,NA,0.23059391975402832
+  [3m[38;5;246m<chr>[39m[23m       [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m El Salvador  [4m2[24m023 NW      [31mNA[39m            auction          2",0.5285665988922119
+Guatemala,2023,https://allianceforcoffeeexcellence.org/guatemala-2023/,included,34,31,0,NA,0.5924708843231201
 Honduras,2023,https://allianceforcoffeeexcellence.org/honduras-2023/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 1 × 6
+[38;5;246m# A tibble: 1 × 6[39m
   country   year program process_group missing_side     n
-  <chr>    <int> <chr>   <chr>         <chr>        <int>
-1 Honduras  2023 NW      <NA>          auction          2",0.22388601303100586
+  [3m[38;5;246m<chr>[39m[23m    [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Honduras  [4m2[24m023 NW      [31mNA[39m            auction          2",0.5784904956817627
 Indonesia,2023,https://allianceforcoffeeexcellence.org/indonesia-2023/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country    year program process_group missing_side     n
-  <chr>     <int> <chr>   <chr>         <chr>        <int>
-1 Indonesia  2023 COE     <NA>          competition      1
-2 Indonesia  2023 NW      <NA>          competition      1",0.19828414916992188
-Mexico,2023,https://allianceforcoffeeexcellence.org/mexico-2023/,included,38,35,0,NA,0.2244255542755127
+  [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Indonesia  [4m2[24m023 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Indonesia  [4m2[24m023 NW      [31mNA[39m            competition      1",0.6971404552459717
+Mexico,2023,https://allianceforcoffeeexcellence.org/mexico-2023/,included,38,35,0,NA,0.7574434280395508
 Nicaragua,2023,https://allianceforcoffeeexcellence.org/nicaragua-2023/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country    year program process_group missing_side     n
-  <chr>     <int> <chr>   <chr>         <chr>        <int>
-1 Nicaragua  2023 NW      <NA>          auction          8
-2 Nicaragua  2023 NW      <NA>          competition      8",0.22521591186523438
+  [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Nicaragua  [4m2[24m023 NW      [31mNA[39m            auction          8
+[38;5;250m2[39m Nicaragua  [4m2[24m023 NW      [31mNA[39m            competition      8",0.8351514339447021
 Peru,2023,https://allianceforcoffeeexcellence.org/peru-2023/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country  year program process_group missing_side     n
-  <chr>   <int> <chr>   <chr>         <chr>        <int>
-1 Peru     2023 COE     <NA>          competition      1
-2 Peru     2023 NW      <NA>          competition      1",0.22829341888427734
-Thailand,2023,https://allianceforcoffeeexcellence.org/thailand-2023/,included,25,24,0,NA,0.19670343399047852
-Brazil,2024,https://allianceforcoffeeexcellence.org/brazil-2024/,included,38,35,37,NA,0.3294332027435303
-Costa Rica,2024,https://allianceforcoffeeexcellence.org/costa-rica-2024/,included,34,31,34,NA,0.27045106887817383
-El Salvador,2024,https://allianceforcoffeeexcellence.org/el-salvador-2024/,included,36,33,36,NA,0.32033300399780273
-Ethiopia,2024,https://allianceforcoffeeexcellence.org/ethiopia-2024/,included,42,40,42,NA,0.2079916000366211
-Guatemala,2024,https://allianceforcoffeeexcellence.org/guatemala-2024/,included,33,31,33,NA,0.2806518077850342
+  [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Peru     [4m2[24m023 COE     [31mNA[39m            competition      1
+[38;5;250m2[39m Peru     [4m2[24m023 NW      [31mNA[39m            competition      1",0.8061418533325195
+Thailand,2023,https://allianceforcoffeeexcellence.org/thailand-2023/,included,25,24,0,NA,0.59481048583984375
+Brazil,2024,https://allianceforcoffeeexcellence.org/brazil-2024/,included,38,35,37,NA,0.7245395183563232
+Costa Rica,2024,https://allianceforcoffeeexcellence.org/costa-rica-2024/,included,34,31,34,NA,0.5328502655029297
+El Salvador,2024,https://allianceforcoffeeexcellence.org/el-salvador-2024/,included,36,33,36,NA,0.6755421161651611
+Ethiopia,2024,https://allianceforcoffeeexcellence.org/ethiopia-2024/,included,42,40,42,NA,0.47063636779785156
+Guatemala,2024,https://allianceforcoffeeexcellence.org/guatemala-2024/,included,33,31,33,NA,0.510279655456543
 Honduras,2024,https://allianceforcoffeeexcellence.org/honduras-2024/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 1 × 6
+[38;5;246m# A tibble: 1 × 6[39m
   country   year program process_group missing_side     n
-  <chr>    <int> <chr>   <chr>         <chr>        <int>
-1 Honduras  2024 COE     <NA>          competition      1",0.22663664817810059
-Mexico,2024,https://allianceforcoffeeexcellence.org/mexico-2024/,included,37,34,37,NA,0.31601929664611816
+  [3m[38;5;246m<chr>[39m[23m    [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Honduras  [4m2[24m024 COE     [31mNA[39m            competition      1",0.5378890037536621
+Mexico,2024,https://allianceforcoffeeexcellence.org/mexico-2024/,included,37,34,37,NA,0.9382603168487549
 Nicaragua,2024,https://allianceforcoffeeexcellence.org/nicaragua-2024/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 1 × 6
+[38;5;246m# A tibble: 1 × 6[39m
   country    year program process_group missing_side     n
-  <chr>     <int> <chr>   <chr>         <chr>        <int>
-1 Nicaragua  2024 COE     <NA>          competition      1",0.2105693817138672
+  [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Nicaragua  [4m2[24m024 COE     [31mNA[39m            competition      1",0.49849987030029297
 Peru,2024,https://allianceforcoffeeexcellence.org/peru-2024/,excluded,0,0,0,"Non-unique lot keys require manual review.
-# A tibble: 1 × 7
+[38;5;246m# A tibble: 1 × 7[39m
   country  year program process_group match_key     n stage  
-  <chr>   <int> <chr>   <chr>         <chr>     <int> <chr>  
-1 Peru     2024 COE     <NA>          8             2 auction",0.21035361289978027
-Taiwan,2024,https://allianceforcoffeeexcellence.org/taiwan-2024/,included,25,25,25,NA,0.18212032318115234
-Thailand,2024,https://allianceforcoffeeexcellence.org/thailand-2024/,included,33,31,33,NA,0.1900794506072998
-Brazil,2025,https://allianceforcoffeeexcellence.org/brazil-2025/,included,42,39,42,NA,0.32570767402648926
-Costa Rica,2025,https://allianceforcoffeeexcellence.org/costa-rica-2025/,included,33,30,0,NA,0.26825594902038574
+  [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m  
+[38;5;250m1[39m Peru     [4m2[24m024 COE     [31mNA[39m            8             2 auction",0.6149094104766846
+Taiwan,2024,https://allianceforcoffeeexcellence.org/taiwan-2024/,included,25,25,25,NA,0.5547924041748047
+Thailand,2024,https://allianceforcoffeeexcellence.org/thailand-2024/,included,33,31,33,NA,0.43243908882141113
+Brazil,2025,https://allianceforcoffeeexcellence.org/brazil-2025/,included,42,39,42,NA,0.5492663383483887
+Costa Rica,2025,https://allianceforcoffeeexcellence.org/costa-rica-2025/,included,33,30,0,NA,0.7028515338897705
 El Salvador,2025,https://allianceforcoffeeexcellence.org/el-salvador-2025/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 2 × 6
+[38;5;246m# A tibble: 2 × 6[39m
   country      year program process_group  missing_side     n
-  <chr>       <int> <chr>   <chr>          <chr>        <int>
-1 El Salvador  2025 COE     Washed + Honey auction          1
-2 El Salvador  2025 COE     Washed + Honey competition      1",0.2523841857910156
-Guatemala,2025,https://allianceforcoffeeexcellence.org/guatemala-2025/,included,38,35,0,NA,0.3052670955657959
+  [3m[38;5;246m<chr>[39m[23m       [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m          [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m El Salvador  [4m2[24m025 COE     Washed + Honey auction          1
+[38;5;250m2[39m El Salvador  [4m2[24m025 COE     Washed + Honey competition      1",0.6500279903411865
+Guatemala,2025,https://allianceforcoffeeexcellence.org/guatemala-2025/,included,38,35,0,NA,0.8017692565917969
 Honduras,2025,https://allianceforcoffeeexcellence.org/honduras-2025/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 3 × 6
+[38;5;246m# A tibble: 3 × 6[39m
   country   year program process_group                  missing_side     n
-  <chr>    <int> <chr>   <chr>                          <chr>        <int>
-1 Honduras  2025 COE     Exotic Varieties               auction         15
-2 Honduras  2025 COE     Honduras Traditional Varieties auction         11
-3 Honduras  2025 COE     Parainema Variety              auction          7",0.24631857872009277
-Mexico,2025,https://allianceforcoffeeexcellence.org/mexico-2025/,included,37,34,37,NA,0.2874109745025635
-Nicaragua,2025,https://allianceforcoffeeexcellence.org/nicaragua-2025/,included,32,30,32,NA,0.20933198928833008
-Peru,2025,https://allianceforcoffeeexcellence.org/peru-2025/,included,35,33,35,NA,0.20531582832336426
-Taiwan,2025,https://allianceforcoffeeexcellence.org/taiwan-2025/,included,28,27,0,NA,0.17343997955322266
+  [3m[38;5;246m<chr>[39m[23m    [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m                          [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Honduras  [4m2[24m025 COE     Exotic Varieties               auction         15
+[38;5;250m2[39m Honduras  [4m2[24m025 COE     Honduras Traditional Varieties auction         11
+[38;5;250m3[39m Honduras  [4m2[24m025 COE     Parainema Variety              auction          7",0.8490040302276611
+Mexico,2025,https://allianceforcoffeeexcellence.org/mexico-2025/,included,37,34,37,NA,0.6805706024169922
+Nicaragua,2025,https://allianceforcoffeeexcellence.org/nicaragua-2025/,included,32,30,32,NA,0.492098331451416
+Peru,2025,https://allianceforcoffeeexcellence.org/peru-2025/,included,35,33,35,NA,0.6107654571533203
+Taiwan,2025,https://allianceforcoffeeexcellence.org/taiwan-2025/,included,28,27,0,NA,0.35060644149780273
 Thailand,2025,https://allianceforcoffeeexcellence.org/thailand-2025/,excluded,0,0,0,"Competition-to-auction joins are incomplete; review lot keys.
-# A tibble: 4 × 6
+[38;5;246m# A tibble: 4 × 6[39m
   country   year program process_group missing_side     n
-  <chr>    <int> <chr>   <chr>         <chr>        <int>
-1 Thailand  2025 COE     <NA>          auction          1
-2 Thailand  2025 COE     <NA>          competition      1
-3 Thailand  2025 NW      <NA>          auction          6
-4 Thailand  2025 NW      <NA>          competition      6",0.21781563758850098
+  [3m[38;5;246m<chr>[39m[23m    [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m   [3m[38;5;246m<chr>[39m[23m         [3m[38;5;246m<chr>[39m[23m        [3m[38;5;246m<int>[39m[23m
+[38;5;250m1[39m Thailand  [4m2[24m025 COE     [31mNA[39m            auction          1
+[38;5;250m2[39m Thailand  [4m2[24m025 COE     [31mNA[39m            competition      1
+[38;5;250m3[39m Thailand  [4m2[24m025 NW      [31mNA[39m            auction          6
+[38;5;250m4[39m Thailand  [4m2[24m025 NW      [31mNA[39m            competition      6",0.4930241107940674

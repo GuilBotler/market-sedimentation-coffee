@@ -1,0 +1,4 @@
+event_id,source_table_id,identifiable_rows,matching_rows,overlap_rate
+183f05090c9a1140,11,31,31,1
+730e5b8120156480,5,29,29,1
+95f3bb26fec856b9,5,30,30,1

@@ -1,0 +1,215 @@
+event_id,country,year,event_name,event_type,source_url,download_status,download_error,competition_rows,auction_rows
+006d132a118d0da8,Nicaragua,2003,2003,COE,https://allianceforcoffeeexcellence.org/nicaragua-2003/,success,NA,37,76
+033b9c6652fed90f,El Salvador,2022,El Salvador 2022,COE,https://allianceforcoffeeexcellence.org/el-salvador-2022/,success,NA,30,67
+049e1f574d37b6f7,Peru,2021,Peru 2021,COE,https://allianceforcoffeeexcellence.org/peru-2021/,success,NA,27,64
+04cf157e5060655a,Guatemala,2018,2018,COE,https://allianceforcoffeeexcellence.org/guatemala-2018/,success,NA,37,80
+05dea4f9ef49cf00,Colombia,2018,2018,COE,https://allianceforcoffeeexcellence.org/colombia-2018/,success,NA,36,74
+07530078211d9a65,El Salvador,2015,2015,COE,https://allianceforcoffeeexcellence.org/el-salvador-2015/,success,NA,27,56
+07a149006df074a2,Guatemala,2017,2017,COE,https://allianceforcoffeeexcellence.org/guatemala-2017/,success,NA,30,73
+09d57f1b6eace9c6,Guatemala,2012,2012,COE,https://allianceforcoffeeexcellence.org/guatemala-2012/,success,NA,23,48
+0c50203e4ea9e6e7,El Salvador,2017,2017,COE,https://allianceforcoffeeexcellence.org/el-salvador-2017/,success,NA,26,62
+101c33c318834c3a,Brazil,2015,2015 January,COE Natural,https://allianceforcoffeeexcellence.org/brazil-naturals-2015-january/,success,NA,23,48
+10b05a69b2ee99bc,Thailand,2024,Thailand 2024,COE,https://allianceforcoffeeexcellence.org/thailand-2024/,success,NA,33,33
+1105bfdd52f0c6fb,Costa Rica,2011,2011,COE,https://allianceforcoffeeexcellence.org/costa-rica-2011/,success,NA,31,64
+11b46c35400dc616,Brazil,2009,2009,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2009/,success,NA,26,54
+183f05090c9a1140,Costa Rica,2024,Costa Rica 2024,COE,https://allianceforcoffeeexcellence.org/costa-rica-2024/,success,NA,69,34
+1a1cc9a2fd677144,Honduras,2022,Honduras 2022,COE,https://allianceforcoffeeexcellence.org/honduras-2022/,success,NA,27,61
+208d8a119b3fcd68,Brazil,2014,2014,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2014/,success,NA,21,44
+20a6b645aa948554,Colombia,2023,Colombia 2023,COE,https://allianceforcoffeeexcellence.org/colombia-2023/,success,NA,31,64
+216beb519b06ab27,Peru,2025,Peru 2025,COE,https://allianceforcoffeeexcellence.org/peru-2025/,success,NA,35,35
+2275524667da73bd,Taiwan,2025,Taiwan 2025,COE,https://allianceforcoffeeexcellence.org/taiwan-2025/,success,NA,28,28
+236a55b8dc898b6b,El Salvador,2011,2011,COE,https://allianceforcoffeeexcellence.org/el-salvador-2011/,success,NA,42,86
+265090fe20b129cd,El Salvador,2018,2018,COE,https://allianceforcoffeeexcellence.org/el-salvador-2018/,success,NA,42,86
+27e30bcdac0c444c,Ethiopia,2024,Ethiopia 2024,COE,https://allianceforcoffeeexcellence.org/ethiopia-2024/,success,NA,42,42
+27f98df4f5c3dba9,El Salvador,2010,2010,COE,https://allianceforcoffeeexcellence.org/el-salvador-2010/,success,NA,30,62
+29ce078048b6ca5a,Brazil,2016,2016,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2016/,success,NA,26,54
+2a8e5a9baaa80905,Thailand,2023,Thailand 2023,COE,https://allianceforcoffeeexcellence.org/thailand-2023/,success,NA,17,64
+2b2f8fc82c5e8056,Ethiopia,2021,Ethiopia 2021,COE,https://allianceforcoffeeexcellence.org/ethiopia-2021/,success,NA,33,78
+2ce15a7f40ccc6a3,Taiwan,2024,Taiwan 2024,COE,https://allianceforcoffeeexcellence.org/taiwan-2024/,success,NA,25,25
+2ce1a77eff6cdd28,Honduras,2016,2016,COE,https://allianceforcoffeeexcellence.org/honduras-2016/,success,NA,26,54
+2d66f52827193519,Mexico,2024,Mexico 2024,COE,https://allianceforcoffeeexcellence.org/mexico-2024/,success,NA,37,75
+30131012ffca0563,Colombia,2007,2007 North,COE regional,https://allianceforcoffeeexcellence.org/colombia-north-2007/,success,NA,30,62
+306cdc3f652cd29f,Nicaragua,2015,2015,COE,https://allianceforcoffeeexcellence.org/nicaragua-2015/,success,NA,36,74
+319d40e9b8e35a24,Nicaragua,2022,Nicaragua 2022,COE,https://allianceforcoffeeexcellence.org/nicaragua-2022/,success,NA,27,62
+3252450a1c4f202d,Rwanda,2018,2018,COE,https://allianceforcoffeeexcellence.org/rwanda-2018/,success,NA,32,72
+3323c637ef5cd812,Costa Rica,2020,Costa Rica 2020,COE,https://allianceforcoffeeexcellence.org/costa-rica-2020/,success,NA,0,67
+33788018ae7fb5b7,Costa Rica,2021,Costa Rica 2021,COE,https://allianceforcoffeeexcellence.org/costa-rica-2021/,success,NA,33,68
+344ddab608c8d8c8,Bolivia,2007,2007,COE,https://allianceforcoffeeexcellence.org/bolivia-2007/,success,NA,26,54
+35258d5d107d50f1,Indonesia,2022,Indonesia 2022,COE,https://allianceforcoffeeexcellence.org/indonesia-2022/,success,NA,35,61
+3658e3cf0f8b901b,Guatemala,2010,2010,COE,https://allianceforcoffeeexcellence.org/guatemala-2010/,success,NA,28,58
+36f7881408411ac3,El Salvador,2024,El Salvador 2024,COE,https://allianceforcoffeeexcellence.org/el-salvador-2024/,success,NA,33,73
+374bae6a9cdc8d6c,Brazil,2022,Brazil 2022,COE,https://allianceforcoffeeexcellence.org/brazil-2022/,success,NA,24,59
+378b15a9f8e37b92,Colombia,2019,2019 North,COE regional,https://allianceforcoffeeexcellence.org/colombia-north-2019/,success,NA,34,70
+38b2d2e3c7e71d0f,Brazil,2017,2017,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2017/,success,NA,28,66
+3963608e04ba6462,Mexico,2014,2014,COE,https://allianceforcoffeeexcellence.org/mexico-2014/,success,NA,19,40
+39c4de609fc7f6d0,Costa Rica,2008,2008,COE,https://allianceforcoffeeexcellence.org/costa-rica-2008/,success,NA,30,62
+3a9e10cfadb01ede,Honduras,2012,2012,COE,https://allianceforcoffeeexcellence.org/honduras-2012/,success,NA,20,42
+3b14ef284fc16bc7,Guatemala,2020,Guatemala 2020,COE,https://allianceforcoffeeexcellence.org/guatemala-2020/,success,NA,0,73
+3d618d74f19c5393,El Salvador,2009,2009,COE,https://allianceforcoffeeexcellence.org/el-salvador-2009/,success,NA,33,68
+3eba8775b8710914,Peru,2023,Peru 2023,COE,https://allianceforcoffeeexcellence.org/peru-2023/,success,NA,33,76
+3f24f65f0fcace40,Peru,2022,Peru 2022,COE,https://allianceforcoffeeexcellence.org/peru-2022/,success,NA,32,72
+3f6557f6d36b2162,Costa Rica,2018,2018,COE,https://allianceforcoffeeexcellence.org/costa-rica-2018/,success,NA,42,91
+3fdd9aa5fb9dcee3,Ethiopia,2020,Ethiopia 2020,COE,https://allianceforcoffeeexcellence.org/ethiopia-2020/,success,NA,0,76
+415b9957427e9382,Rwanda,2013,2013,COE,https://allianceforcoffeeexcellence.org/rwanda-2013/,success,NA,15,32
+41c894e8f5792c14,Bolivia,2009,2009,COE,https://allianceforcoffeeexcellence.org/bolivia-2009/,success,NA,30,62
+44540f168407c8ad,Costa Rica,2012,2012,COE,https://allianceforcoffeeexcellence.org/costa-rica-2012/,success,NA,27,56
+44619d3e719c99ef,Brazil,2008,2008,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2008/,success,NA,23,48
+4891a599b8c371e3,Guatemala,2007,2007,COE,https://allianceforcoffeeexcellence.org/guatemala-2007/,success,NA,19,40
+49d1caf44685b143,Guatemala,2015,2015,COE,https://allianceforcoffeeexcellence.org/guatemala-2015/,success,NA,24,50
+4b1d2194122da044,Guatemala,2014,2014,COE,https://allianceforcoffeeexcellence.org/guatemala-2014/,success,NA,24,50
+4b2992b9faf3f4f6,El Salvador,2020,El Salvador 2020,COE,https://allianceforcoffeeexcellence.org/el-salvador-2020/,success,NA,0,59
+4cb76103d3072242,Honduras,2004,2004,COE,https://allianceforcoffeeexcellence.org/honduras-2004/,success,NA,21,44
+4d450701ea8feb17,Brazil,2025,Brazil 2025,COE,https://allianceforcoffeeexcellence.org/brazil-2025/,success,NA,39,42
+4ddbb0cda233441d,Ethiopia,2022,Ethiopia 2022,COE,https://allianceforcoffeeexcellence.org/ethiopia-2022/,success,NA,32,77
+4e0a635e5b9cd136,Peru,2018,2018,COE,https://allianceforcoffeeexcellence.org/peru-2018/,success,NA,24,58
+4f4bfa360131e53c,El Salvador,2025,El Salvador 2025,COE,https://allianceforcoffeeexcellence.org/el-salvador-2025/,success,NA,32,66
+4f643bafa11775bd,Guatemala,2013,2013,COE,https://allianceforcoffeeexcellence.org/guatemala-2013/,success,NA,23,48
+512074cd9f5e0fb3,Peru,2020,Peru 2020,COE,https://allianceforcoffeeexcellence.org/peru-2020/,success,NA,0,61
+5128a3c5edf58a16,Guatemala,2011,2011,COE,https://allianceforcoffeeexcellence.org/guatemala-2011/,success,NA,29,60
+54e133d3a0bc6ff3,Honduras,2014,2014,COE,https://allianceforcoffeeexcellence.org/honduras-2014/,success,NA,23,48
+558daec13f90276f,El Salvador,2014,2014,COE,https://allianceforcoffeeexcellence.org/el-salvador-2014/,success,NA,33,68
+563b2176a64e6691,Costa Rica,2025,Costa Rica 2025,COE,https://allianceforcoffeeexcellence.org/costa-rica-2025/,success,NA,33,68
+5690e5dd7b7859d2,Brazil,2023,Brazil 2023,COE,https://allianceforcoffeeexcellence.org/brazil-2023/,success,NA,30,36
+56e67cb59fb81745,Costa Rica,2015,2015,COE,https://allianceforcoffeeexcellence.org/costa-rica-2015/,success,NA,35,72
+56f3d93e6d53724a,Brazil,2018,2018,COE Natural,https://allianceforcoffeeexcellence.org/brazil-naturals-2018/,success,NA,45,92
+58d0dda26a0c47c5,Brazil,2019,2019,COE,https://allianceforcoffeeexcellence.org/brazil-2019/,success,NA,30,63
+5971844d6c5e2009,Nicaragua,2010,2010,COE,https://allianceforcoffeeexcellence.org/nicaragua-2010/,success,NA,27,56
+597c46cc3f0e2bd1,Honduras,2010,2010,COE,https://allianceforcoffeeexcellence.org/honduras-2010/,success,NA,25,52
+5a4325fd738bec15,Ecuador,2023,Ecuador 2023,COE,https://allianceforcoffeeexcellence.org/ecuador-2023/,success,NA,19,19
+5add2920159e49b6,Burundi,2019,2019,COE,https://allianceforcoffeeexcellence.org/burundi-2019/,success,NA,24,49
+5b0c683a06c2fd21,Brazil,2000,2000,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2000/,success,NA,18,38
+6125b41b95ca5561,Burundi,2018,2018,COE,https://allianceforcoffeeexcellence.org/burundi-2018/,success,NA,36,80
+616f537ef2678bf7,Burundi,2012,2012,COE,https://allianceforcoffeeexcellence.org/burundi-2012/,success,NA,17,36
+633bbe248a592d8c,Honduras,2025,Honduras 2025,COE,https://allianceforcoffeeexcellence.org/honduras-2025/,success,NA,33,68
+6380da67582687f1,Brazil,2002,2002,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2002/,success,NA,28,58
+648ba67dc99a9346,El Salvador,2019,2019,COE,https://allianceforcoffeeexcellence.org/el-salvador-2019/,success,NA,27,63
+6646acbd1638b6ee,Bolivia,2008,2008,COE,https://allianceforcoffeeexcellence.org/bolivia-2008/,success,NA,29,60
+69a12e0f55740ef8,Rwanda,2008,2008,COE,https://allianceforcoffeeexcellence.org/rwanda-2008/,success,NA,24,50
+6b9d377e893fb5d8,El Salvador,2008,2008,COE,https://allianceforcoffeeexcellence.org/el-salvador-2008/,success,NA,36,74
+6dc5bb1377bf2317,Brazil,2011,2011,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2011/,success,NA,31,64
+70d2a14e35e4a127,Brazil,2020,Brazil 2020,COE,https://allianceforcoffeeexcellence.org/brazil-2020/,success,NA,0,66
+7271aa2d4ce78a13,Guatemala,2023,Guatemala 2023,COE,https://allianceforcoffeeexcellence.org/guatemala-2023/,success,NA,31,84
+7294b6371afc8507,El Salvador,2013,2013,COE,https://allianceforcoffeeexcellence.org/el-salvador-2013/,success,NA,26,54
+730e5b8120156480,Honduras,2024,Honduras 2024,COE,https://allianceforcoffeeexcellence.org/honduras-2024/,success,NA,65,33
+7596cdc55b1b13b7,El Salvador,2007,2007,COE,https://allianceforcoffeeexcellence.org/el-salvador-2007/,success,NA,23,48
+762c57dba751e942,Nicaragua,2007,2007,COE,https://allianceforcoffeeexcellence.org/nicaragua-2007/,success,NA,34,70
+7887cd6f3b2c4612,Colombia,2006,2006 North,COE regional,https://allianceforcoffeeexcellence.org/colombia-north-2006/,success,NA,23,48
+7b46413689f41744,Nicaragua,2023,Nicaragua 2023,COE,https://allianceforcoffeeexcellence.org/nicaragua-2023/,success,NA,18,41
+7b8b2a60ec93c4dc,Honduras,2006,2006,COE,https://allianceforcoffeeexcellence.org/honduras-2006/,success,NA,33,68
+7ba223eeaf3a9cb7,Brazil,2017,2017,COE Natural,https://allianceforcoffeeexcellence.org/brazil-naturals-2017/,success,NA,37,81
+7cd41b217cdcd97e,Mexico,2017,2017,COE,https://allianceforcoffeeexcellence.org/mexico-2017/,success,NA,27,56
+7d2b8caa9301eabc,Indonesia,2023,Indonesia 2023,COE,https://allianceforcoffeeexcellence.org/indonesia-2023/,success,NA,27,29
+7e63f3505a9fd29f,Colombia,2009,2009 North,COE regional,https://allianceforcoffeeexcellence.org/colombia-north-2009/,success,NA,27,56
+7eda394b87ad5966,Nicaragua,2025,Nicaragua 2025,COE,https://allianceforcoffeeexcellence.org/nicaragua-2025/,success,NA,32,66
+7ee7c9627e3a94bd,Colombia,2011,2011 North,COE regional,https://allianceforcoffeeexcellence.org/colombia-north-2011/,success,NA,22,46
+7f40430980f0b5e6,Nicaragua,2018,2018,COE,https://allianceforcoffeeexcellence.org/nicaragua-2018/,success,NA,40,85
+8191f8204aa713fa,Guatemala,2016,2016,COE,https://allianceforcoffeeexcellence.org/guatemala-2016/,success,NA,25,52
+81ba66b9c2fe1d13,Brazil,2013,2013,COE Natural,https://allianceforcoffeeexcellence.org/brazil-naturals-2013/,success,NA,22,23
+837f203d0b40095f,Thailand,2022,Thailand 2022,pilot,https://allianceforcoffeeexcellence.org/thailand-2022/,failed,HTTP 404 Not Found.,0,0
+8490c0273821d2a1,Mexico,2021,Mexico 2021,COE,https://allianceforcoffeeexcellence.org/mexico-2021/,success,NA,33,76
+84ad38b1037dcc19,Nicaragua,2020,Nicaragua 2020,COE,https://allianceforcoffeeexcellence.org/nicaragua-2020/,success,NA,0,51
+85b770ec2ac11ac8,Honduras,2008,2008,COE,https://allianceforcoffeeexcellence.org/honduras-2008/,success,NA,26,54
+85dbbeca6dd82687,Rwanda,2015,2015,COE,https://allianceforcoffeeexcellence.org/rwanda-2015/,success,NA,24,50
+8609cb0c260326a4,Rwanda,2012,2012,COE,https://allianceforcoffeeexcellence.org/rwanda-2012/,success,NA,26,54
+86196d6e98565c85,Costa Rica,2017,2017,COE,https://allianceforcoffeeexcellence.org/costa-rica-coe-2017/,success,NA,32,70
+86f5fadc62969c5f,Bolivia,2004,2004,COE,https://allianceforcoffeeexcellence.org/bolivia-2004/,success,NA,13,14
+8783a594e2c5082b,Brazil,2014,2014,COE Natural,https://allianceforcoffeeexcellence.org/brazil-naturals-2014/,success,NA,23,24
+88ab413a4b17ecde,Honduras,2019,2019,COE,https://allianceforcoffeeexcellence.org/honduras-2019/,success,NA,33,74
+8aabc8f0143025f3,Honduras,2011,2011,COE,https://allianceforcoffeeexcellence.org/honduras-2011/,success,NA,33,68
+8b291231c7145e12,Honduras,2015,2015,COE,https://allianceforcoffeeexcellence.org/honduras-2015/,success,NA,38,78
+8ba1050b3deba653,Colombia,2013,2013 North,COE regional,https://allianceforcoffeeexcellence.org/colombia-north-2013/,success,NA,20,42
+8df430f321dfebe7,Nicaragua,2014,2014,COE,https://allianceforcoffeeexcellence.org/nicaragua-2014/,success,NA,25,52
+8ec9c5ddcac94e33,Colombia,2021,Colombia 2021,COE,https://allianceforcoffeeexcellence.org/colombia-2021/,success,NA,25,52
+8f48007819e94a7e,Guatemala,2022,Guatemala 2022,COE,https://allianceforcoffeeexcellence.org/guatemala-2022/,success,NA,33,74
+8f910a10a522a6e4,Brazil,2024,Brazil 2024,COE,https://allianceforcoffeeexcellence.org/brazil-2024/,success,NA,38,38
+90ce520eb2b1c7b3,Brazil,2012,2012,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2012/,success,NA,24,50
+924c6ccd256e3867,Colombia,2005,2005 North,COE regional,https://allianceforcoffeeexcellence.org/colombia-north-2005/,success,NA,25,52
+932be81913d4d6cc,Ecuador,2022,Ecuador 2022,COE,https://allianceforcoffeeexcellence.org/ecuador-2022/,success,NA,24,40
+94e0f75eb8b007ec,Guatemala,2019,2019,COE,https://allianceforcoffeeexcellence.org/guatemala-2019/,success,NA,23,65
+958690440cdbefb5,Nicaragua,2002,2002,COE,https://allianceforcoffeeexcellence.org/nicaragua-2002/,success,NA,23,76
+95f3bb26fec856b9,Nicaragua,2024,Nicaragua 2024,COE,https://allianceforcoffeeexcellence.org/nicaragua-2024/,success,NA,63,32
+96a5d35a9035433e,Mexico,2012,2012,COE,https://allianceforcoffeeexcellence.org/mexico-2012/,success,NA,10,22
+97486e2f1c2df951,Brazil,2012,2012,COE Natural,https://allianceforcoffeeexcellence.org/brazil-naturals-2012/,success,NA,18,38
+977c3d13e69fd1a0,Colombia,2005,2005 South,COE regional,https://allianceforcoffeeexcellence.org/colombia-south-2005/,success,NA,33,68
+9afb42276738b733,Mexico,2022,Mexico 2022,COE,https://allianceforcoffeeexcellence.org/mexico-2022/,success,NA,33,73
+9b39103db61369e1,El Salvador,2003,2003,COE,https://allianceforcoffeeexcellence.org/el-salvador-2003/,success,NA,31,64
+9b41db41829ea486,Nicaragua,2004,2004,COE,https://allianceforcoffeeexcellence.org/nicaragua-2004/,success,NA,29,60
+9c4359f85637f806,Mexico,2015,2015,COE,https://allianceforcoffeeexcellence.org/mexico-2015/,success,NA,20,36
+9f945028bafe640f,Brazil,1999,1999,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-1999/,success,NA,10,22
+a17342050c271e78,Guatemala,2008,2008,COE,https://allianceforcoffeeexcellence.org/guatemala-2008/,success,NA,25,52
+a2287dd141a2aa33,Brazil,2005,2005,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2005/,success,NA,36,74
+a4ff42ee1c56fcb6,El Salvador,2005,2005,COE,https://allianceforcoffeeexcellence.org/el-salvador-2005/,success,NA,17,36
+a58384c85569435c,Nicaragua,2012,2012,COE,https://allianceforcoffeeexcellence.org/nicaragua-2012/,success,NA,25,52
+a66ac5503b74bdc0,Rwanda,2014,2014,COE,https://allianceforcoffeeexcellence.org/rwanda-2014/,success,NA,28,58
+a715bdb54ff0d688,Nicaragua,2021,Nicaragua 2021,COE,https://allianceforcoffeeexcellence.org/nicaragua-2021/,success,NA,26,63
+a788c4997f41e4fb,Burundi,2013,2013,COE,https://allianceforcoffeeexcellence.org/burundi-2013/,success,NA,14,30
+a888e8977fcf5201,Guatemala,2024,Guatemala 2024,COE,https://allianceforcoffeeexcellence.org/guatemala-2024/,success,NA,33,67
+a9c5085d9aa7d8bf,Peru,2019,2019,COE,https://allianceforcoffeeexcellence.org/peru-2019/,success,NA,24,50
+aaed34d3b88aef8b,Honduras,2009,2009,COE,https://allianceforcoffeeexcellence.org/honduras-2009/,success,NA,39,76
+ab20ca6fa71477c3,Brazil,2003,2003,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2003/,success,NA,43,88
+ad438a1492b82749,Rwanda,2010,2010,COE,https://allianceforcoffeeexcellence.org/rwanda-2010/,success,NA,22,46
+ada629ce75da8ae0,El Salvador,2006,2006,COE,https://allianceforcoffeeexcellence.org/el-salvador-2006/,success,NA,23,48
+ae19c1e1f76a37ad,Guatemala,2001,2001,COE,https://allianceforcoffeeexcellence.org/guatemala-2001/,success,NA,0,32
+b049d78ce4ab573e,Costa Rica,2023,Costa Rica 2023,COE,https://allianceforcoffeeexcellence.org/costa-rica-2023/,success,NA,33,88
+b0fc9afec2b36341,Guatemala,2025,Guatemala 2025,COE,https://allianceforcoffeeexcellence.org/guatemala-2025/,success,NA,38,78
+b2252d20dd28d7dd,Brazil,2015,2015,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2015/,success,NA,22,46
+b26066e3491384bc,Honduras,2007,2007,COE,https://allianceforcoffeeexcellence.org/honduras-2007/,success,NA,24,50
+b762b1a91ef82ae0,Costa Rica,2014,2014,COE,https://allianceforcoffeeexcellence.org/costa-rica-2014/,success,NA,25,52
+bc5c1e38d691c08b,Burundi,2017,2017,COE,https://allianceforcoffeeexcellence.org/burundi-2017/,success,NA,25,61
+bc80a53b61b50b1c,Brazil,2013,2013,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2013/,success,NA,32,66
+becb5d5a8d06e2c4,Guatemala,2006,2006,COE,https://allianceforcoffeeexcellence.org/guatemala-2006/,success,NA,25,52
+c00d15b2e8b05812,Honduras,2023,Honduras 2023,COE,https://allianceforcoffeeexcellence.org/honduras-2023/,success,NA,32,91
+c0bf466579f2d947,Honduras,2021,Honduras 2021,COE,https://allianceforcoffeeexcellence.org/honduras-2021/,success,NA,28,66
+c1a563a1cea61442,Honduras,2017,2017,COE,https://allianceforcoffeeexcellence.org/honduras-2017/,success,NA,27,69
+c56ff7f8e1e41dd6,Nicaragua,2009,2009,COE,https://allianceforcoffeeexcellence.org/nicaragua-2009/,success,NA,26,54
+c5947e46efa4a520,Mexico,2023,Mexico 2023,COE,https://allianceforcoffeeexcellence.org/mexico-2023/,success,NA,29,87
+c5f2e2e30775dfe7,Costa Rica,2009,2009,COE,https://allianceforcoffeeexcellence.org/costa-rica-2009/,success,NA,24,50
+c70d21b6380ff8fc,Ecuador,2021,Ecuador 2021,COE,https://allianceforcoffeeexcellence.org/ecuador-2021/,success,NA,25,58
+c8752ceee8bb53f1,Brazil,2006,2006,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2006/,success,NA,28,58
+c991847a22ff1716,El Salvador,2023,El Salvador 2023,COE,https://allianceforcoffeeexcellence.org/el-salvador-2023/,success,NA,33,92
+cb99a98e8f70e864,Colombia,2017,2017,COE,https://allianceforcoffeeexcellence.org/colombia-2017/,success,NA,36,74
+cbb6685c1de9606c,Rwanda,2011,2011,COE,https://allianceforcoffeeexcellence.org/rwanda-2011/,success,NA,36,74
+cbe3c4b09a54bec0,Bolivia,2005,2005,COE,https://allianceforcoffeeexcellence.org/bolivia-2005/,success,NA,19,40
+cbf7cef16e2f2288,Colombia,2006,2006 South,COE regional,https://allianceforcoffeeexcellence.org/colombia-south-2006/,success,NA,30,62
+cc0114c82be5db63,Mexico,2019,2019,COE,https://allianceforcoffeeexcellence.org/mexico-2019/,success,NA,31,76
+ce40b6a6738bbb99,Costa Rica,2019,2019,COE,https://allianceforcoffeeexcellence.org/costa-rica-2019/,success,NA,31,68
+d097a68f0a5eff0b,Colombia,2012,2012 South,COE regional,https://allianceforcoffeeexcellence.org/colombia-south-2012/,success,NA,30,62
+d144777157aa3439,Costa Rica,2013,2013,COE,https://allianceforcoffeeexcellence.org/costa-rica-2013/,success,NA,22,46
+d1543b65c7f3dffe,Brazil,2018,2018,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2018/,success,NA,35,77
+d499fbd326fc6ee9,Colombia,2010,2010 South,COE regional,https://allianceforcoffeeexcellence.org/colombia-south-2010/,success,NA,21,44
+d767976e2066de8e,Nicaragua,2005,2005,COE,https://allianceforcoffeeexcellence.org/nicaragua-2005/,success,NA,35,72
+d9e938f39eb3880a,Peru,2024,Peru 2024,COE,https://allianceforcoffeeexcellence.org/peru-2024/,success,NA,34,35
+da5b8d67ef9fccb3,Nicaragua,2008,2008,COE,https://allianceforcoffeeexcellence.org/nicaragua-2008/,success,NA,25,52
+da9b1a5c74fd4dd4,Nicaragua,2006,2006,COE,https://allianceforcoffeeexcellence.org/nicaragua-2006/,success,NA,25,52
+db8d673b53d2c07d,Mexico,2018,2018,COE,https://allianceforcoffeeexcellence.org/mexico-2018/,success,NA,33,71
+dec3b623fc3b102d,Costa Rica,2016,2016,COE,https://allianceforcoffeeexcellence.org/costa-rica-2016/,success,NA,26,54
+deeed450e36aab5d,Costa Rica,2022,Costa Rica 2022,COE,https://allianceforcoffeeexcellence.org/costa-rica-2022/,success,NA,25,63
+df2a0030ea37d2c1,Burundi,2015,2015,COE,https://allianceforcoffeeexcellence.org/burundi-2015/,success,NA,27,56
+e027de3eaca1fdbe,Guatemala,2021,Guatemala 2021,COE,https://allianceforcoffeeexcellence.org/guatemala-2021/,success,NA,31,74
+e27e0f7c702fa71e,Brazil,2015,2015 December,COE Natural,https://allianceforcoffeeexcellence.org/brazil-naturals-2015/,success,NA,32,66
+e2acf27cd7656ef2,Brazil,2001,2001,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2001/,success,NA,18,38
+e36d63fff8523cfb,Brazil,2004,2004,COE Pulped Natural,https://allianceforcoffeeexcellence.org/brazil-pulped-naturals-2004/,success,NA,36,74
+e38c7393edb1fc36,Guatemala,2002,2002,COE,https://allianceforcoffeeexcellence.org/guatemala-2002/,success,NA,33,68
+e3acd98cde143171,Guatemala,2009,2009,COE,https://allianceforcoffeeexcellence.org/guatemala-2009/,success,NA,23,48
+e3ee4b83024a8fdc,Colombia,2015,2015 North,COE regional,https://allianceforcoffeeexcellence.org/colombia-north-2015/,success,NA,31,64
+e4999c5ee612d56f,Honduras,2005,2005,COE,https://allianceforcoffeeexcellence.org/honduras-2005/,success,NA,41,84
+e4f222213bccceb2,Thailand,2025,Thailand 2025,COE,https://allianceforcoffeeexcellence.org/thailand-2025/,success,NA,30,62
+e741c9bf9232ab04,Nicaragua,2011,2011,COE,https://allianceforcoffeeexcellence.org/nicaragua-2011/,success,NA,27,56
+e79330b9e90b09dc,Mexico,2025,Mexico 2025,COE,https://allianceforcoffeeexcellence.org/mexico-2025/,success,NA,37,37
+e80af4f8d8bd890c,Indonesia,2021,Indonesia 2021,COE,https://allianceforcoffeeexcellence.org/indonesia-2021/,success,NA,26,61
+e91a6326be6cc6dc,Colombia,2008,2008 South,COE regional,https://allianceforcoffeeexcellence.org/colombia-south-2008/,success,NA,18,38
+eb131b841c2d82a2,Nicaragua,2017,2017,COE,https://allianceforcoffeeexcellence.org/nicaragua-2017/,success,NA,28,63
+eb4956f44a554a3b,Mexico,2013,2013,COE,https://allianceforcoffeeexcellence.org/mexico-2013/,success,NA,16,34
+eba617e4fe8e52b9,El Salvador,2012,2012,COE,https://allianceforcoffeeexcellence.org/el-salvador-2012/,success,NA,28,58
+ed9a6c81f8e5fb94,Colombia,2022,Colombia 2022,COE,https://allianceforcoffeeexcellence.org/colombia-2022/,success,NA,24,50
+ef7f110ca8ad65a5,Honduras,2018,2018,COE,https://allianceforcoffeeexcellence.org/honduras-2018/,success,NA,41,44
+efb2f39d90f46af8,Costa Rica,2007,2007,COE,https://allianceforcoffeeexcellence.org/costa-rica-2007/,success,NA,25,52
+f06207128b447b2a,Peru,2017,2017,COE,https://allianceforcoffeeexcellence.org/peru-2017/,success,NA,24,62
+f142488b1549196e,Burundi,2014,2014,COE,https://allianceforcoffeeexcellence.org/burundi-2014/,success,NA,27,56
+f1e54b3b5ca863aa,Colombia,2014,2014 South,COE regional,https://allianceforcoffeeexcellence.org/colombia-south-2014/,success,NA,34,70
+f2c23fa8e29d9daa,Colombia,2020,Colombia 2020,COE,https://allianceforcoffeeexcellence.org/colombia-2020/,success,NA,0,52
+f52a7809bb1fd00e,El Salvador,2021,El Salvador 2021,COE,https://allianceforcoffeeexcellence.org/el-salvador-2021/,success,NA,27,71
+f57a799e620edb5c,Brazil,2016,2016,COE Natural,https://allianceforcoffeeexcellence.org/brazil-naturals-2016/,success,NA,23,48
+f59277b5e64c2ec4,El Salvador,2004,2004,COE,https://allianceforcoffeeexcellence.org/el-salvador-2004/,success,NA,35,72
+f6b296b9e61cd542,Honduras,2013,2013,COE,https://allianceforcoffeeexcellence.org/honduras-2013/,success,NA,22,46
+f8c00d6b60400117,Brazil,2021,Brazil 2021,COE,https://allianceforcoffeeexcellence.org/brazil-2021/,success,NA,31,68

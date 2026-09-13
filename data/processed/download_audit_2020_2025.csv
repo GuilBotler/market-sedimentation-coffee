@@ -1,0 +1,67 @@
+country,year,source_url,download_status,download_error,competition_rows,auction_rows
+Brazil,2020,https://allianceforcoffeeexcellence.org/brazil-2020/,success,NA,0,35
+Brazil,2021,https://allianceforcoffeeexcellence.org/brazil-2021/,success,NA,34,36
+Brazil,2022,https://allianceforcoffeeexcellence.org/brazil-2022/,success,NA,26,28
+Brazil,2023,https://allianceforcoffeeexcellence.org/brazil-2023/,success,NA,36,36
+Brazil,2024,https://allianceforcoffeeexcellence.org/brazil-2024/,success,NA,38,38
+Brazil,2025,https://allianceforcoffeeexcellence.org/brazil-2025/,success,NA,39,42
+Colombia,2020,https://allianceforcoffeeexcellence.org/colombia-2020/,success,NA,0,26
+Colombia,2021,https://allianceforcoffeeexcellence.org/colombia-2021/,success,NA,25,26
+Colombia,2022,https://allianceforcoffeeexcellence.org/colombia-2022/,success,NA,24,25
+Colombia,2023,https://allianceforcoffeeexcellence.org/colombia-2023/,success,NA,31,32
+Costa Rica,2020,https://allianceforcoffeeexcellence.org/costa-rica-2020/,success,NA,0,38
+Costa Rica,2021,https://allianceforcoffeeexcellence.org/costa-rica-2021/,success,NA,33,34
+Costa Rica,2022,https://allianceforcoffeeexcellence.org/costa-rica-2022/,success,NA,35,37
+Costa Rica,2023,https://allianceforcoffeeexcellence.org/costa-rica-2023/,success,NA,36,36
+Costa Rica,2024,https://allianceforcoffeeexcellence.org/costa-rica-2024/,success,NA,34,34
+Costa Rica,2025,https://allianceforcoffeeexcellence.org/costa-rica-2025/,success,NA,33,33
+Ecuador,2021,https://allianceforcoffeeexcellence.org/ecuador-2021/,success,NA,30,32
+Ecuador,2022,https://allianceforcoffeeexcellence.org/ecuador-2022/,success,NA,24,20
+Ecuador,2023,https://allianceforcoffeeexcellence.org/ecuador-2023/,success,NA,19,19
+El Salvador,2020,https://allianceforcoffeeexcellence.org/el-salvador-2020/,success,NA,0,35
+El Salvador,2021,https://allianceforcoffeeexcellence.org/el-salvador-2021/,success,NA,41,43
+El Salvador,2022,https://allianceforcoffeeexcellence.org/el-salvador-2022/,success,NA,34,36
+El Salvador,2023,https://allianceforcoffeeexcellence.org/el-salvador-2023/,success,NA,39,37
+El Salvador,2024,https://allianceforcoffeeexcellence.org/el-salvador-2024/,success,NA,33,36
+El Salvador,2025,https://allianceforcoffeeexcellence.org/el-salvador-2025/,success,NA,32,32
+Ethiopia,2020,https://allianceforcoffeeexcellence.org/ethiopia-2020/,success,NA,0,12
+Ethiopia,2021,https://allianceforcoffeeexcellence.org/ethiopia-2021/,success,NA,42,44
+Ethiopia,2022,https://allianceforcoffeeexcellence.org/ethiopia-2022/,success,NA,42,44
+Ethiopia,2024,https://allianceforcoffeeexcellence.org/ethiopia-2024/,success,NA,42,42
+Guatemala,2020,https://allianceforcoffeeexcellence.org/guatemala-2020/,success,NA,0,41
+Guatemala,2021,https://allianceforcoffeeexcellence.org/guatemala-2021/,success,NA,40,42
+Guatemala,2022,https://allianceforcoffeeexcellence.org/guatemala-2022/,success,NA,38,40
+Guatemala,2023,https://allianceforcoffeeexcellence.org/guatemala-2023/,success,NA,34,34
+Guatemala,2024,https://allianceforcoffeeexcellence.org/guatemala-2024/,success,NA,33,33
+Guatemala,2025,https://allianceforcoffeeexcellence.org/guatemala-2025/,success,NA,38,38
+Honduras,2021,https://allianceforcoffeeexcellence.org/honduras-2021/,success,NA,35,37
+Honduras,2022,https://allianceforcoffeeexcellence.org/honduras-2022/,success,NA,31,33
+Honduras,2023,https://allianceforcoffeeexcellence.org/honduras-2023/,success,NA,34,32
+Honduras,2024,https://allianceforcoffeeexcellence.org/honduras-2024/,success,NA,32,33
+Honduras,2025,https://allianceforcoffeeexcellence.org/honduras-2025/,success,NA,33,0
+Indonesia,2021,https://allianceforcoffeeexcellence.org/indonesia-2021/,success,NA,32,34
+Indonesia,2022,https://allianceforcoffeeexcellence.org/indonesia-2022/,success,NA,35,24
+Indonesia,2023,https://allianceforcoffeeexcellence.org/indonesia-2023/,success,NA,27,29
+Mexico,2021,https://allianceforcoffeeexcellence.org/mexico-2021/,success,NA,40,42
+Mexico,2022,https://allianceforcoffeeexcellence.org/mexico-2022/,success,NA,37,39
+Mexico,2023,https://allianceforcoffeeexcellence.org/mexico-2023/,success,NA,38,38
+Mexico,2024,https://allianceforcoffeeexcellence.org/mexico-2024/,success,NA,37,37
+Mexico,2025,https://allianceforcoffeeexcellence.org/mexico-2025/,success,NA,37,37
+Nicaragua,2020,https://allianceforcoffeeexcellence.org/nicaragua-2020/,success,NA,0,32
+Nicaragua,2021,https://allianceforcoffeeexcellence.org/nicaragua-2021/,success,NA,35,36
+Nicaragua,2022,https://allianceforcoffeeexcellence.org/nicaragua-2022/,success,NA,38,34
+Nicaragua,2023,https://allianceforcoffeeexcellence.org/nicaragua-2023/,success,NA,27,27
+Nicaragua,2024,https://allianceforcoffeeexcellence.org/nicaragua-2024/,success,NA,31,32
+Nicaragua,2025,https://allianceforcoffeeexcellence.org/nicaragua-2025/,success,NA,32,32
+Peru,2020,https://allianceforcoffeeexcellence.org/peru-2020/,success,NA,0,35
+Peru,2021,https://allianceforcoffeeexcellence.org/peru-2021/,success,NA,34,36
+Peru,2022,https://allianceforcoffeeexcellence.org/peru-2022/,success,NA,37,33
+Peru,2023,https://allianceforcoffeeexcellence.org/peru-2023/,success,NA,40,42
+Peru,2024,https://allianceforcoffeeexcellence.org/peru-2024/,success,NA,34,35
+Peru,2025,https://allianceforcoffeeexcellence.org/peru-2025/,success,NA,35,35
+Taiwan,2024,https://allianceforcoffeeexcellence.org/taiwan-2024/,success,NA,25,25
+Taiwan,2025,https://allianceforcoffeeexcellence.org/taiwan-2025/,success,NA,28,28
+Thailand,2022,https://allianceforcoffeeexcellence.org/thailand-2022/,failed,[38;5;232mHTTP 404 Not Found.[39m,0,0
+Thailand,2023,https://allianceforcoffeeexcellence.org/thailand-2023/,success,NA,25,25
+Thailand,2024,https://allianceforcoffeeexcellence.org/thailand-2024/,success,NA,33,33
+Thailand,2025,https://allianceforcoffeeexcellence.org/thailand-2025/,success,NA,30,30

@@ -1,0 +1,102 @@
+country,year,program,entries,reported_process,missing_process,coverage_rate
+Mexico,2023,COE,29,0,29,0
+Mexico,2023,NW,9,0,9,0
+Brazil,2023,NW,6,5,1,0.8333333333333334
+Brazil,2022,COE,24,23,1,0.9583333333333334
+Brazil,2021,COE,31,31,0,1
+Brazil,2021,NW,3,3,0,1
+Brazil,2022,NW,2,2,0,1
+Brazil,2023,COE,30,30,0,1
+Brazil,2024,COE,30,30,0,1
+Brazil,2024,NW,8,8,0,1
+Brazil,2025,COE,30,30,0,1
+Brazil,2025,NW,9,9,0,1
+Colombia,2021,COE,25,25,0,1
+Colombia,2022,COE,24,24,0,1
+Colombia,2023,COE,31,31,0,1
+Costa Rica,2021,COE,33,33,0,1
+Costa Rica,2022,COE,25,25,0,1
+Costa Rica,2022,NW,10,10,0,1
+Costa Rica,2023,COE,33,33,0,1
+Costa Rica,2023,NW,3,3,0,1
+Costa Rica,2024,COE,33,33,0,1
+Costa Rica,2024,NW,1,1,0,1
+Costa Rica,2025,COE,33,33,0,1
+Ecuador,2021,COE,25,25,0,1
+Ecuador,2021,NW,5,5,0,1
+Ecuador,2022,COE,18,18,0,1
+Ecuador,2023,COE,19,19,0,1
+El Salvador,2021,COE,27,27,0,1
+El Salvador,2021,NW,14,14,0,1
+El Salvador,2022,COE,30,30,0,1
+El Salvador,2022,NW,4,4,0,1
+El Salvador,2023,COE,33,33,0,1
+El Salvador,2023,NW,6,6,0,1
+El Salvador,2024,COE,30,30,0,1
+El Salvador,2024,NW,3,3,0,1
+El Salvador,2025,COE,32,32,0,1
+Ethiopia,2021,COE,33,33,0,1
+Ethiopia,2021,NW,9,9,0,1
+Ethiopia,2022,COE,32,32,0,1
+Ethiopia,2022,NW,10,10,0,1
+Ethiopia,2024,COE,29,29,0,1
+Ethiopia,2024,NW,13,13,0,1
+Guatemala,2021,COE,31,31,0,1
+Guatemala,2021,NW,9,9,0,1
+Guatemala,2022,COE,33,33,0,1
+Guatemala,2022,NW,5,5,0,1
+Guatemala,2023,COE,31,31,0,1
+Guatemala,2023,NW,3,3,0,1
+Guatemala,2024,COE,30,30,0,1
+Guatemala,2024,NW,3,3,0,1
+Guatemala,2025,COE,33,33,0,1
+Guatemala,2025,NW,5,5,0,1
+Honduras,2021,COE,28,28,0,1
+Honduras,2021,NW,7,7,0,1
+Honduras,2022,COE,27,27,0,1
+Honduras,2022,NW,4,4,0,1
+Honduras,2023,COE,32,32,0,1
+Honduras,2023,NW,2,2,0,1
+Honduras,2024,COE,32,32,0,1
+Honduras,2025,COE,33,33,0,1
+Indonesia,2021,COE,26,26,0,1
+Indonesia,2021,NW,6,6,0,1
+Indonesia,2022,COE,23,23,0,1
+Indonesia,2022,NW,12,12,0,1
+Indonesia,2023,COE,25,25,0,1
+Indonesia,2023,NW,2,2,0,1
+Mexico,2021,COE,33,33,0,1
+Mexico,2021,NW,7,7,0,1
+Mexico,2022,COE,33,33,0,1
+Mexico,2022,NW,4,4,0,1
+Mexico,2024,COE,33,33,0,1
+Mexico,2024,NW,4,4,0,1
+Mexico,2025,COE,33,33,0,1
+Mexico,2025,NW,4,4,0,1
+Nicaragua,2021,COE,26,26,0,1
+Nicaragua,2021,NW,9,9,0,1
+Nicaragua,2022,COE,27,27,0,1
+Nicaragua,2022,NW,11,11,0,1
+Nicaragua,2023,COE,18,18,0,1
+Nicaragua,2023,NW,9,9,0,1
+Nicaragua,2024,COE,31,31,0,1
+Nicaragua,2025,COE,32,32,0,1
+Peru,2021,COE,27,27,0,1
+Peru,2021,NW,7,7,0,1
+Peru,2022,COE,32,32,0,1
+Peru,2022,NW,5,5,0,1
+Peru,2023,COE,33,33,0,1
+Peru,2023,NW,7,7,0,1
+Peru,2024,COE,27,27,0,1
+Peru,2024,NW,7,7,0,1
+Peru,2025,COE,32,32,0,1
+Peru,2025,NW,3,3,0,1
+Taiwan,2024,COE,20,20,0,1
+Taiwan,2024,NW,5,5,0,1
+Taiwan,2025,COE,28,28,0,1
+Thailand,2023,COE,17,17,0,1
+Thailand,2023,NW,8,8,0,1
+Thailand,2024,COE,29,29,0,1
+Thailand,2024,NW,4,4,0,1
+Thailand,2025,COE,23,23,0,1
+Thailand,2025,NW,7,7,0,1

@@ -14,3 +14,10 @@ data/processed/*.parquet
 _targets/
 _targets.RData
 
+
+/.quarto/
+**/*.quarto_ipynb
+data/raw/
+
+*.Rhistory
+*.RData

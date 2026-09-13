@@ -1,0 +1,239 @@
+country,year,program,entries,reported_process,missing_process,coverage_rate
+Bolivia,2004,Not classified,13,0,13,0
+Bolivia,2005,Not classified,19,0,19,0
+Bolivia,2007,Not classified,26,0,26,0
+Bolivia,2008,Not classified,29,0,29,0
+Bolivia,2009,Not classified,30,0,30,0
+Brazil,1999,Not classified,10,0,10,0
+Brazil,2000,Not classified,18,0,18,0
+Brazil,2001,Not classified,18,0,18,0
+Brazil,2002,Not classified,28,0,28,0
+Brazil,2003,Not classified,43,0,43,0
+Brazil,2004,Not classified,36,0,36,0
+Brazil,2005,Not classified,36,0,36,0
+Brazil,2006,Not classified,28,0,28,0
+Brazil,2008,Not classified,23,0,23,0
+Brazil,2009,Not classified,26,0,26,0
+Brazil,2011,Not classified,31,0,31,0
+Brazil,2012,Not classified,24,0,24,0
+Brazil,2013,Not classified,39,0,39,0
+Brazil,2014,Not classified,25,0,25,0
+Brazil,2015,Not classified,41,0,41,0
+Brazil,2016,Not classified,31,0,31,0
+Brazil,2017,Not classified,38,0,38,0
+Brazil,2018,Not classified,48,48,0,1
+Brazil,2019,Not classified,30,30,0,1
+Brazil,2021,COE,29,29,0,1
+Brazil,2021,NW,3,3,0,1
+Brazil,2022,COE,24,24,0,1
+Brazil,2022,NW,2,2,0,1
+Brazil,2023,COE,30,30,0,1
+Brazil,2023,NW,6,6,0,1
+Brazil,2024,COE,27,27,0,1
+Brazil,2024,NW,8,8,0,1
+Brazil,2025,COE,30,30,0,1
+Brazil,2025,NW,9,9,0,1
+Burundi,2012,Not classified,17,0,17,0
+Burundi,2013,Not classified,14,0,14,0
+Burundi,2014,Not classified,27,0,27,0
+Burundi,2015,Not classified,27,0,27,0
+Burundi,2017,Not classified,25,0,25,0
+Burundi,2018,Not classified,36,36,0,1
+Burundi,2019,Not classified,24,24,0,1
+Colombia,2005,Not classified,33,0,33,0
+Colombia,2006,Not classified,30,0,30,0
+Colombia,2007,Not classified,30,0,30,0
+Colombia,2008,Not classified,18,0,18,0
+Colombia,2009,Not classified,27,0,27,0
+Colombia,2010,Not classified,21,0,21,0
+Colombia,2011,Not classified,22,0,22,0
+Colombia,2012,Not classified,30,0,30,0
+Colombia,2013,Not classified,20,0,20,0
+Colombia,2014,Not classified,34,0,34,0
+Colombia,2015,Not classified,31,0,31,0
+Colombia,2017,Not classified,36,0,36,0
+Colombia,2018,Not classified,36,36,0,1
+Colombia,2019,Not classified,34,34,0,1
+Colombia,2021,COE,23,23,0,1
+Colombia,2022,COE,22,22,0,1
+Colombia,2023,COE,28,28,0,1
+Costa Rica,2007,Not classified,25,0,25,0
+Costa Rica,2008,Not classified,30,0,30,0
+Costa Rica,2009,Not classified,24,0,24,0
+Costa Rica,2011,Not classified,31,0,31,0
+Costa Rica,2012,Not classified,27,0,27,0
+Costa Rica,2013,Not classified,22,0,22,0
+Costa Rica,2014,Not classified,25,0,25,0
+Costa Rica,2015,Not classified,35,0,35,0
+Costa Rica,2016,Not classified,26,0,26,0
+Costa Rica,2017,Not classified,32,0,32,0
+Costa Rica,2018,Not classified,42,42,0,1
+Costa Rica,2019,Not classified,31,31,0,1
+Costa Rica,2021,COE,30,30,0,1
+Costa Rica,2022,COE,22,22,0,1
+Costa Rica,2022,NW,10,10,0,1
+Costa Rica,2023,COE,30,30,0,1
+Costa Rica,2023,NW,3,3,0,1
+Costa Rica,2024,COE,30,30,0,1
+Costa Rica,2024,NW,1,1,0,1
+Costa Rica,2025,COE,30,30,0,1
+Ecuador,2021,COE,23,23,0,1
+Ecuador,2021,NW,5,5,0,1
+Ecuador,2022,COE,18,18,0,1
+Ecuador,2023,COE,16,16,0,1
+El Salvador,2003,Not classified,31,0,31,0
+El Salvador,2004,Not classified,35,0,35,0
+El Salvador,2005,Not classified,17,0,17,0
+El Salvador,2006,Not classified,23,0,23,0
+El Salvador,2007,Not classified,23,0,23,0
+El Salvador,2008,Not classified,36,0,36,0
+El Salvador,2009,Not classified,33,0,33,0
+El Salvador,2010,Not classified,30,0,30,0
+El Salvador,2011,Not classified,42,0,42,0
+El Salvador,2012,Not classified,28,0,28,0
+El Salvador,2013,Not classified,26,0,26,0
+El Salvador,2014,Not classified,33,0,33,0
+El Salvador,2015,Not classified,27,0,27,0
+El Salvador,2017,Not classified,26,0,26,0
+El Salvador,2018,Not classified,42,42,0,1
+El Salvador,2019,Not classified,27,27,0,1
+El Salvador,2021,COE,24,24,0,1
+El Salvador,2021,NW,14,14,0,1
+El Salvador,2022,COE,27,27,0,1
+El Salvador,2022,NW,4,4,0,1
+El Salvador,2023,COE,30,30,0,1
+El Salvador,2023,NW,6,6,0,1
+El Salvador,2024,COE,30,30,0,1
+El Salvador,2024,NW,3,3,0,1
+El Salvador,2025,COE,29,29,0,1
+Ethiopia,2021,COE,30,30,0,1
+Ethiopia,2021,NW,9,9,0,1
+Ethiopia,2022,COE,30,30,0,1
+Ethiopia,2022,NW,10,10,0,1
+Ethiopia,2024,COE,27,27,0,1
+Ethiopia,2024,NW,13,13,0,1
+Guatemala,2002,Not classified,33,0,33,0
+Guatemala,2006,Not classified,25,0,25,0
+Guatemala,2007,Not classified,19,0,19,0
+Guatemala,2008,Not classified,25,0,25,0
+Guatemala,2009,Not classified,23,0,23,0
+Guatemala,2010,Not classified,28,0,28,0
+Guatemala,2011,Not classified,29,0,29,0
+Guatemala,2012,Not classified,23,0,23,0
+Guatemala,2013,Not classified,23,0,23,0
+Guatemala,2014,Not classified,24,0,24,0
+Guatemala,2015,Not classified,24,0,24,0
+Guatemala,2016,Not classified,25,0,25,0
+Guatemala,2017,Not classified,30,0,30,0
+Guatemala,2018,Not classified,37,37,0,1
+Guatemala,2019,Not classified,23,23,0,1
+Guatemala,2021,COE,28,28,0,1
+Guatemala,2021,NW,9,9,0,1
+Guatemala,2022,COE,30,30,0,1
+Guatemala,2022,NW,5,5,0,1
+Guatemala,2023,COE,28,28,0,1
+Guatemala,2023,NW,3,3,0,1
+Guatemala,2024,COE,28,28,0,1
+Guatemala,2024,NW,3,3,0,1
+Guatemala,2025,COE,30,30,0,1
+Guatemala,2025,NW,5,5,0,1
+Honduras,2004,Not classified,21,0,21,0
+Honduras,2005,Not classified,41,0,41,0
+Honduras,2006,Not classified,33,0,33,0
+Honduras,2007,Not classified,24,0,24,0
+Honduras,2008,Not classified,26,0,26,0
+Honduras,2009,Not classified,39,0,39,0
+Honduras,2010,Not classified,25,0,25,0
+Honduras,2011,Not classified,33,0,33,0
+Honduras,2012,Not classified,20,0,20,0
+Honduras,2013,Not classified,22,0,22,0
+Honduras,2014,Not classified,23,0,23,0
+Honduras,2015,Not classified,38,0,38,0
+Honduras,2016,Not classified,26,0,26,0
+Honduras,2017,Not classified,27,0,27,0
+Honduras,2018,Not classified,41,41,0,1
+Honduras,2019,Not classified,33,33,0,1
+Honduras,2021,COE,25,25,0,1
+Honduras,2021,NW,7,7,0,1
+Honduras,2022,COE,25,25,0,1
+Honduras,2022,NW,4,4,0,1
+Honduras,2023,COE,30,30,0,1
+Honduras,2023,NW,2,2,0,1
+Honduras,2024,COE,29,29,0,1
+Honduras,2025,COE,30,30,0,1
+Indonesia,2021,COE,26,26,0,1
+Indonesia,2021,NW,6,6,0,1
+Indonesia,2022,COE,22,22,0,1
+Indonesia,2022,NW,12,12,0,1
+Indonesia,2023,COE,22,22,0,1
+Indonesia,2023,NW,2,2,0,1
+Mexico,2012,Not classified,10,0,10,0
+Mexico,2013,Not classified,16,0,16,0
+Mexico,2014,Not classified,19,0,19,0
+Mexico,2015,Not classified,20,0,20,0
+Mexico,2017,Not classified,27,0,27,0
+Mexico,2018,Not classified,33,32,1,0.9696969696969697
+Mexico,2019,Not classified,31,31,0,1
+Mexico,2021,COE,30,30,0,1
+Mexico,2021,NW,7,7,0,1
+Mexico,2022,COE,30,30,0,1
+Mexico,2022,NW,4,4,0,1
+Mexico,2023,COE,26,26,0,1
+Mexico,2023,NW,9,9,0,1
+Mexico,2024,COE,30,30,0,1
+Mexico,2024,NW,4,4,0,1
+Mexico,2025,COE,30,30,0,1
+Mexico,2025,NW,4,4,0,1
+Nicaragua,2002,Not classified,23,0,23,0
+Nicaragua,2003,Not classified,37,0,37,0
+Nicaragua,2004,Not classified,29,0,29,0
+Nicaragua,2005,Not classified,35,0,35,0
+Nicaragua,2006,Not classified,25,0,25,0
+Nicaragua,2007,Not classified,34,0,34,0
+Nicaragua,2008,Not classified,25,0,25,0
+Nicaragua,2009,Not classified,26,0,26,0
+Nicaragua,2010,Not classified,27,0,27,0
+Nicaragua,2011,Not classified,27,0,27,0
+Nicaragua,2012,Not classified,25,0,25,0
+Nicaragua,2014,Not classified,25,0,25,0
+Nicaragua,2015,Not classified,36,0,36,0
+Nicaragua,2017,Not classified,28,0,28,0
+Nicaragua,2018,Not classified,40,40,0,1
+Nicaragua,2021,COE,23,23,0,1
+Nicaragua,2021,NW,9,9,0,1
+Nicaragua,2022,COE,26,26,0,1
+Nicaragua,2022,NW,11,11,0,1
+Nicaragua,2023,COE,16,16,0,1
+Nicaragua,2023,NW,9,9,0,1
+Nicaragua,2024,COE,30,30,0,1
+Nicaragua,2025,COE,30,30,0,1
+Peru,2017,Not classified,24,0,24,0
+Peru,2018,Not classified,24,24,0,1
+Peru,2019,Not classified,24,24,0,1
+Peru,2021,COE,24,24,0,1
+Peru,2021,NW,7,7,0,1
+Peru,2022,COE,29,29,0,1
+Peru,2022,NW,5,5,0,1
+Peru,2023,COE,30,30,0,1
+Peru,2023,NW,7,7,0,1
+Peru,2024,COE,25,25,0,1
+Peru,2024,NW,7,7,0,1
+Peru,2025,COE,30,30,0,1
+Peru,2025,NW,3,3,0,1
+Rwanda,2008,Not classified,24,0,24,0
+Rwanda,2010,Not classified,22,0,22,0
+Rwanda,2011,Not classified,36,0,36,0
+Rwanda,2012,Not classified,26,0,26,0
+Rwanda,2013,Not classified,15,0,15,0
+Rwanda,2014,Not classified,28,0,28,0
+Rwanda,2015,Not classified,24,0,24,0
+Rwanda,2018,Not classified,32,31,1,0.96875
+Taiwan,2024,COE,20,20,0,1
+Taiwan,2024,NW,5,5,0,1
+Taiwan,2025,COE,27,27,0,1
+Thailand,2023,COE,16,16,0,1
+Thailand,2023,NW,8,8,0,1
+Thailand,2024,COE,27,27,0,1
+Thailand,2024,NW,4,4,0,1
+Thailand,2025,COE,21,21,0,1
+Thailand,2025,NW,7,7,0,1

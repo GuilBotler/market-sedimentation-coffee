@@ -1,0 +1,461 @@
+country,year,program,process_family,entries,total_entries,reported_entries,share_all,share_reported,coverage_rate
+Bolivia,2004,Not classified,Not reported,13,13,0,1,NA,0
+Bolivia,2005,Not classified,Not reported,19,19,0,1,NA,0
+Bolivia,2007,Not classified,Not reported,26,26,0,1,NA,0
+Bolivia,2008,Not classified,Not reported,29,29,0,1,NA,0
+Bolivia,2009,Not classified,Not reported,30,30,0,1,NA,0
+Brazil,1999,Not classified,Not reported,10,10,0,1,NA,0
+Brazil,2000,Not classified,Not reported,18,18,0,1,NA,0
+Brazil,2001,Not classified,Not reported,18,18,0,1,NA,0
+Brazil,2002,Not classified,Not reported,28,28,0,1,NA,0
+Brazil,2003,Not classified,Not reported,43,43,0,1,NA,0
+Brazil,2004,Not classified,Not reported,36,36,0,1,NA,0
+Brazil,2005,Not classified,Not reported,36,36,0,1,NA,0
+Brazil,2006,Not classified,Not reported,28,28,0,1,NA,0
+Brazil,2008,Not classified,Not reported,23,23,0,1,NA,0
+Brazil,2009,Not classified,Not reported,26,26,0,1,NA,0
+Brazil,2011,Not classified,Not reported,31,31,0,1,NA,0
+Brazil,2012,Not classified,Not reported,24,24,0,1,NA,0
+Brazil,2013,Not classified,Not reported,39,39,0,1,NA,0
+Brazil,2014,Not classified,Not reported,25,25,0,1,NA,0
+Brazil,2015,Not classified,Not reported,41,41,0,1,NA,0
+Brazil,2016,Not classified,Not reported,31,31,0,1,NA,0
+Brazil,2017,Not classified,Not reported,38,38,0,1,NA,0
+Brazil,2018,Not classified,Honey / pulped natural,3,48,48,0.0625,0.0625,1
+Brazil,2018,Not classified,Natural,45,48,48,0.9375,0.9375,1
+Brazil,2019,Not classified,Experimental,3,30,30,0.1,0.1,1
+Brazil,2019,Not classified,Honey / pulped natural,10,30,30,0.3333333333333333,0.3333333333333333,1
+Brazil,2019,Not classified,Natural,17,30,30,0.5666666666666667,0.5666666666666667,1
+Brazil,2021,COE,Honey / pulped natural,13,29,29,0.4482758620689655,0.4482758620689655,1
+Brazil,2021,COE,Natural,14,29,29,0.4827586206896552,0.4827586206896552,1
+Brazil,2021,COE,Washed,2,29,29,0.06896551724137931,0.06896551724137931,1
+Brazil,2021,NW,Natural,3,3,3,1,1,1
+Brazil,2022,COE,Honey / pulped natural,8,24,24,0.3333333333333333,0.3333333333333333,1
+Brazil,2022,COE,Natural,16,24,24,0.6666666666666666,0.6666666666666666,1
+Brazil,2022,NW,Natural,2,2,2,1,1,1
+Brazil,2023,COE,Experimental,10,30,30,0.3333333333333333,0.3333333333333333,1
+Brazil,2023,COE,Honey / pulped natural,9,30,30,0.3,0.3,1
+Brazil,2023,COE,Natural,10,30,30,0.3333333333333333,0.3333333333333333,1
+Brazil,2023,COE,Washed,1,30,30,0.03333333333333333,0.03333333333333333,1
+Brazil,2023,NW,Experimental,1,6,6,0.16666666666666666,0.16666666666666666,1
+Brazil,2023,NW,Honey / pulped natural,4,6,6,0.6666666666666666,0.6666666666666666,1
+Brazil,2023,NW,Natural,1,6,6,0.16666666666666666,0.16666666666666666,1
+Brazil,2024,COE,Experimental,7,27,27,0.25925925925925924,0.25925925925925924,1
+Brazil,2024,COE,Honey / pulped natural,10,27,27,0.37037037037037035,0.37037037037037035,1
+Brazil,2024,COE,Natural,10,27,27,0.37037037037037035,0.37037037037037035,1
+Brazil,2024,NW,Experimental,1,8,8,0.125,0.125,1
+Brazil,2024,NW,Honey / pulped natural,3,8,8,0.375,0.375,1
+Brazil,2024,NW,Natural,4,8,8,0.5,0.5,1
+Brazil,2025,COE,Experimental,10,30,30,0.3333333333333333,0.3333333333333333,1
+Brazil,2025,COE,Honey / pulped natural,9,30,30,0.3,0.3,1
+Brazil,2025,COE,Natural,10,30,30,0.3333333333333333,0.3333333333333333,1
+Brazil,2025,COE,Washed,1,30,30,0.03333333333333333,0.03333333333333333,1
+Brazil,2025,NW,Experimental,4,9,9,0.4444444444444444,0.4444444444444444,1
+Brazil,2025,NW,Honey / pulped natural,1,9,9,0.1111111111111111,0.1111111111111111,1
+Brazil,2025,NW,Natural,3,9,9,0.3333333333333333,0.3333333333333333,1
+Brazil,2025,NW,Washed,1,9,9,0.1111111111111111,0.1111111111111111,1
+Burundi,2012,Not classified,Not reported,17,17,0,1,NA,0
+Burundi,2013,Not classified,Not reported,14,14,0,1,NA,0
+Burundi,2014,Not classified,Not reported,27,27,0,1,NA,0
+Burundi,2015,Not classified,Not reported,27,27,0,1,NA,0
+Burundi,2017,Not classified,Not reported,25,25,0,1,NA,0
+Burundi,2018,Not classified,Washed,36,36,36,1,1,1
+Burundi,2019,Not classified,Natural,3,24,24,0.125,0.125,1
+Burundi,2019,Not classified,Washed,21,24,24,0.875,0.875,1
+Colombia,2005,Not classified,Not reported,33,33,0,1,NA,0
+Colombia,2006,Not classified,Not reported,30,30,0,1,NA,0
+Colombia,2007,Not classified,Not reported,30,30,0,1,NA,0
+Colombia,2008,Not classified,Not reported,18,18,0,1,NA,0
+Colombia,2009,Not classified,Not reported,27,27,0,1,NA,0
+Colombia,2010,Not classified,Not reported,21,21,0,1,NA,0
+Colombia,2011,Not classified,Not reported,22,22,0,1,NA,0
+Colombia,2012,Not classified,Not reported,30,30,0,1,NA,0
+Colombia,2013,Not classified,Not reported,20,20,0,1,NA,0
+Colombia,2014,Not classified,Not reported,34,34,0,1,NA,0
+Colombia,2015,Not classified,Not reported,31,31,0,1,NA,0
+Colombia,2017,Not classified,Not reported,36,36,0,1,NA,0
+Colombia,2018,Not classified,Experimental,1,36,36,0.027777777777777776,0.027777777777777776,1
+Colombia,2018,Not classified,Honey / pulped natural,4,36,36,0.1111111111111111,0.1111111111111111,1
+Colombia,2018,Not classified,Washed,31,36,36,0.8611111111111112,0.8611111111111112,1
+Colombia,2019,Not classified,Experimental,2,34,34,0.058823529411764705,0.058823529411764705,1
+Colombia,2019,Not classified,Honey / pulped natural,2,34,34,0.058823529411764705,0.058823529411764705,1
+Colombia,2019,Not classified,Natural,5,34,34,0.14705882352941177,0.14705882352941177,1
+Colombia,2019,Not classified,Washed,25,34,34,0.7352941176470589,0.7352941176470589,1
+Colombia,2021,COE,Experimental,4,23,23,0.17391304347826086,0.17391304347826086,1
+Colombia,2021,COE,Honey / pulped natural,2,23,23,0.08695652173913043,0.08695652173913043,1
+Colombia,2021,COE,Natural,4,23,23,0.17391304347826086,0.17391304347826086,1
+Colombia,2021,COE,Washed,13,23,23,0.5652173913043478,0.5652173913043478,1
+Colombia,2022,COE,Experimental,3,22,22,0.13636363636363635,0.13636363636363635,1
+Colombia,2022,COE,Honey / pulped natural,2,22,22,0.09090909090909091,0.09090909090909091,1
+Colombia,2022,COE,Natural,4,22,22,0.18181818181818182,0.18181818181818182,1
+Colombia,2022,COE,Washed,13,22,22,0.5909090909090909,0.5909090909090909,1
+Colombia,2023,COE,Experimental,6,28,28,0.21428571428571427,0.21428571428571427,1
+Colombia,2023,COE,Honey / pulped natural,6,28,28,0.21428571428571427,0.21428571428571427,1
+Colombia,2023,COE,Natural,2,28,28,0.07142857142857142,0.07142857142857142,1
+Colombia,2023,COE,Washed,14,28,28,0.5,0.5,1
+Costa Rica,2007,Not classified,Not reported,25,25,0,1,NA,0
+Costa Rica,2008,Not classified,Not reported,30,30,0,1,NA,0
+Costa Rica,2009,Not classified,Not reported,24,24,0,1,NA,0
+Costa Rica,2011,Not classified,Not reported,31,31,0,1,NA,0
+Costa Rica,2012,Not classified,Not reported,27,27,0,1,NA,0
+Costa Rica,2013,Not classified,Not reported,22,22,0,1,NA,0
+Costa Rica,2014,Not classified,Not reported,25,25,0,1,NA,0
+Costa Rica,2015,Not classified,Not reported,35,35,0,1,NA,0
+Costa Rica,2016,Not classified,Not reported,26,26,0,1,NA,0
+Costa Rica,2017,Not classified,Not reported,32,32,0,1,NA,0
+Costa Rica,2018,Not classified,Experimental,3,42,42,0.07142857142857142,0.07142857142857142,1
+Costa Rica,2018,Not classified,Honey / pulped natural,21,42,42,0.5,0.5,1
+Costa Rica,2018,Not classified,Natural,10,42,42,0.23809523809523808,0.23809523809523808,1
+Costa Rica,2018,Not classified,Washed,8,42,42,0.19047619047619047,0.19047619047619047,1
+Costa Rica,2019,Not classified,Experimental,4,31,31,0.12903225806451613,0.12903225806451613,1
+Costa Rica,2019,Not classified,Honey / pulped natural,16,31,31,0.5161290322580645,0.5161290322580645,1
+Costa Rica,2019,Not classified,Natural,7,31,31,0.22580645161290322,0.22580645161290322,1
+Costa Rica,2019,Not classified,Washed,4,31,31,0.12903225806451613,0.12903225806451613,1
+Costa Rica,2021,COE,Experimental,5,30,30,0.16666666666666666,0.16666666666666666,1
+Costa Rica,2021,COE,Honey / pulped natural,12,30,30,0.4,0.4,1
+Costa Rica,2021,COE,Natural,7,30,30,0.23333333333333334,0.23333333333333334,1
+Costa Rica,2021,COE,Washed,6,30,30,0.2,0.2,1
+Costa Rica,2022,COE,Experimental,5,22,22,0.22727272727272727,0.22727272727272727,1
+Costa Rica,2022,COE,Honey / pulped natural,8,22,22,0.36363636363636365,0.36363636363636365,1
+Costa Rica,2022,COE,Natural,4,22,22,0.18181818181818182,0.18181818181818182,1
+Costa Rica,2022,COE,Washed,5,22,22,0.22727272727272727,0.22727272727272727,1
+Costa Rica,2022,NW,Experimental,2,10,10,0.2,0.2,1
+Costa Rica,2022,NW,Honey / pulped natural,1,10,10,0.1,0.1,1
+Costa Rica,2022,NW,Natural,6,10,10,0.6,0.6,1
+Costa Rica,2022,NW,Washed,1,10,10,0.1,0.1,1
+Costa Rica,2023,COE,Experimental,6,30,30,0.2,0.2,1
+Costa Rica,2023,COE,Honey / pulped natural,7,30,30,0.23333333333333334,0.23333333333333334,1
+Costa Rica,2023,COE,Natural,11,30,30,0.36666666666666664,0.36666666666666664,1
+Costa Rica,2023,COE,Washed,6,30,30,0.2,0.2,1
+Costa Rica,2023,NW,Experimental,2,3,3,0.6666666666666666,0.6666666666666666,1
+Costa Rica,2023,NW,Honey / pulped natural,1,3,3,0.3333333333333333,0.3333333333333333,1
+Costa Rica,2024,COE,Experimental,6,30,30,0.2,0.2,1
+Costa Rica,2024,COE,Honey / pulped natural,10,30,30,0.3333333333333333,0.3333333333333333,1
+Costa Rica,2024,COE,Natural,6,30,30,0.2,0.2,1
+Costa Rica,2024,COE,Washed,8,30,30,0.26666666666666666,0.26666666666666666,1
+Costa Rica,2024,NW,Natural,1,1,1,1,1,1
+Costa Rica,2025,COE,Experimental,10,30,30,0.3333333333333333,0.3333333333333333,1
+Costa Rica,2025,COE,Honey / pulped natural,4,30,30,0.13333333333333333,0.13333333333333333,1
+Costa Rica,2025,COE,Natural,6,30,30,0.2,0.2,1
+Costa Rica,2025,COE,Washed,10,30,30,0.3333333333333333,0.3333333333333333,1
+Ecuador,2021,COE,Experimental,2,23,23,0.08695652173913043,0.08695652173913043,1
+Ecuador,2021,COE,Honey / pulped natural,6,23,23,0.2608695652173913,0.2608695652173913,1
+Ecuador,2021,COE,Natural,3,23,23,0.13043478260869565,0.13043478260869565,1
+Ecuador,2021,COE,Washed,12,23,23,0.5217391304347826,0.5217391304347826,1
+Ecuador,2021,NW,Washed,5,5,5,1,1,1
+Ecuador,2022,COE,Experimental,8,18,18,0.4444444444444444,0.4444444444444444,1
+Ecuador,2022,COE,Honey / pulped natural,1,18,18,0.05555555555555555,0.05555555555555555,1
+Ecuador,2022,COE,Natural,4,18,18,0.2222222222222222,0.2222222222222222,1
+Ecuador,2022,COE,Washed,5,18,18,0.2777777777777778,0.2777777777777778,1
+Ecuador,2023,COE,Experimental,8,16,16,0.5,0.5,1
+Ecuador,2023,COE,Natural,3,16,16,0.1875,0.1875,1
+Ecuador,2023,COE,Washed,5,16,16,0.3125,0.3125,1
+El Salvador,2003,Not classified,Not reported,31,31,0,1,NA,0
+El Salvador,2004,Not classified,Not reported,35,35,0,1,NA,0
+El Salvador,2005,Not classified,Not reported,17,17,0,1,NA,0
+El Salvador,2006,Not classified,Not reported,23,23,0,1,NA,0
+El Salvador,2007,Not classified,Not reported,23,23,0,1,NA,0
+El Salvador,2008,Not classified,Not reported,36,36,0,1,NA,0
+El Salvador,2009,Not classified,Not reported,33,33,0,1,NA,0
+El Salvador,2010,Not classified,Not reported,30,30,0,1,NA,0
+El Salvador,2011,Not classified,Not reported,42,42,0,1,NA,0
+El Salvador,2012,Not classified,Not reported,28,28,0,1,NA,0
+El Salvador,2013,Not classified,Not reported,26,26,0,1,NA,0
+El Salvador,2014,Not classified,Not reported,33,33,0,1,NA,0
+El Salvador,2015,Not classified,Not reported,27,27,0,1,NA,0
+El Salvador,2017,Not classified,Not reported,26,26,0,1,NA,0
+El Salvador,2018,Not classified,Honey / pulped natural,14,42,42,0.3333333333333333,0.3333333333333333,1
+El Salvador,2018,Not classified,Natural,15,42,42,0.35714285714285715,0.35714285714285715,1
+El Salvador,2018,Not classified,Washed,13,42,42,0.30952380952380953,0.30952380952380953,1
+El Salvador,2019,Not classified,Experimental,1,27,27,0.037037037037037035,0.037037037037037035,1
+El Salvador,2019,Not classified,Honey / pulped natural,10,27,27,0.37037037037037035,0.37037037037037035,1
+El Salvador,2019,Not classified,Natural,8,27,27,0.2962962962962963,0.2962962962962963,1
+El Salvador,2019,Not classified,Washed,8,27,27,0.2962962962962963,0.2962962962962963,1
+El Salvador,2021,COE,Experimental,2,24,24,0.08333333333333333,0.08333333333333333,1
+El Salvador,2021,COE,Honey / pulped natural,6,24,24,0.25,0.25,1
+El Salvador,2021,COE,Natural,12,24,24,0.5,0.5,1
+El Salvador,2021,COE,Washed,4,24,24,0.16666666666666666,0.16666666666666666,1
+El Salvador,2021,NW,Experimental,1,14,14,0.07142857142857142,0.07142857142857142,1
+El Salvador,2021,NW,Honey / pulped natural,3,14,14,0.21428571428571427,0.21428571428571427,1
+El Salvador,2021,NW,Natural,7,14,14,0.5,0.5,1
+El Salvador,2021,NW,Washed,3,14,14,0.21428571428571427,0.21428571428571427,1
+El Salvador,2022,COE,Experimental,3,27,27,0.1111111111111111,0.1111111111111111,1
+El Salvador,2022,COE,Honey / pulped natural,2,27,27,0.07407407407407407,0.07407407407407407,1
+El Salvador,2022,COE,Natural,17,27,27,0.6296296296296297,0.6296296296296297,1
+El Salvador,2022,COE,Washed,5,27,27,0.18518518518518517,0.18518518518518517,1
+El Salvador,2022,NW,Natural,2,4,4,0.5,0.5,1
+El Salvador,2022,NW,Washed,2,4,4,0.5,0.5,1
+El Salvador,2023,COE,Experimental,12,30,30,0.4,0.4,1
+El Salvador,2023,COE,Honey / pulped natural,4,30,30,0.13333333333333333,0.13333333333333333,1
+El Salvador,2023,COE,Natural,11,30,30,0.36666666666666664,0.36666666666666664,1
+El Salvador,2023,COE,Washed,3,30,30,0.1,0.1,1
+El Salvador,2023,NW,Experimental,4,6,6,0.6666666666666666,0.6666666666666666,1
+El Salvador,2023,NW,Natural,2,6,6,0.3333333333333333,0.3333333333333333,1
+El Salvador,2024,COE,Experimental,12,30,30,0.4,0.4,1
+El Salvador,2024,COE,Honey / pulped natural,5,30,30,0.16666666666666666,0.16666666666666666,1
+El Salvador,2024,COE,Natural,10,30,30,0.3333333333333333,0.3333333333333333,1
+El Salvador,2024,COE,Washed,3,30,30,0.1,0.1,1
+El Salvador,2024,NW,Experimental,1,3,3,0.3333333333333333,0.3333333333333333,1
+El Salvador,2024,NW,Natural,2,3,3,0.6666666666666666,0.6666666666666666,1
+El Salvador,2025,COE,Experimental,9,29,29,0.3103448275862069,0.3103448275862069,1
+El Salvador,2025,COE,Honey / pulped natural,4,29,29,0.13793103448275862,0.13793103448275862,1
+El Salvador,2025,COE,Natural,12,29,29,0.41379310344827586,0.41379310344827586,1
+El Salvador,2025,COE,Washed,4,29,29,0.13793103448275862,0.13793103448275862,1
+Ethiopia,2021,COE,Experimental,6,30,30,0.2,0.2,1
+Ethiopia,2021,COE,Honey / pulped natural,1,30,30,0.03333333333333333,0.03333333333333333,1
+Ethiopia,2021,COE,Natural,22,30,30,0.7333333333333333,0.7333333333333333,1
+Ethiopia,2021,COE,Washed,1,30,30,0.03333333333333333,0.03333333333333333,1
+Ethiopia,2021,NW,Honey / pulped natural,1,9,9,0.1111111111111111,0.1111111111111111,1
+Ethiopia,2021,NW,Natural,8,9,9,0.8888888888888888,0.8888888888888888,1
+Ethiopia,2022,COE,Experimental,3,30,30,0.1,0.1,1
+Ethiopia,2022,COE,Natural,26,30,30,0.8666666666666667,0.8666666666666667,1
+Ethiopia,2022,COE,Washed,1,30,30,0.03333333333333333,0.03333333333333333,1
+Ethiopia,2022,NW,Natural,9,10,10,0.9,0.9,1
+Ethiopia,2022,NW,Washed,1,10,10,0.1,0.1,1
+Ethiopia,2024,COE,Natural,27,27,27,1,1,1
+Ethiopia,2024,NW,Natural,13,13,13,1,1,1
+Guatemala,2002,Not classified,Not reported,33,33,0,1,NA,0
+Guatemala,2006,Not classified,Not reported,25,25,0,1,NA,0
+Guatemala,2007,Not classified,Not reported,19,19,0,1,NA,0
+Guatemala,2008,Not classified,Not reported,25,25,0,1,NA,0
+Guatemala,2009,Not classified,Not reported,23,23,0,1,NA,0
+Guatemala,2010,Not classified,Not reported,28,28,0,1,NA,0
+Guatemala,2011,Not classified,Not reported,29,29,0,1,NA,0
+Guatemala,2012,Not classified,Not reported,23,23,0,1,NA,0
+Guatemala,2013,Not classified,Not reported,23,23,0,1,NA,0
+Guatemala,2014,Not classified,Not reported,24,24,0,1,NA,0
+Guatemala,2015,Not classified,Not reported,24,24,0,1,NA,0
+Guatemala,2016,Not classified,Not reported,25,25,0,1,NA,0
+Guatemala,2017,Not classified,Not reported,30,30,0,1,NA,0
+Guatemala,2018,Not classified,Honey / pulped natural,4,37,37,0.10810810810810811,0.10810810810810811,1
+Guatemala,2018,Not classified,Natural,6,37,37,0.16216216216216217,0.16216216216216217,1
+Guatemala,2018,Not classified,Washed,27,37,37,0.7297297297297297,0.7297297297297297,1
+Guatemala,2019,Not classified,Natural,4,23,23,0.17391304347826086,0.17391304347826086,1
+Guatemala,2019,Not classified,Washed,19,23,23,0.8260869565217391,0.8260869565217391,1
+Guatemala,2021,COE,Experimental,4,28,28,0.14285714285714285,0.14285714285714285,1
+Guatemala,2021,COE,Natural,8,28,28,0.2857142857142857,0.2857142857142857,1
+Guatemala,2021,COE,Washed,16,28,28,0.5714285714285714,0.5714285714285714,1
+Guatemala,2021,NW,Experimental,1,9,9,0.1111111111111111,0.1111111111111111,1
+Guatemala,2021,NW,Washed,8,9,9,0.8888888888888888,0.8888888888888888,1
+Guatemala,2022,COE,Honey / pulped natural,3,30,30,0.1,0.1,1
+Guatemala,2022,COE,Natural,11,30,30,0.36666666666666664,0.36666666666666664,1
+Guatemala,2022,COE,Washed,16,30,30,0.5333333333333333,0.5333333333333333,1
+Guatemala,2022,NW,Honey / pulped natural,1,5,5,0.2,0.2,1
+Guatemala,2022,NW,Washed,4,5,5,0.8,0.8,1
+Guatemala,2023,COE,Honey / pulped natural,1,28,28,0.03571428571428571,0.03571428571428571,1
+Guatemala,2023,COE,Natural,7,28,28,0.25,0.25,1
+Guatemala,2023,COE,Washed,20,28,28,0.7142857142857143,0.7142857142857143,1
+Guatemala,2023,NW,Natural,3,3,3,1,1,1
+Guatemala,2024,COE,Honey / pulped natural,3,28,28,0.10714285714285714,0.10714285714285714,1
+Guatemala,2024,COE,Natural,9,28,28,0.32142857142857145,0.32142857142857145,1
+Guatemala,2024,COE,Washed,16,28,28,0.5714285714285714,0.5714285714285714,1
+Guatemala,2024,NW,Natural,3,3,3,1,1,1
+Guatemala,2025,COE,Honey / pulped natural,2,30,30,0.06666666666666667,0.06666666666666667,1
+Guatemala,2025,COE,Natural,11,30,30,0.36666666666666664,0.36666666666666664,1
+Guatemala,2025,COE,Washed,17,30,30,0.5666666666666667,0.5666666666666667,1
+Guatemala,2025,NW,Honey / pulped natural,2,5,5,0.4,0.4,1
+Guatemala,2025,NW,Natural,1,5,5,0.2,0.2,1
+Guatemala,2025,NW,Washed,2,5,5,0.4,0.4,1
+Honduras,2004,Not classified,Not reported,21,21,0,1,NA,0
+Honduras,2005,Not classified,Not reported,41,41,0,1,NA,0
+Honduras,2006,Not classified,Not reported,33,33,0,1,NA,0
+Honduras,2007,Not classified,Not reported,24,24,0,1,NA,0
+Honduras,2008,Not classified,Not reported,26,26,0,1,NA,0
+Honduras,2009,Not classified,Not reported,39,39,0,1,NA,0
+Honduras,2010,Not classified,Not reported,25,25,0,1,NA,0
+Honduras,2011,Not classified,Not reported,33,33,0,1,NA,0
+Honduras,2012,Not classified,Not reported,20,20,0,1,NA,0
+Honduras,2013,Not classified,Not reported,22,22,0,1,NA,0
+Honduras,2014,Not classified,Not reported,23,23,0,1,NA,0
+Honduras,2015,Not classified,Not reported,38,38,0,1,NA,0
+Honduras,2016,Not classified,Not reported,26,26,0,1,NA,0
+Honduras,2017,Not classified,Not reported,27,27,0,1,NA,0
+Honduras,2018,Not classified,Honey / pulped natural,3,41,41,0.07317073170731707,0.07317073170731707,1
+Honduras,2018,Not classified,Natural,3,41,41,0.07317073170731707,0.07317073170731707,1
+Honduras,2018,Not classified,Washed,35,41,41,0.8536585365853658,0.8536585365853658,1
+Honduras,2019,Not classified,Experimental,1,33,33,0.030303030303030304,0.030303030303030304,1
+Honduras,2019,Not classified,Honey / pulped natural,3,33,33,0.09090909090909091,0.09090909090909091,1
+Honduras,2019,Not classified,Natural,5,33,33,0.15151515151515152,0.15151515151515152,1
+Honduras,2019,Not classified,Washed,24,33,33,0.7272727272727273,0.7272727272727273,1
+Honduras,2021,COE,Honey / pulped natural,2,25,25,0.08,0.08,1
+Honduras,2021,COE,Natural,6,25,25,0.24,0.24,1
+Honduras,2021,COE,Washed,17,25,25,0.68,0.68,1
+Honduras,2021,NW,Honey / pulped natural,1,7,7,0.14285714285714285,0.14285714285714285,1
+Honduras,2021,NW,Washed,6,7,7,0.8571428571428571,0.8571428571428571,1
+Honduras,2022,COE,Honey / pulped natural,5,25,25,0.2,0.2,1
+Honduras,2022,COE,Natural,10,25,25,0.4,0.4,1
+Honduras,2022,COE,Washed,10,25,25,0.4,0.4,1
+Honduras,2022,NW,Honey / pulped natural,1,4,4,0.25,0.25,1
+Honduras,2022,NW,Washed,3,4,4,0.75,0.75,1
+Honduras,2023,COE,Honey / pulped natural,4,30,30,0.13333333333333333,0.13333333333333333,1
+Honduras,2023,COE,Natural,7,30,30,0.23333333333333334,0.23333333333333334,1
+Honduras,2023,COE,Washed,19,30,30,0.6333333333333333,0.6333333333333333,1
+Honduras,2023,NW,Honey / pulped natural,1,2,2,0.5,0.5,1
+Honduras,2023,NW,Washed,1,2,2,0.5,0.5,1
+Honduras,2024,COE,Honey / pulped natural,4,29,29,0.13793103448275862,0.13793103448275862,1
+Honduras,2024,COE,Natural,9,29,29,0.3103448275862069,0.3103448275862069,1
+Honduras,2024,COE,Washed,16,29,29,0.5517241379310345,0.5517241379310345,1
+Honduras,2025,COE,Honey / pulped natural,4,30,30,0.13333333333333333,0.13333333333333333,1
+Honduras,2025,COE,Natural,6,30,30,0.2,0.2,1
+Honduras,2025,COE,Washed,20,30,30,0.6666666666666666,0.6666666666666666,1
+Indonesia,2021,COE,Honey / pulped natural,2,26,26,0.07692307692307693,0.07692307692307693,1
+Indonesia,2021,COE,Natural,13,26,26,0.5,0.5,1
+Indonesia,2021,COE,Washed,11,26,26,0.4230769230769231,0.4230769230769231,1
+Indonesia,2021,NW,Natural,3,6,6,0.5,0.5,1
+Indonesia,2021,NW,Washed,3,6,6,0.5,0.5,1
+Indonesia,2022,COE,Experimental,6,22,22,0.2727272727272727,0.2727272727272727,1
+Indonesia,2022,COE,Honey / pulped natural,4,22,22,0.18181818181818182,0.18181818181818182,1
+Indonesia,2022,COE,Natural,4,22,22,0.18181818181818182,0.18181818181818182,1
+Indonesia,2022,COE,Washed,8,22,22,0.36363636363636365,0.36363636363636365,1
+Indonesia,2022,NW,Experimental,1,12,12,0.08333333333333333,0.08333333333333333,1
+Indonesia,2022,NW,Honey / pulped natural,2,12,12,0.16666666666666666,0.16666666666666666,1
+Indonesia,2022,NW,Natural,3,12,12,0.25,0.25,1
+Indonesia,2022,NW,Washed,6,12,12,0.5,0.5,1
+Indonesia,2023,COE,Experimental,3,22,22,0.13636363636363635,0.13636363636363635,1
+Indonesia,2023,COE,Honey / pulped natural,3,22,22,0.13636363636363635,0.13636363636363635,1
+Indonesia,2023,COE,Natural,15,22,22,0.6818181818181818,0.6818181818181818,1
+Indonesia,2023,COE,Washed,1,22,22,0.045454545454545456,0.045454545454545456,1
+Indonesia,2023,NW,Experimental,2,2,2,1,1,1
+Mexico,2012,Not classified,Not reported,10,10,0,1,NA,0
+Mexico,2013,Not classified,Not reported,16,16,0,1,NA,0
+Mexico,2014,Not classified,Not reported,19,19,0,1,NA,0
+Mexico,2015,Not classified,Not reported,20,20,0,1,NA,0
+Mexico,2017,Not classified,Not reported,27,27,0,1,NA,0
+Mexico,2018,Not classified,Natural,7,33,32,0.21212121212121213,0.21875,0.9696969696969697
+Mexico,2018,Not classified,Not reported,1,33,32,0.030303030303030304,NA,0.9696969696969697
+Mexico,2018,Not classified,Washed,25,33,32,0.7575757575757576,0.78125,0.9696969696969697
+Mexico,2019,Not classified,Experimental,1,31,31,0.03225806451612903,0.03225806451612903,1
+Mexico,2019,Not classified,Honey / pulped natural,3,31,31,0.0967741935483871,0.0967741935483871,1
+Mexico,2019,Not classified,Natural,5,31,31,0.16129032258064516,0.16129032258064516,1
+Mexico,2019,Not classified,Washed,22,31,31,0.7096774193548387,0.7096774193548387,1
+Mexico,2021,COE,Honey / pulped natural,6,30,30,0.2,0.2,1
+Mexico,2021,COE,Natural,8,30,30,0.26666666666666666,0.26666666666666666,1
+Mexico,2021,COE,Washed,16,30,30,0.5333333333333333,0.5333333333333333,1
+Mexico,2021,NW,Honey / pulped natural,3,7,7,0.42857142857142855,0.42857142857142855,1
+Mexico,2021,NW,Natural,2,7,7,0.2857142857142857,0.2857142857142857,1
+Mexico,2021,NW,Washed,2,7,7,0.2857142857142857,0.2857142857142857,1
+Mexico,2022,COE,Honey / pulped natural,2,30,30,0.06666666666666667,0.06666666666666667,1
+Mexico,2022,COE,Natural,6,30,30,0.2,0.2,1
+Mexico,2022,COE,Washed,22,30,30,0.7333333333333333,0.7333333333333333,1
+Mexico,2022,NW,Natural,2,4,4,0.5,0.5,1
+Mexico,2022,NW,Washed,2,4,4,0.5,0.5,1
+Mexico,2023,COE,Honey / pulped natural,3,26,26,0.11538461538461539,0.11538461538461539,1
+Mexico,2023,COE,Natural,12,26,26,0.46153846153846156,0.46153846153846156,1
+Mexico,2023,COE,Washed,11,26,26,0.4230769230769231,0.4230769230769231,1
+Mexico,2023,NW,Honey / pulped natural,2,9,9,0.2222222222222222,0.2222222222222222,1
+Mexico,2023,NW,Natural,2,9,9,0.2222222222222222,0.2222222222222222,1
+Mexico,2023,NW,Washed,5,9,9,0.5555555555555556,0.5555555555555556,1
+Mexico,2024,COE,Experimental,10,30,30,0.3333333333333333,0.3333333333333333,1
+Mexico,2024,COE,Honey / pulped natural,6,30,30,0.2,0.2,1
+Mexico,2024,COE,Natural,4,30,30,0.13333333333333333,0.13333333333333333,1
+Mexico,2024,COE,Washed,10,30,30,0.3333333333333333,0.3333333333333333,1
+Mexico,2024,NW,Natural,1,4,4,0.25,0.25,1
+Mexico,2024,NW,Washed,3,4,4,0.75,0.75,1
+Mexico,2025,COE,Experimental,9,30,30,0.3,0.3,1
+Mexico,2025,COE,Honey / pulped natural,6,30,30,0.2,0.2,1
+Mexico,2025,COE,Natural,5,30,30,0.16666666666666666,0.16666666666666666,1
+Mexico,2025,COE,Washed,10,30,30,0.3333333333333333,0.3333333333333333,1
+Mexico,2025,NW,Experimental,1,4,4,0.25,0.25,1
+Mexico,2025,NW,Washed,3,4,4,0.75,0.75,1
+Nicaragua,2002,Not classified,Not reported,23,23,0,1,NA,0
+Nicaragua,2003,Not classified,Not reported,37,37,0,1,NA,0
+Nicaragua,2004,Not classified,Not reported,29,29,0,1,NA,0
+Nicaragua,2005,Not classified,Not reported,35,35,0,1,NA,0
+Nicaragua,2006,Not classified,Not reported,25,25,0,1,NA,0
+Nicaragua,2007,Not classified,Not reported,34,34,0,1,NA,0
+Nicaragua,2008,Not classified,Not reported,25,25,0,1,NA,0
+Nicaragua,2009,Not classified,Not reported,26,26,0,1,NA,0
+Nicaragua,2010,Not classified,Not reported,27,27,0,1,NA,0
+Nicaragua,2011,Not classified,Not reported,27,27,0,1,NA,0
+Nicaragua,2012,Not classified,Not reported,25,25,0,1,NA,0
+Nicaragua,2014,Not classified,Not reported,25,25,0,1,NA,0
+Nicaragua,2015,Not classified,Not reported,36,36,0,1,NA,0
+Nicaragua,2017,Not classified,Not reported,28,28,0,1,NA,0
+Nicaragua,2018,Not classified,Honey / pulped natural,7,40,40,0.175,0.175,1
+Nicaragua,2018,Not classified,Natural,7,40,40,0.175,0.175,1
+Nicaragua,2018,Not classified,Washed,26,40,40,0.65,0.65,1
+Nicaragua,2021,COE,Experimental,1,23,23,0.043478260869565216,0.043478260869565216,1
+Nicaragua,2021,COE,Honey / pulped natural,5,23,23,0.21739130434782608,0.21739130434782608,1
+Nicaragua,2021,COE,Natural,7,23,23,0.30434782608695654,0.30434782608695654,1
+Nicaragua,2021,COE,Washed,10,23,23,0.43478260869565216,0.43478260869565216,1
+Nicaragua,2021,NW,Honey / pulped natural,2,9,9,0.2222222222222222,0.2222222222222222,1
+Nicaragua,2021,NW,Natural,1,9,9,0.1111111111111111,0.1111111111111111,1
+Nicaragua,2021,NW,Washed,6,9,9,0.6666666666666666,0.6666666666666666,1
+Nicaragua,2022,COE,Honey / pulped natural,4,26,26,0.15384615384615385,0.15384615384615385,1
+Nicaragua,2022,COE,Natural,12,26,26,0.46153846153846156,0.46153846153846156,1
+Nicaragua,2022,COE,Washed,10,26,26,0.38461538461538464,0.38461538461538464,1
+Nicaragua,2022,NW,Honey / pulped natural,1,11,11,0.09090909090909091,0.09090909090909091,1
+Nicaragua,2022,NW,Natural,2,11,11,0.18181818181818182,0.18181818181818182,1
+Nicaragua,2022,NW,Washed,8,11,11,0.7272727272727273,0.7272727272727273,1
+Nicaragua,2023,COE,Honey / pulped natural,1,16,16,0.0625,0.0625,1
+Nicaragua,2023,COE,Natural,6,16,16,0.375,0.375,1
+Nicaragua,2023,COE,Washed,9,16,16,0.5625,0.5625,1
+Nicaragua,2023,NW,Natural,2,9,9,0.2222222222222222,0.2222222222222222,1
+Nicaragua,2023,NW,Washed,7,9,9,0.7777777777777778,0.7777777777777778,1
+Nicaragua,2024,COE,Honey / pulped natural,2,30,30,0.06666666666666667,0.06666666666666667,1
+Nicaragua,2024,COE,Natural,10,30,30,0.3333333333333333,0.3333333333333333,1
+Nicaragua,2024,COE,Washed,18,30,30,0.6,0.6,1
+Nicaragua,2025,COE,Honey / pulped natural,1,30,30,0.03333333333333333,0.03333333333333333,1
+Nicaragua,2025,COE,Natural,14,30,30,0.4666666666666667,0.4666666666666667,1
+Nicaragua,2025,COE,Washed,15,30,30,0.5,0.5,1
+Peru,2017,Not classified,Not reported,24,24,0,1,NA,0
+Peru,2018,Not classified,Washed,24,24,24,1,1,1
+Peru,2019,Not classified,Honey / pulped natural,1,24,24,0.041666666666666664,0.041666666666666664,1
+Peru,2019,Not classified,Washed,23,24,24,0.9583333333333334,0.9583333333333334,1
+Peru,2021,COE,Natural,7,24,24,0.2916666666666667,0.2916666666666667,1
+Peru,2021,COE,Washed,17,24,24,0.7083333333333334,0.7083333333333334,1
+Peru,2021,NW,Natural,1,7,7,0.14285714285714285,0.14285714285714285,1
+Peru,2021,NW,Washed,6,7,7,0.8571428571428571,0.8571428571428571,1
+Peru,2022,COE,Natural,5,29,29,0.1724137931034483,0.1724137931034483,1
+Peru,2022,COE,Washed,24,29,29,0.8275862068965517,0.8275862068965517,1
+Peru,2022,NW,Washed,5,5,5,1,1,1
+Peru,2023,COE,Experimental,2,30,30,0.06666666666666667,0.06666666666666667,1
+Peru,2023,COE,Honey / pulped natural,1,30,30,0.03333333333333333,0.03333333333333333,1
+Peru,2023,COE,Natural,7,30,30,0.23333333333333334,0.23333333333333334,1
+Peru,2023,COE,Washed,20,30,30,0.6666666666666666,0.6666666666666666,1
+Peru,2023,NW,Washed,7,7,7,1,1,1
+Peru,2024,COE,Natural,6,25,25,0.24,0.24,1
+Peru,2024,COE,Washed,19,25,25,0.76,0.76,1
+Peru,2024,NW,Washed,7,7,7,1,1,1
+Peru,2025,COE,Honey / pulped natural,1,30,30,0.03333333333333333,0.03333333333333333,1
+Peru,2025,COE,Natural,6,30,30,0.2,0.2,1
+Peru,2025,COE,Washed,23,30,30,0.7666666666666667,0.7666666666666667,1
+Peru,2025,NW,Natural,1,3,3,0.3333333333333333,0.3333333333333333,1
+Peru,2025,NW,Washed,2,3,3,0.6666666666666666,0.6666666666666666,1
+Rwanda,2008,Not classified,Not reported,24,24,0,1,NA,0
+Rwanda,2010,Not classified,Not reported,22,22,0,1,NA,0
+Rwanda,2011,Not classified,Not reported,36,36,0,1,NA,0
+Rwanda,2012,Not classified,Not reported,26,26,0,1,NA,0
+Rwanda,2013,Not classified,Not reported,15,15,0,1,NA,0
+Rwanda,2014,Not classified,Not reported,28,28,0,1,NA,0
+Rwanda,2015,Not classified,Not reported,24,24,0,1,NA,0
+Rwanda,2018,Not classified,Not reported,1,32,31,0.03125,NA,0.96875
+Rwanda,2018,Not classified,Washed,31,32,31,0.96875,1,0.96875
+Taiwan,2024,COE,Honey / pulped natural,3,20,20,0.15,0.15,1
+Taiwan,2024,COE,Natural,13,20,20,0.65,0.65,1
+Taiwan,2024,COE,Washed,4,20,20,0.2,0.2,1
+Taiwan,2024,NW,Natural,3,5,5,0.6,0.6,1
+Taiwan,2024,NW,Washed,2,5,5,0.4,0.4,1
+Taiwan,2025,COE,Honey / pulped natural,7,27,27,0.25925925925925924,0.25925925925925924,1
+Taiwan,2025,COE,Natural,14,27,27,0.5185185185185185,0.5185185185185185,1
+Taiwan,2025,COE,Washed,6,27,27,0.2222222222222222,0.2222222222222222,1
+Thailand,2023,COE,Experimental,1,16,16,0.0625,0.0625,1
+Thailand,2023,COE,Honey / pulped natural,5,16,16,0.3125,0.3125,1
+Thailand,2023,COE,Natural,8,16,16,0.5,0.5,1
+Thailand,2023,COE,Washed,2,16,16,0.125,0.125,1
+Thailand,2023,NW,Honey / pulped natural,2,8,8,0.25,0.25,1
+Thailand,2023,NW,Natural,4,8,8,0.5,0.5,1
+Thailand,2023,NW,Washed,2,8,8,0.25,0.25,1
+Thailand,2024,COE,Honey / pulped natural,7,27,27,0.25925925925925924,0.25925925925925924,1
+Thailand,2024,COE,Natural,15,27,27,0.5555555555555556,0.5555555555555556,1
+Thailand,2024,COE,Washed,5,27,27,0.18518518518518517,0.18518518518518517,1
+Thailand,2024,NW,Honey / pulped natural,1,4,4,0.25,0.25,1
+Thailand,2024,NW,Natural,1,4,4,0.25,0.25,1
+Thailand,2024,NW,Washed,2,4,4,0.5,0.5,1
+Thailand,2025,COE,Experimental,2,21,21,0.09523809523809523,0.09523809523809523,1
+Thailand,2025,COE,Honey / pulped natural,7,21,21,0.3333333333333333,0.3333333333333333,1
+Thailand,2025,COE,Natural,10,21,21,0.47619047619047616,0.47619047619047616,1
+Thailand,2025,COE,Washed,2,21,21,0.09523809523809523,0.09523809523809523,1
+Thailand,2025,NW,Honey / pulped natural,1,7,7,0.14285714285714285,0.14285714285714285,1
+Thailand,2025,NW,Natural,5,7,7,0.7142857142857143,0.7142857142857143,1
+Thailand,2025,NW,Washed,1,7,7,0.14285714285714285,0.14285714285714285,1
