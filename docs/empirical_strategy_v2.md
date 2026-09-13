@@ -48,7 +48,7 @@ The repository preserves four linked but analytically separate layers:
 | External | country-year/month | output, trade, commodity prices, climate and shocks |
 
 The local V2 audit recovered 213 of 214 registered source pages; Thailand 2022
-returned HTTP 404. The competition panel has 5,446 unique entries in 204 events
+returned HTTP 404. The competition panel has 5,442 unique entries in 204 events
 and the auction panel has 6,373 unique lots in 213 events. Coverage spans 17
 origins and 1999-2025. No duplicate entry IDs, duplicate lot IDs, or process-share
 sums different from one were found in the reported audit.
@@ -58,7 +58,7 @@ Process measurement is heterogeneous and must not be pooled blindly:
 - 2,214 entries contain a row-level reported process;
 - 599 entries belong to explicitly named Brazilian Natural or Pulped Natural
   events and receive an event-restriction indicator;
-- 2,633 entries have no reported process.
+- 2,629 entries have no reported process.
 
 Row-level process coverage is effectively complete from 2018 onward except for
 the missing 2020 competition layer and isolated missing values. Historical
