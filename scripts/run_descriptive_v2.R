@@ -19,6 +19,11 @@ safe_variance <- function(x) {
   if (length(x) >= 2L) stats::var(x) else NA_real_
 }
 
+safe_statistic <- function(x, fn) {
+  x <- x[is.finite(x)]
+  if (length(x) > 0L) fn(x) else NA_real_
+}
+
 reported_text <- function(x) {
   !is.na(x) & trimws(as.character(x)) != ""
 }
@@ -108,11 +113,11 @@ score_statistics <- entries |>
   summarise(
     entries = n(),
     n_score = sum(is.finite(score)),
-    mean_score = if_else(n_score > 0L, mean(score, na.rm = TRUE), NA_real_),
+    mean_score = safe_statistic(score, mean),
     variance_score = safe_variance(score),
-    median_score = if_else(n_score > 0L, median(score, na.rm = TRUE), NA_real_),
-    min_score = if_else(n_score > 0L, min(score, na.rm = TRUE), NA_real_),
-    max_score = if_else(n_score > 0L, max(score, na.rm = TRUE), NA_real_),
+    median_score = safe_statistic(score, median),
+    min_score = safe_statistic(score, min),
+    max_score = safe_statistic(score, max),
     .groups = "drop"
   )
 
@@ -145,27 +150,11 @@ price_statistics <- lots |>
   summarise(
     lots = n(),
     n_price = sum(valid_price),
-    mean_price_usd_lb = if_else(
-      n_price > 0L,
-      mean(final_bid_usd_lb[valid_price]),
-      NA_real_
-    ),
+    mean_price_usd_lb = safe_statistic(final_bid_usd_lb[valid_price], mean),
     variance_price_usd_lb = safe_variance(final_bid_usd_lb[valid_price]),
-    median_price_usd_lb = if_else(
-      n_price > 0L,
-      median(final_bid_usd_lb[valid_price]),
-      NA_real_
-    ),
-    min_price_usd_lb = if_else(
-      n_price > 0L,
-      min(final_bid_usd_lb[valid_price]),
-      NA_real_
-    ),
-    max_price_usd_lb = if_else(
-      n_price > 0L,
-      max(final_bid_usd_lb[valid_price]),
-      NA_real_
-    ),
+    median_price_usd_lb = safe_statistic(final_bid_usd_lb[valid_price], median),
+    min_price_usd_lb = safe_statistic(final_bid_usd_lb[valid_price], min),
+    max_price_usd_lb = safe_statistic(final_bid_usd_lb[valid_price], max),
     .groups = "drop"
   )
 
