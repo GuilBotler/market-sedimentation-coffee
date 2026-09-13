@@ -16,386 +16,378 @@ library(DT)
 library(scales)
 library(crosstalk)
 
-read_optional_csv <- function(path) {
+read_optional <- function(path) {
   if (!file.exists(path)) return(tibble())
   readr::read_csv(path, show_col_types = FALSE)
 }
 
-lots <- read_optional_csv("data/processed/auction_lots.csv")
-benchmarks <- read_optional_csv("data/processed/commodity_prices.csv")
-source_audit <- read_optional_csv("data/processed/source_audit.csv")
+competition <- read_optional("data/processed/v2/competition_entries.csv")
+auctions <- read_optional("data/processed/v2/auction_lots.csv")
+benchmarks <- read_optional("data/processed/commodity_prices.csv")
+coverage <- read_optional("data/processed/v2/process_coverage.csv")
+downloads <- read_optional("data/audit/v2/download.csv")
+reductions <- read_optional("data/audit/v2/entry_reduction.csv")
 
-has_data <- nrow(lots) > 0 && any(!is.na(lots$final_bid_usd_lb))
-if (nrow(lots) > 0 && !"process_family" %in% names(lots)) {
-  lots <- lots |> mutate(process_family = coalesce(process_group, "Not reported"))
-}
-entries <- lots |> distinct(entry_id, .keep_all = TRUE)
-reported <- lots |> filter(auction_result_status == "reported")
+has_competition <- nrow(competition) > 0
+has_auctions <- nrow(auctions) > 0
+
+competition <- competition |>
+  mutate(classification_group = case_when(
+    process_classification_source %in% c("reported process", "ACE table heading") ~
+      "Entry or table reported",
+    process_classification_source == "ACE event title" ~ "Event-restricted category",
+    TRUE ~ "Not reported"
+  ))
+
+auctions <- auctions |>
+  mutate(entry_rank = if_else(
+    program == "COE" & str_detect(rank_key, "^[0-9]+[AB]$"),
+    str_remove(rank_key, "[AB]$"), rank_key
+  ))
+
+entry_attributes <- competition |>
+  select(event_id, program, process_group, entry_rank, entry_key,
+         competition_score = score, competition_farm = farm, producer,
+         process, process_family, process_classification_source,
+         classification_group, competition_variety = variety, region) |>
+  group_by(event_id, program, process_group, entry_rank) |>
+  filter(n() == 1L) |>
+  ungroup()
+
+matched_lots <- auctions |>
+  left_join(entry_attributes,
+            by = c("event_id", "program", "process_group", "entry_rank")) |>
+  mutate(
+    score_display = coalesce(competition_score, score),
+    farm_display = coalesce(competition_farm, farm),
+    variety_display = coalesce(competition_variety, variety),
+    process_family = replace_na(process_family, "Not reported"),
+    match_status = if_else(is.na(entry_key), "Unmatched or ambiguous", "Unique match")
+  )
+
+plot_config <- function(p, filename) plotly::config(
+  p, displaylogo = FALSE, responsive = TRUE,
+  toImageButtonOptions = list(format = "png", filename = filename)
+)
 
 safe_stat <- function(x, fun, min_n = 1L) {
   if (sum(!is.na(x)) < min_n) return(NA_real_)
   fun(x, na.rm = TRUE)
 }
-
-apply_plot_config <- function(plot) {
-  plotly::config(
-    plot,
-    displaylogo = FALSE,
-    responsive = TRUE,
-    toImageButtonOptions = list(format = "png", filename = "market-sedimentation")
-  )
-}
 ```
 
-## Overview
+## V2 overview
 
-::: {.valuebox icon="cup-hot" color="primary"}
-### Auction lots
+::: {.valuebox icon="layers" color="primary"}
+### Competition entries
 ```{r}
-cat(if (has_data) comma(nrow(lots)) else "Awaiting validated extraction")
+cat(if (has_competition) comma(nrow(competition)) else "Awaiting V2 data")
 ```
 :::
 
-::: {.valuebox icon="layers" color="secondary"}
-### Coffee entries
+::: {.valuebox icon="cup-hot" color="secondary"}
+### Auction lots
 ```{r}
-cat(if (has_data) comma(nrow(entries)) else "—")
+cat(if (has_auctions) comma(nrow(auctions)) else "—")
 ```
 :::
 
 ::: {.valuebox icon="currency-dollar" color="success"}
 ### Reported bids
 ```{r}
-cat(if (has_data) comma(nrow(reported)) else "—")
-```
-:::
-
-::: {.valuebox icon="globe-americas" color="info"}
-### Producing countries
-```{r}
-cat(if (has_data) comma(n_distinct(lots$country)) else "—")
+cat(if (has_auctions) comma(sum(!is.na(auctions$final_bid_usd_lb))) else "—")
 ```
 :::
 
 ::: {.valuebox icon="calendar3" color="warning"}
-### Auction years
+### Events
 ```{r}
-cat(if (has_data) paste(range(lots$year), collapse = "–") else "—")
+cat(comma(n_distinct(c(competition$event_id, auctions$event_id))))
+```
+:::
+
+::: {.valuebox icon="globe-americas" color="info"}
+### Origins
+```{r}
+cat(comma(n_distinct(c(competition$country, auctions$country))))
+```
+:::
+
+::: {.valuebox icon="calendar-range" color="dark"}
+### Coverage
+```{r}
+all_years <- c(competition$year, auctions$year)
+cat(paste(range(all_years, na.rm = TRUE), collapse = "–"))
 ```
 :::
 
 ::: {.card}
 ### Scope
 
-This dashboard measures the emergence and persistence of differentiated signals inside COE/NW auctions. Public auction data contain selected finalists, so this sample is not the whole coffee market and does not by itself identify escape from a low-quality pooling equilibrium.
+A **competition entry** is a selected coffee published by a COE/NW competition. An **auction lot** is a sale unit; one entry may be split into 1A/1B lots. Participation measures presence inside this selected specialty institution—not all submissions or national specialty production. Prices extend back to 1999, while named buyers and entry-level process labels have stronger recent coverage. Missing outcomes are never coded as zero.
 
-An **auction lot** is a sale unit; a **coffee entry** is the underlying competition entry. Split lots such as 1A/1B share one `entry_id` and count once in composition measures. Missing auction outcomes are never coded as zero.
+Score, process and variety are added to a sale lot only when its event/program/process/rank key identifies one unique competition entry. Ambiguous keys remain unmatched rather than duplicating lots.
 :::
 
-## Interactive auction explorer
+## Participation
 
 ::: {.card}
-### Choose origins, years, program and process
+### Published entries, auction lots and events
 ```{r}
-if (has_data) {
-  shared_lots <- SharedData$new(lots, key = ~lot_id, group = "auction-explorer")
-  controls <- htmltools::div(
-    filter_select(
-      "country_filter", "Producing origins", shared_lots, ~country,
-      multiple = TRUE
-    ),
-    filter_slider(
-      "year_filter", "Auction years", shared_lots, ~year,
-      step = 1
-    ),
-    filter_select(
-      "program_filter", "Programs", shared_lots, ~program,
-      multiple = TRUE
-    ),
-    filter_select(
-      "process_filter", "Canonical process families", shared_lots, ~process_family,
-      multiple = TRUE
-    )
-  )
-  bscols(widths = c(3, 9), controls, htmltools::div(
-    "Filters in this panel affect the scatter plot and lot table below. ",
-    "Use the Plotly toolbar to zoom, select and download a PNG."
-  ))
-} else {
-  cat("No validated auction observations yet.")
-}
+annual <- bind_rows(
+  competition |> count(year, name = "value") |>
+    mutate(measure = "Competition entries"),
+  competition |> distinct(year, event_id) |> count(year, name = "value") |>
+    mutate(measure = "Competition events"),
+  auctions |> count(year, name = "value") |>
+    mutate(measure = "Auction lots"),
+  auctions |> distinct(year, event_id) |> count(year, name = "value") |>
+    mutate(measure = "Auction events")
+)
+
+plot_ly(annual, x = ~year, y = ~value, color = ~measure,
+        type = "scatter", mode = "lines+markers",
+        text = ~paste(measure, year, comma(value), sep = "<br>")) |>
+  layout(xaxis = list(title = "Year", dtick = 1),
+         yaxis = list(title = "Published observations"),
+         legend = list(orientation = "h")) |>
+  plot_config("annual-participation")
+```
+
+Growth can reflect participation, additional country programs, finalist limits, event design or publication coverage. It is an observable first-stage proxy, not yet a national entry rate.
+:::
+
+::: {.card}
+### Country–year explorer
+```{r}
+country_year <- competition |>
+  group_by(country, year, program) |>
+  summarise(events = n_distinct(event_id), entries = n(),
+            farms = n_distinct(farm_key[farm_key != "" & !is.na(farm_key)]),
+            process_coverage = mean(process_classification_source != "not reported"),
+            .groups = "drop") |>
+  mutate(key = paste(country, year, program, sep = "|"))
+
+shared_participation <- SharedData$new(country_year, key = ~key,
+                                       group = "participation")
+controls <- htmltools::div(
+  filter_select("part_country", "Origins", shared_participation, ~country,
+                multiple = TRUE),
+  filter_slider("part_year", "Years", shared_participation, ~year, step = 1),
+  filter_select("part_program", "Programs", shared_participation, ~program,
+                multiple = TRUE)
+)
+p <- plot_ly(shared_participation, x = ~year, y = ~entries, color = ~country,
+             linetype = ~program, type = "scatter", mode = "lines+markers",
+             text = ~paste(country, program, paste0("Entries: ", entries),
+                           paste0("Events: ", events),
+                           paste0("Process coverage: ", percent(process_coverage)),
+                           sep = "<br>")) |>
+  layout(xaxis = list(title = "Year", dtick = 1),
+         yaxis = list(title = "Published competition entries"),
+         legend = list(orientation = "h")) |>
+  plot_config("country-year-participation")
+bscols(widths = c(3, 9), controls, p)
+```
+:::
+
+## Process specialization
+
+::: {.card}
+### Composition with classification provenance
+```{r}
+process_data <- competition |>
+  count(country, year, program, classification_group, process_family,
+        name = "entries") |>
+  group_by(country, year, program, classification_group) |>
+  mutate(share = entries / sum(entries),
+         key = paste(country, year, program, classification_group,
+                     process_family, sep = "|")) |>
+  ungroup()
+
+shared_process <- SharedData$new(process_data, key = ~key, group = "process")
+process_controls <- htmltools::div(
+  filter_select("proc_country", "Origins", shared_process, ~country,
+                multiple = TRUE),
+  filter_slider("proc_year", "Years", shared_process, ~year, step = 1),
+  filter_select("proc_program", "Programs", shared_process, ~program,
+                multiple = TRUE),
+  filter_select("proc_source", "Classification provenance", shared_process,
+                ~classification_group, multiple = TRUE)
+)
+pp <- plot_ly(shared_process, x = ~year, y = ~share, color = ~process_family,
+              linetype = ~country, type = "scatter", mode = "lines+markers",
+              text = ~paste(country, program, classification_group,
+                            process_family, paste0("Entries: ", entries),
+                            percent(share, accuracy = 0.1), sep = "<br>")) |>
+  layout(xaxis = list(title = "Year", dtick = 1),
+         yaxis = list(title = "Share within provenance group", tickformat = ".0%"),
+         legend = list(orientation = "h")) |>
+  plot_config("process-specialization")
+bscols(widths = c(3, 9), process_controls, pp)
+```
+
+Use **Entry or table reported** for the main specialization analysis. **Event-restricted category** identifies explicit Natural or Pulped Natural events, mainly in Brazil; it documents institutional categories, not producer-choice shares from an open multi-process competition.
+:::
+
+::: {.card}
+### Process information coverage
+```{r}
+source_year <- competition |> count(year, classification_group, name = "entries") |>
+  group_by(year) |> mutate(share = entries / sum(entries)) |> ungroup()
+plot_ly(source_year, x = ~year, y = ~share, color = ~classification_group,
+        type = "bar", text = ~paste(classification_group,
+                                     paste0("Entries: ", entries),
+                                     percent(share, accuracy = 0.1), sep = "<br>")) |>
+  layout(barmode = "stack", xaxis = list(title = "Year", dtick = 1),
+         yaxis = list(title = "Share of entries", tickformat = ".0%"),
+         legend = list(orientation = "h")) |>
+  plot_config("process-coverage")
+```
+:::
+
+## Prices and differentiated-market benchmark
+
+::: {.card}
+### Score and final bid—matched V2 observations
+```{r}
+priced <- matched_lots |>
+  filter(!is.na(final_bid_usd_lb), !is.na(score_display)) |>
+  mutate(key = lot_key)
+shared_prices <- SharedData$new(priced, key = ~key, group = "prices")
+price_controls <- htmltools::div(
+  filter_select("price_country", "Origins", shared_prices, ~country,
+                multiple = TRUE),
+  filter_slider("price_year", "Years", shared_prices, ~year, step = 1),
+  filter_select("price_program", "Programs", shared_prices, ~program,
+                multiple = TRUE),
+  filter_select("price_process", "Processes", shared_prices, ~process_family,
+                multiple = TRUE)
+)
+sp <- plot_ly(shared_prices, x = ~score_display, y = ~final_bid_usd_lb,
+              color = ~country, symbol = ~process_family,
+              type = "scatter", mode = "markers",
+              text = ~paste(country, year, farm_display, process_family,
+                            variety_display, paste0("Score: ", score_display),
+                            paste0("USD/lb: ", final_bid_usd_lb), sep = "<br>")) |>
+  layout(xaxis = list(title = "Jury score"),
+         yaxis = list(title = "Final bid (USD/lb)", type = "log"),
+         legend = list(orientation = "h")) |>
+  plot_config("score-final-bid")
+bscols(widths = c(3, 9), price_controls, sp)
 ```
 :::
 
 ::: {.card}
-### Score and final bid
+### Auction statistics
 ```{r}
-if (has_data) {
-  plot_ly(
-    shared_lots,
-    x = ~score, y = ~final_bid_usd_lb, color = ~program,
-    symbol = ~process_family,
-    text = ~paste(
-      country, year, farm, process_family, variety,
-      paste0("USD/lb: ", final_bid_usd_lb),
-      sep = "<br>"
-    ),
-    type = "scatter", mode = "markers"
-  ) |>
-    layout(
-      xaxis = list(title = "Jury score"),
-      yaxis = list(title = "Final bid (USD/lb)", type = "log"),
-      legend = list(orientation = "h")
-    ) |>
-    apply_plot_config()
-}
+auctions |> group_by(country, year, program) |>
+  summarise(`Auction lots` = n(),
+            `Reported bids` = sum(!is.na(final_bid_usd_lb)),
+            `Mean bid` = safe_stat(final_bid_usd_lb, mean),
+            `Variance` = safe_stat(final_bid_usd_lb, var, 2L),
+            `Median bid` = safe_stat(final_bid_usd_lb, median),
+            `Minimum` = safe_stat(final_bid_usd_lb, min),
+            `Maximum` = safe_stat(final_bid_usd_lb, max), .groups = "drop") |>
+  mutate(across(where(is.numeric), ~round(.x, 2))) |>
+  datatable(options = list(pageLength = 15, scrollX = TRUE), rownames = FALSE)
 ```
 :::
 
 ::: {.card}
-### Filtered auction lots
-```{r}
-if (has_data) {
-  datatable(
-    shared_lots,
-    options = list(pageLength = 12, scrollX = TRUE),
-    rownames = FALSE,
-    filter = "top"
-  )
-}
-```
-:::
-
-## Process evolution
-
-::: {.card}
-### Annual participation of process families by country
-```{r}
-if (has_data) {
-  process_composition <- entries |>
-    count(country, year, program, process_family, name = "entries") |>
-    group_by(country, year, program) |>
-    mutate(
-      total_entries = sum(entries),
-      share = entries / total_entries,
-      process_key = paste(country, year, program, process_family, sep = "|")
-    ) |>
-    ungroup()
-
-  shared_process <- SharedData$new(
-    process_composition,
-    key = ~process_key,
-    group = "process-evolution"
-  )
-
-  process_controls <- htmltools::div(
-    filter_select(
-      "process_country_filter", "Producing origins", shared_process, ~country,
-      multiple = TRUE
-    ),
-    filter_slider(
-      "process_year_filter", "Auction years", shared_process, ~year,
-      step = 1
-    ),
-    filter_select(
-      "process_program_filter", "Programs", shared_process, ~program,
-      multiple = TRUE
-    )
-  )
-
-  process_plot <- plot_ly(
-    shared_process,
-    x = ~year, y = ~share, color = ~process_family,
-    linetype = ~country,
-    text = ~paste(
-      country, program, process_family,
-      paste0("Entries: ", entries),
-      paste0("Share: ", percent(share, accuracy = 0.1)),
-      sep = "<br>"
-    ),
-    type = "scatter", mode = "lines+markers"
-  ) |>
-    layout(
-      xaxis = list(title = "Auction year", dtick = 1),
-      yaxis = list(title = "Share of competition entries", tickformat = ".0%"),
-      legend = list(orientation = "h")
-    ) |>
-    apply_plot_config()
-
-  bscols(widths = c(3, 9), process_controls, process_plot)
-} else {
-  cat("No validated competition composition is available yet.")
-}
-```
-
-The denominator is the number of distinct competition entries in each country–year–program. The canonical taxonomy preserves the reported process and maps it into: Washed, Natural, Honey/pulped natural, Experimental, grouped Natural/Honey, or Not reported. A missing process remains visible in the denominator.
-:::
-
-::: {.card}
-### Process composition table
-```{r}
-if (has_data) {
-  datatable(
-    shared_process,
-    options = list(pageLength = 12, scrollX = TRUE),
-    rownames = FALSE
-  )
-}
-```
-:::
-
-## Prices and external benchmarks
-
-::: {.card}
-### Auction bid statistics by event and program
-```{r}
-if (has_data) {
-  lots |>
-    group_by(country, year, program) |>
-    summarise(
-      `Auction lots` = n(),
-      `Coffee entries` = n_distinct(entry_id),
-      `Reported bids` = sum(!is.na(final_bid_usd_lb)),
-      `Mean bid (USD/lb)` = safe_stat(final_bid_usd_lb, mean),
-      `Bid variance` = safe_stat(final_bid_usd_lb, var, min_n = 2L),
-      `Median bid (USD/lb)` = safe_stat(final_bid_usd_lb, median),
-      `Minimum bid` = safe_stat(final_bid_usd_lb, min),
-      `Maximum bid` = safe_stat(final_bid_usd_lb, max),
-      .groups = "drop"
-    ) |>
-    mutate(across(where(is.numeric), ~round(.x, 2))) |>
-    datatable(options = list(pageLength = 15, scrollX = TRUE), rownames = FALSE)
-}
-```
-
-These summaries are descriptive. Differences across countries, years, programs and processes combine score selection, auction rules, sample composition and market valuation; they are not causal premiums.
-:::
-
-::: {.card}
-### Benchmark price evolution (common index)
+### Median auction bid relative to Arabica
 ```{r}
 if (nrow(benchmarks) > 0) {
-  benchmark_index <- benchmarks |>
-    group_by(series) |>
-    mutate(
-      base_value = mean(value[year == 2020], na.rm = TRUE),
-      base_value = if_else(is.nan(base_value), first(value[!is.na(value)]), base_value),
-      index_2020 = 100 * value / base_value
-    ) |>
-    ungroup()
-
-  plot_ly(
-    benchmark_index,
-    x = ~date, y = ~index_2020, color = ~series,
-    text = ~paste(series, date, paste0("Index: ", round(index_2020, 1)), sep = "<br>"),
-    type = "scatter", mode = "lines"
-  ) |>
-    layout(
-      xaxis = list(title = "", rangeslider = list(visible = TRUE)),
-      yaxis = list(title = "Index (2020 average = 100)"),
-      legend = list(orientation = "h")
-    ) |>
-    apply_plot_config()
-} else {
-  cat("Benchmark data will appear after the validated refresh workflow finishes.")
-}
-```
-
-Arabica, robusta and cocoa are monthly World Bank commodity prices in USD/kg. Wine is not a homogeneous global commodity: the wine comparison is the monthly U.S. winery producer price index from BLS/FRED, clearly kept as an index rather than converted into a fictitious global spot price.
-:::
-
-::: {.card}
-### Benchmark levels and units
-```{r}
-if (nrow(benchmarks) > 0) {
-  benchmarks |>
-    group_by(series, unit, market_scope) |>
-    filter(date == max(date, na.rm = TRUE)) |>
-    ungroup() |>
-    transmute(
-      Series = series,
-      Date = date,
-      Value = round(value, 3),
-      Unit = unit,
-      Scope = market_scope
-    ) |>
-    datatable(options = list(dom = "t", scrollX = TRUE), rownames = FALSE)
-}
-```
-:::
-
-::: {.card}
-### Specialty auction price relative to Arabica benchmark
-```{r}
-if (has_data && nrow(benchmarks) > 0) {
-  arabica_annual <- benchmarks |>
-    filter(series == "Coffee Arabica — World Bank") |>
+  arabica <- benchmarks |> filter(series == "Coffee Arabica — World Bank") |>
     group_by(year) |>
-    summarise(
-      arabica_usd_lb = mean(value, na.rm = TRUE) / 2.2046226218,
-      .groups = "drop"
-    )
-
-  auction_ratio <- lots |>
-    filter(!is.na(final_bid_usd_lb)) |>
+    summarise(arabica_usd_lb = mean(value, na.rm = TRUE) / 2.2046226218,
+              .groups = "drop")
+  ratio <- auctions |> filter(!is.na(final_bid_usd_lb)) |>
     group_by(country, year, program) |>
-    summarise(median_auction_usd_lb = median(final_bid_usd_lb), .groups = "drop") |>
-    left_join(arabica_annual, by = "year") |>
-    mutate(ratio = median_auction_usd_lb / arabica_usd_lb)
-
-  plot_ly(
-    auction_ratio,
-    x = ~year, y = ~ratio, color = ~country, linetype = ~program,
-    text = ~paste(country, program, paste0(round(ratio, 1), "×"), sep = "<br>"),
-    type = "scatter", mode = "lines+markers"
-  ) |>
-    layout(
-      xaxis = list(title = "Auction year", dtick = 1),
-      yaxis = list(title = "Median auction bid / Arabica benchmark"),
-      legend = list(orientation = "h")
-    ) |>
-    apply_plot_config()
+    summarise(median_bid = median(final_bid_usd_lb), priced_lots = n(),
+              .groups = "drop") |>
+    left_join(arabica, by = "year") |>
+    mutate(ratio = median_bid / arabica_usd_lb)
+  plot_ly(ratio, x = ~year, y = ~ratio, color = ~country,
+          linetype = ~program, type = "scatter", mode = "lines+markers",
+          text = ~paste(country, program, paste0("Lots: ", priced_lots),
+                        paste0(round(ratio, 1), "×"), sep = "<br>")) |>
+    layout(xaxis = list(title = "Auction year", dtick = 1),
+           yaxis = list(title = "Median auction bid / Arabica benchmark"),
+           legend = list(orientation = "h")) |>
+    plot_config("specialty-benchmark-ratio")
 }
 ```
 
-This ratio is a descriptive benchmark, not a causal premium and not a farm-gate margin.
+This ratio is a descriptive differentiated-market premium—not a causal effect and not a farm-gate margin.
 :::
 
-## Coverage and methods
+## Buyer depth
 
 ::: {.card}
-### Source coverage audit
+### Named-buyer coverage
 ```{r}
-if (nrow(source_audit) > 0) {
-  datatable(
-    source_audit,
-    options = list(pageLength = 15, scrollX = TRUE),
-    rownames = FALSE,
-    filter = "top"
-  )
-} else {
-  cat("The source audit will appear after the expanded registry is processed.")
-}
+buyer_year <- auctions |> group_by(year) |>
+  summarise(lots = n(), buyer_reported = sum(!is.na(buyer) & buyer != ""),
+            named_buyers = n_distinct(buyer[!is.na(buyer) & buyer != ""]),
+            coverage = buyer_reported / lots, .groups = "drop")
+plot_ly(buyer_year, x = ~year, y = ~coverage, type = "bar",
+        text = ~paste(year, paste0("Named-buyer lots: ", buyer_reported),
+                      paste0("Distinct buyers: ", named_buyers),
+                      percent(coverage, accuracy = 0.1), sep = "<br>")) |>
+  layout(xaxis = list(title = "Year", dtick = 1),
+         yaxis = list(title = "Share with named buyer", tickformat = ".0%")) |>
+  plot_config("buyer-coverage")
 ```
 
-Every registered country–year is either included or retained in this audit with its exclusion reason. A page that exists but fails the competition–auction join is not silently admitted.
+Buyer analysis is defensible mainly from 2018 onward. Earlier missing names mean “not published or not recognized,” not “no buyer.”
+:::
+
+## Coverage and audit
+
+::: {.card}
+### Event-level process coverage
+```{r}
+datatable(coverage |> mutate(coverage_rate = percent(coverage_rate, accuracy = 0.1)),
+          options = list(pageLength = 15, scrollX = TRUE), rownames = FALSE,
+          filter = "top")
+```
+:::
+
+::: {.card}
+### Download audit
+```{r}
+datatable(downloads, options = list(pageLength = 15, scrollX = TRUE),
+          rownames = FALSE, filter = "top")
+```
+:::
+
+::: {.card}
+### Raw-table reduction audit
+```{r}
+datatable(reductions |> arrange(desc(abs(removed))),
+          options = list(pageLength = 15, scrollX = TRUE), rownames = FALSE,
+          filter = "top")
+```
+
+Three fully overlapping sparse summary tables were excluded before harmonization. Remaining reductions still require classification before freezing the ACE analytical base.
 :::
 
 ::: {.card}
 ### Interpretation rules
 
-- International coffee prices are benchmarks, not the main instrumental variable.
-- COE and NW are analyzed separately before pooling.
-- Missing auction outcomes are never coded automatically as zero.
-- Raw process labels and ACE headings are preserved alongside the canonical taxonomy.
-- The process chart counts competition entries, not split auction lots.
-- Descriptive coefficients are not presented as causal effects.
+- Entries and auction lots are separate units; split lots never duplicate process choices.
+- Process provenance remains explicit: reported, event-restricted or missing.
+- Historical prices cover a longer period than buyers and process labels.
+- COE and NW remain separately filterable.
+- Participation means published finalists, not national adoption.
+- Descriptive price ratios and coefficients are not causal effects.
 :::
 
 ::: {.card}
 ### Data sources
 
-- Auction and competition tables: [Alliance for Coffee Excellence historical results](https://allianceforcoffeeexcellence.org/competition-auction-results/)
-- Arabica, robusta and cocoa: [World Bank Commodity Price Data (Pink Sheet)](https://www.worldbank.org/en/research/commodity-markets)
-- Wine comparison: [BLS winery producer price index via FRED](https://fred.stlouisfed.org/series/PCU3121303121300)
+- [Alliance for Coffee Excellence historical results](https://allianceforcoffeeexcellence.org/competition-auction-results/)
+- [World Bank Commodity Price Data](https://www.worldbank.org/en/research/commodity-markets)
+- [BLS winery producer price index via FRED](https://fred.stlouisfed.org/series/PCU3121303121300)
 :::
