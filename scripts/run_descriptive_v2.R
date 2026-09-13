@@ -60,8 +60,18 @@ entry_activity <- entries |>
     entries = n(),
     scores_reported = sum(!is.na(score)),
     varieties_reported = sum(reported_text(variety)),
-    processes_classified = sum(process_family != "Not reported"),
-    process_coverage_rate = processes_classified / entries,
+    processes_reported = sum(
+      process_classification_source == "reported process"
+    ),
+    processes_event_title = sum(
+      process_classification_source == "ACE event title"
+    ),
+    processes_not_reported = sum(
+      process_classification_source == "not reported"
+    ),
+    processes_classified = processes_reported + processes_event_title,
+    process_strict_coverage_rate = processes_reported / entries,
+    process_any_classification_rate = processes_classified / entries,
     .groups = "drop"
   )
 
@@ -80,33 +90,49 @@ process_measurement <- entries |>
   ) |>
   ungroup()
 
-process_composition <- entries |>
+process_composition_classified <- entries |>
   count(country, year, program, process_family, name = "entries") |>
   group_by(country, year, program) |>
   mutate(
     total_entries = sum(entries),
-    reported_entries = sum(entries[process_family != "Not reported"]),
+    classified_entries = sum(entries[process_family != "Not reported"]),
     missing_process = sum(entries[process_family == "Not reported"]),
-    coverage_rate = reported_entries / total_entries,
+    coverage_rate = classified_entries / total_entries,
     share_all = entries / total_entries,
-    share_reported = if_else(
-      process_family != "Not reported" & reported_entries > 0L,
-      entries / reported_entries,
+    share_classified = if_else(
+      process_family != "Not reported" & classified_entries > 0L,
+      entries / classified_entries,
       NA_real_
     )
   ) |>
   ungroup() |>
   arrange(country, year, program, process_family)
 
+strict_denominators <- entries |>
+  group_by(country, year, program) |>
+  summarise(
+    total_entries = n(),
+    reported_entries = sum(
+      process_classification_source == "reported process"
+    ),
+    strict_coverage_rate = reported_entries / total_entries,
+    .groups = "drop"
+  )
+
+process_composition <- entries |>
+  filter(process_classification_source == "reported process") |>
+  count(country, year, program, process_family, name = "entries") |>
+  left_join(
+    strict_denominators,
+    by = c("country", "year", "program")
+  ) |>
+  mutate(share_reported = entries / reported_entries) |>
+  arrange(country, year, program, process_family)
+
 share_check <- process_composition |>
-  filter(process_family != "Not reported", reported_entries > 0L) |>
   group_by(country, year, program) |>
   summarise(share_sum = sum(share_reported), .groups = "drop") |>
   filter(abs(share_sum - 1) > 1e-8)
-
-if (nrow(share_check) > 0L) {
-  stop("Reported process shares do not sum to one.")
-}
 
 score_statistics <- entries |>
   group_by(country, year, program) |>
@@ -188,7 +214,14 @@ invalid_values <- bind_rows(
 write_csv(sample_summary, file.path(output_dir, "sample_summary.csv"))
 write_csv(country_year_panel, file.path(output_dir, "country_year_panel.csv"))
 write_csv(process_measurement, file.path(output_dir, "process_measurement_sources.csv"))
-write_csv(process_composition, file.path(output_dir, "process_composition_country_year.csv"))
+write_csv(
+  process_composition,
+  file.path(output_dir, "process_composition_country_year.csv")
+)
+write_csv(
+  process_composition_classified,
+  file.path(output_dir, "process_composition_classified_country_year.csv")
+)
 write_csv(score_statistics, file.path(output_dir, "score_statistics_country_year.csv"))
 write_csv(auction_activity, file.path(output_dir, "auction_activity_country_year.csv"))
 write_csv(price_statistics, file.path(output_dir, "price_statistics_country_year.csv"))
