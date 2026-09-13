@@ -72,9 +72,9 @@ identify_sparse_summary_tables_v2 <- function(data, overlap_threshold = 0.8,
     dplyr::group_by(event_id, source_table_id, identifiable_rows) |>
     dplyr::summarise(
       matching_rows = sum(found_in_richer_table %in% TRUE),
-      overlap_rate = matching_rows / identifiable_rows,
       .groups = "drop"
     ) |>
+    dplyr::mutate(overlap_rate = matching_rows / identifiable_rows) |>
     dplyr::filter(
       matching_rows >= minimum_matches,
       overlap_rate >= overlap_threshold
