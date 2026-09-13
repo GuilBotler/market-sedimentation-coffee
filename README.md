@@ -18,6 +18,18 @@ Public COE data describe selected competition finalists. They can identify diffe
 
 The international coffee price is a benchmark and premium denominator, not the primary instrumental variable for auction prices.
 
+## Dashboard V2
+
+The dashboard now reads the historical V2 tables directly and keeps the empirical units separate:
+
+- competition entries measure published finalists and feed participation and process views;
+- auction lots feed price and buyer views, including split 1A/1B sale lots;
+- score, process and variety are attached to sale lots through an explicit event/program/rank match;
+- process charts expose whether classification came from an entry/table, an event-restricted category, or is missing;
+- the participation, download, coverage and raw-table reduction audits are visible in the dashboard.
+
+The historical price panel covers 1999–2025. Named-buyer and reported-process analyses use their actual, more limited coverage rather than treating earlier missing fields as zeros.
+
 ## Repository structure
 
 ```text
