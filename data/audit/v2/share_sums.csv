@@ -72,7 +72,7 @@ event_id,country,year,program,share_all_sum,share_reported_sum,coverage_rate
 5128a3c5edf58a16,Guatemala,2011,COE,1,0,0
 54e133d3a0bc6ff3,Honduras,2014,COE,1,0,0
 558daec13f90276f,El Salvador,2014,COE,1,0,0
-563b2176a64e6691,Costa Rica,2025,COE,1,1,1
+563b2176a64e6691,Costa Rica,2025,COE,1,1,0.6666666666666666
 5690e5dd7b7859d2,Brazil,2023,COE,1,1,1
 56e67cb59fb81745,Costa Rica,2015,COE,1,0,0
 56f3d93e6d53724a,Brazil,2018,COE,1,1,1
@@ -101,7 +101,7 @@ event_id,country,year,program,share_all_sum,share_reported_sum,coverage_rate
 7b8b2a60ec93c4dc,Honduras,2006,COE,1,0,0
 7ba223eeaf3a9cb7,Brazil,2017,COE,1,1,1
 7cd41b217cdcd97e,Mexico,2017,COE,1,0,0
-7d2b8caa9301eabc,Indonesia,2023,COE,0.9999999999999999,0.9999999999999999,1
+7d2b8caa9301eabc,Indonesia,2023,COE,1,1,1
 7d2b8caa9301eabc,Indonesia,2023,NW,1,1,1
 7e63f3505a9fd29f,Colombia,2009,COE,1,0,0
 7eda394b87ad5966,Nicaragua,2025,COE,1,1,1

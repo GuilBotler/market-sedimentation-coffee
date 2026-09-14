@@ -1,0 +1,227 @@
+country,year,base_process,entries,total_entries,share
+Brazil,2018,Honey / pulped natural,30,67,0.44776119402985076
+Brazil,2018,Natural,37,67,0.5522388059701493
+Brazil,2019,Honey / pulped natural,9,27,0.3333333333333333
+Brazil,2019,Natural,18,27,0.6666666666666666
+Brazil,2021,Honey / pulped natural,13,29,0.4482758620689655
+Brazil,2021,Natural,14,29,0.4827586206896552
+Brazil,2021,Washed,2,29,0.06896551724137931
+Brazil,2022,Honey / pulped natural,8,24,0.3333333333333333
+Brazil,2022,Natural,16,24,0.6666666666666666
+Brazil,2023,Honey / pulped natural,10,30,0.3333333333333333
+Brazil,2023,Natural,11,30,0.36666666666666664
+Brazil,2023,Not reported,8,30,0.26666666666666666
+Brazil,2023,Washed,1,30,0.03333333333333333
+Brazil,2024,Honey / pulped natural,10,27,0.37037037037037035
+Brazil,2024,Natural,10,27,0.37037037037037035
+Brazil,2024,Not reported,7,27,0.25925925925925924
+Brazil,2025,Honey / pulped natural,9,30,0.3
+Brazil,2025,Natural,10,30,0.3333333333333333
+Brazil,2025,Not reported,10,30,0.3333333333333333
+Brazil,2025,Washed,1,30,0.03333333333333333
+Burundi,2018,Washed,29,29,1
+Burundi,2019,Natural,2,23,0.08695652173913043
+Burundi,2019,Washed,21,23,0.9130434782608695
+Colombia,2018,Honey / pulped natural,3,27,0.1111111111111111
+Colombia,2018,Not reported,1,27,0.037037037037037035
+Colombia,2018,Washed,23,27,0.8518518518518519
+Colombia,2019,Honey / pulped natural,3,29,0.10344827586206896
+Colombia,2019,Natural,4,29,0.13793103448275862
+Colombia,2019,Washed,22,29,0.7586206896551724
+Colombia,2021,Honey / pulped natural,3,23,0.13043478260869565
+Colombia,2021,Natural,6,23,0.2608695652173913
+Colombia,2021,Washed,14,23,0.6086956521739131
+Colombia,2022,Honey / pulped natural,2,22,0.09090909090909091
+Colombia,2022,Natural,4,22,0.18181818181818182
+Colombia,2022,Washed,16,22,0.7272727272727273
+Colombia,2023,Honey / pulped natural,7,28,0.25
+Colombia,2023,Natural,3,28,0.10714285714285714
+Colombia,2023,Washed,18,28,0.6428571428571429
+Costa Rica,2018,Honey / pulped natural,18,36,0.5
+Costa Rica,2018,Natural,10,36,0.2777777777777778
+Costa Rica,2018,Not reported,1,36,0.027777777777777776
+Costa Rica,2018,Washed,7,36,0.19444444444444445
+Costa Rica,2019,Honey / pulped natural,15,28,0.5357142857142857
+Costa Rica,2019,Natural,7,28,0.25
+Costa Rica,2019,Not reported,3,28,0.10714285714285714
+Costa Rica,2019,Washed,3,28,0.10714285714285714
+Costa Rica,2021,Honey / pulped natural,12,30,0.4
+Costa Rica,2021,Natural,7,30,0.23333333333333334
+Costa Rica,2021,Not reported,5,30,0.16666666666666666
+Costa Rica,2021,Washed,6,30,0.2
+Costa Rica,2022,Honey / pulped natural,8,22,0.36363636363636365
+Costa Rica,2022,Natural,4,22,0.18181818181818182
+Costa Rica,2022,Not reported,5,22,0.22727272727272727
+Costa Rica,2022,Washed,5,22,0.22727272727272727
+Costa Rica,2023,Honey / pulped natural,7,30,0.23333333333333334
+Costa Rica,2023,Natural,11,30,0.36666666666666664
+Costa Rica,2023,Not reported,6,30,0.2
+Costa Rica,2023,Washed,6,30,0.2
+Costa Rica,2024,Honey / pulped natural,10,30,0.3333333333333333
+Costa Rica,2024,Natural,6,30,0.2
+Costa Rica,2024,Not reported,6,30,0.2
+Costa Rica,2024,Washed,8,30,0.26666666666666666
+Costa Rica,2025,Honey / pulped natural,4,20,0.2
+Costa Rica,2025,Natural,6,20,0.3
+Costa Rica,2025,Washed,10,20,0.5
+Ecuador,2021,Honey / pulped natural,6,23,0.2608695652173913
+Ecuador,2021,Natural,5,23,0.21739130434782608
+Ecuador,2021,Washed,12,23,0.5217391304347826
+Ecuador,2022,Honey / pulped natural,1,18,0.05555555555555555
+Ecuador,2022,Natural,4,18,0.2222222222222222
+Ecuador,2022,Washed,13,18,0.7222222222222222
+Ecuador,2023,Natural,7,16,0.4375
+Ecuador,2023,Washed,9,16,0.5625
+El Salvador,2018,Honey / pulped natural,13,38,0.34210526315789475
+El Salvador,2018,Natural,13,38,0.34210526315789475
+El Salvador,2018,Washed,12,38,0.3157894736842105
+El Salvador,2019,Honey / pulped natural,9,25,0.36
+El Salvador,2019,Natural,9,25,0.36
+El Salvador,2019,Washed,7,25,0.28
+El Salvador,2021,Honey / pulped natural,6,24,0.25
+El Salvador,2021,Natural,13,24,0.5416666666666666
+El Salvador,2021,Not reported,1,24,0.041666666666666664
+El Salvador,2021,Washed,4,24,0.16666666666666666
+El Salvador,2022,Honey / pulped natural,2,27,0.07407407407407407
+El Salvador,2022,Natural,20,27,0.7407407407407407
+El Salvador,2022,Washed,5,27,0.18518518518518517
+El Salvador,2023,Honey / pulped natural,6,30,0.2
+El Salvador,2023,Natural,19,30,0.6333333333333333
+El Salvador,2023,Washed,5,30,0.16666666666666666
+El Salvador,2024,Honey / pulped natural,6,30,0.2
+El Salvador,2024,Natural,16,30,0.5333333333333333
+El Salvador,2024,Washed,8,30,0.26666666666666666
+El Salvador,2025,Honey / pulped natural,6,29,0.20689655172413793
+El Salvador,2025,Natural,18,29,0.6206896551724138
+El Salvador,2025,Washed,5,29,0.1724137931034483
+Ethiopia,2021,Honey / pulped natural,1,30,0.03333333333333333
+Ethiopia,2021,Natural,23,30,0.7666666666666667
+Ethiopia,2021,Not reported,5,30,0.16666666666666666
+Ethiopia,2021,Washed,1,30,0.03333333333333333
+Ethiopia,2022,Natural,26,30,0.8666666666666667
+Ethiopia,2022,Not reported,3,30,0.1
+Ethiopia,2022,Washed,1,30,0.03333333333333333
+Ethiopia,2024,Natural,27,27,1
+Guatemala,2018,Honey / pulped natural,4,34,0.11764705882352941
+Guatemala,2018,Natural,6,34,0.17647058823529413
+Guatemala,2018,Washed,24,34,0.7058823529411765
+Guatemala,2019,Natural,3,20,0.15
+Guatemala,2019,Washed,17,20,0.85
+Guatemala,2021,Natural,8,28,0.2857142857142857
+Guatemala,2021,Washed,20,28,0.7142857142857143
+Guatemala,2022,Honey / pulped natural,3,30,0.1
+Guatemala,2022,Natural,11,30,0.36666666666666664
+Guatemala,2022,Washed,16,30,0.5333333333333333
+Guatemala,2023,Honey / pulped natural,1,28,0.03571428571428571
+Guatemala,2023,Natural,7,28,0.25
+Guatemala,2023,Washed,20,28,0.7142857142857143
+Guatemala,2024,Honey / pulped natural,3,28,0.10714285714285714
+Guatemala,2024,Natural,9,28,0.32142857142857145
+Guatemala,2024,Washed,16,28,0.5714285714285714
+Guatemala,2025,Honey / pulped natural,2,30,0.06666666666666667
+Guatemala,2025,Natural,11,30,0.36666666666666664
+Guatemala,2025,Washed,17,30,0.5666666666666667
+Honduras,2018,Honey / pulped natural,3,36,0.08333333333333333
+Honduras,2018,Natural,2,36,0.05555555555555555
+Honduras,2018,Washed,31,36,0.8611111111111112
+Honduras,2019,Honey / pulped natural,3,30,0.1
+Honduras,2019,Natural,4,30,0.13333333333333333
+Honduras,2019,Not reported,1,30,0.03333333333333333
+Honduras,2019,Washed,22,30,0.7333333333333333
+Honduras,2021,Honey / pulped natural,2,25,0.08
+Honduras,2021,Natural,6,25,0.24
+Honduras,2021,Washed,17,25,0.68
+Honduras,2022,Honey / pulped natural,5,25,0.2
+Honduras,2022,Natural,10,25,0.4
+Honduras,2022,Washed,10,25,0.4
+Honduras,2023,Honey / pulped natural,4,30,0.13333333333333333
+Honduras,2023,Natural,7,30,0.23333333333333334
+Honduras,2023,Washed,19,30,0.6333333333333333
+Honduras,2024,Honey / pulped natural,4,29,0.13793103448275862
+Honduras,2024,Natural,9,29,0.3103448275862069
+Honduras,2024,Washed,16,29,0.5517241379310345
+Honduras,2025,Honey / pulped natural,4,30,0.13333333333333333
+Honduras,2025,Natural,6,30,0.2
+Honduras,2025,Washed,20,30,0.6666666666666666
+Indonesia,2021,Honey / pulped natural,2,26,0.07692307692307693
+Indonesia,2021,Natural,13,26,0.5
+Indonesia,2021,Washed,9,26,0.34615384615384615
+Indonesia,2021,Wet hulled,2,26,0.07692307692307693
+Indonesia,2022,Honey / pulped natural,5,22,0.22727272727272727
+Indonesia,2022,Natural,9,22,0.4090909090909091
+Indonesia,2022,Washed,6,22,0.2727272727272727
+Indonesia,2022,Wet hulled,2,22,0.09090909090909091
+Indonesia,2023,Honey / pulped natural,5,22,0.22727272727272727
+Indonesia,2023,Natural,16,22,0.7272727272727273
+Indonesia,2023,Wet hulled,1,22,0.045454545454545456
+Mexico,2018,Natural,6,28,0.21428571428571427
+Mexico,2018,Washed,22,28,0.7857142857142857
+Mexico,2019,Honey / pulped natural,2,28,0.07142857142857142
+Mexico,2019,Natural,4,28,0.14285714285714285
+Mexico,2019,Washed,22,28,0.7857142857142857
+Mexico,2021,Honey / pulped natural,6,30,0.2
+Mexico,2021,Natural,8,30,0.26666666666666666
+Mexico,2021,Washed,16,30,0.5333333333333333
+Mexico,2022,Honey / pulped natural,2,30,0.06666666666666667
+Mexico,2022,Natural,6,30,0.2
+Mexico,2022,Washed,22,30,0.7333333333333333
+Mexico,2023,Honey / pulped natural,3,26,0.11538461538461539
+Mexico,2023,Natural,12,26,0.46153846153846156
+Mexico,2023,Washed,11,26,0.4230769230769231
+Mexico,2024,Honey / pulped natural,7,30,0.23333333333333334
+Mexico,2024,Natural,8,30,0.26666666666666666
+Mexico,2024,Washed,15,30,0.5
+Mexico,2025,Honey / pulped natural,6,30,0.2
+Mexico,2025,Natural,5,30,0.16666666666666666
+Mexico,2025,Not reported,9,30,0.3
+Mexico,2025,Washed,10,30,0.3333333333333333
+Nicaragua,2018,Honey / pulped natural,5,35,0.14285714285714285
+Nicaragua,2018,Natural,6,35,0.17142857142857143
+Nicaragua,2018,Washed,24,35,0.6857142857142857
+Nicaragua,2021,Honey / pulped natural,5,23,0.21739130434782608
+Nicaragua,2021,Natural,7,23,0.30434782608695654
+Nicaragua,2021,Not reported,1,23,0.043478260869565216
+Nicaragua,2021,Washed,10,23,0.43478260869565216
+Nicaragua,2022,Honey / pulped natural,4,26,0.15384615384615385
+Nicaragua,2022,Natural,12,26,0.46153846153846156
+Nicaragua,2022,Washed,10,26,0.38461538461538464
+Nicaragua,2023,Honey / pulped natural,1,16,0.0625
+Nicaragua,2023,Natural,6,16,0.375
+Nicaragua,2023,Washed,9,16,0.5625
+Nicaragua,2024,Honey / pulped natural,2,30,0.06666666666666667
+Nicaragua,2024,Natural,10,30,0.3333333333333333
+Nicaragua,2024,Washed,18,30,0.6
+Nicaragua,2025,Honey / pulped natural,1,30,0.03333333333333333
+Nicaragua,2025,Natural,14,30,0.4666666666666667
+Nicaragua,2025,Washed,15,30,0.5
+Peru,2018,Washed,23,23,1
+Peru,2019,Honey / pulped natural,1,21,0.047619047619047616
+Peru,2019,Washed,20,21,0.9523809523809523
+Peru,2021,Natural,7,24,0.2916666666666667
+Peru,2021,Washed,17,24,0.7083333333333334
+Peru,2022,Natural,5,29,0.1724137931034483
+Peru,2022,Washed,24,29,0.8275862068965517
+Peru,2023,Honey / pulped natural,1,30,0.03333333333333333
+Peru,2023,Natural,7,30,0.23333333333333334
+Peru,2023,Washed,22,30,0.7333333333333333
+Peru,2024,Natural,6,25,0.24
+Peru,2024,Washed,19,25,0.76
+Peru,2025,Honey / pulped natural,1,30,0.03333333333333333
+Peru,2025,Natural,6,30,0.2
+Peru,2025,Washed,23,30,0.7666666666666667
+Rwanda,2018,Washed,28,28,1
+Taiwan,2024,Honey / pulped natural,3,20,0.15
+Taiwan,2024,Natural,13,20,0.65
+Taiwan,2024,Washed,4,20,0.2
+Taiwan,2025,Honey / pulped natural,7,27,0.25925925925925924
+Taiwan,2025,Natural,14,27,0.5185185185185185
+Taiwan,2025,Washed,6,27,0.2222222222222222
+Thailand,2023,Honey / pulped natural,5,16,0.3125
+Thailand,2023,Natural,9,16,0.5625
+Thailand,2023,Washed,2,16,0.125
+Thailand,2024,Honey / pulped natural,7,27,0.25925925925925924
+Thailand,2024,Natural,15,27,0.5555555555555556
+Thailand,2024,Washed,5,27,0.18518518518518517
+Thailand,2025,Honey / pulped natural,8,21,0.38095238095238093
+Thailand,2025,Natural,11,21,0.5238095238095238
+Thailand,2025,Washed,2,21,0.09523809523809523

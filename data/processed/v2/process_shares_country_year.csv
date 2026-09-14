@@ -129,9 +129,9 @@ Costa Rica,2024,COE,Honey / pulped natural,10,30,0.3333333333333333
 Costa Rica,2024,COE,Natural,6,30,0.2
 Costa Rica,2024,COE,Washed,8,30,0.26666666666666666
 Costa Rica,2024,NW,Natural,1,1,1
-Costa Rica,2025,COE,Experimental,10,30,0.3333333333333333
 Costa Rica,2025,COE,Honey / pulped natural,4,30,0.13333333333333333
 Costa Rica,2025,COE,Natural,6,30,0.2
+Costa Rica,2025,COE,Not reported,10,30,0.3333333333333333
 Costa Rica,2025,COE,Washed,10,30,0.3333333333333333
 Ecuador,2021,COE,Experimental,2,23,0.08695652173913043
 Ecuador,2021,COE,Honey / pulped natural,6,23,0.2608695652173913
@@ -174,9 +174,9 @@ El Salvador,2022,COE,Honey / pulped natural,2,27,0.07407407407407407
 El Salvador,2022,COE,Natural,17,27,0.6296296296296297
 El Salvador,2022,COE,Washed,5,27,0.18518518518518517
 El Salvador,2023,COE,Experimental,12,30,0.4
-El Salvador,2023,COE,Honey / pulped natural,4,30,0.13333333333333333
+El Salvador,2023,COE,Honey / pulped natural,5,30,0.16666666666666666
 El Salvador,2023,COE,Natural,11,30,0.36666666666666664
-El Salvador,2023,COE,Washed,3,30,0.1
+El Salvador,2023,COE,Washed,2,30,0.06666666666666667
 El Salvador,2024,COE,Experimental,12,30,0.4
 El Salvador,2024,COE,Honey / pulped natural,5,30,0.16666666666666666
 El Salvador,2024,COE,Natural,10,30,0.3333333333333333
@@ -184,9 +184,9 @@ El Salvador,2024,COE,Washed,3,30,0.1
 El Salvador,2024,NW,Experimental,1,3,0.3333333333333333
 El Salvador,2024,NW,Natural,2,3,0.6666666666666666
 El Salvador,2025,COE,Experimental,9,29,0.3103448275862069
-El Salvador,2025,COE,Honey / pulped natural,4,29,0.13793103448275862
+El Salvador,2025,COE,Honey / pulped natural,5,29,0.1724137931034483
 El Salvador,2025,COE,Natural,12,29,0.41379310344827586
-El Salvador,2025,COE,Washed,4,29,0.13793103448275862
+El Salvador,2025,COE,Washed,3,29,0.10344827586206896
 Ethiopia,2021,COE,Experimental,6,30,0.2
 Ethiopia,2021,COE,Honey / pulped natural,1,30,0.03333333333333333
 Ethiopia,2021,COE,Natural,22,30,0.7333333333333333
@@ -271,19 +271,22 @@ Honduras,2025,COE,Natural,6,30,0.2
 Honduras,2025,COE,Washed,20,30,0.6666666666666666
 Indonesia,2021,COE,Honey / pulped natural,2,26,0.07692307692307693
 Indonesia,2021,COE,Natural,13,26,0.5
-Indonesia,2021,COE,Washed,11,26,0.4230769230769231
-Indonesia,2022,COE,Experimental,6,22,0.2727272727272727
+Indonesia,2021,COE,Washed,9,26,0.34615384615384615
+Indonesia,2021,COE,Wet hulled,2,26,0.07692307692307693
+Indonesia,2022,COE,Experimental,7,22,0.3181818181818182
 Indonesia,2022,COE,Honey / pulped natural,4,22,0.18181818181818182
-Indonesia,2022,COE,Natural,4,22,0.18181818181818182
-Indonesia,2022,COE,Washed,8,22,0.36363636363636365
+Indonesia,2022,COE,Natural,3,22,0.13636363636363635
+Indonesia,2022,COE,Washed,6,22,0.2727272727272727
+Indonesia,2022,COE,Wet hulled,2,22,0.09090909090909091
 Indonesia,2022,NW,Experimental,1,12,0.08333333333333333
 Indonesia,2022,NW,Honey / pulped natural,2,12,0.16666666666666666
 Indonesia,2022,NW,Natural,3,12,0.25
-Indonesia,2022,NW,Washed,6,12,0.5
-Indonesia,2023,COE,Experimental,3,22,0.13636363636363635
+Indonesia,2022,NW,Washed,3,12,0.25
+Indonesia,2022,NW,Wet hulled,3,12,0.25
+Indonesia,2023,COE,Experimental,4,22,0.18181818181818182
 Indonesia,2023,COE,Honey / pulped natural,3,22,0.13636363636363635
-Indonesia,2023,COE,Natural,15,22,0.6818181818181818
-Indonesia,2023,COE,Washed,1,22,0.045454545454545456
+Indonesia,2023,COE,Natural,14,22,0.6363636363636364
+Indonesia,2023,COE,Wet hulled,1,22,0.045454545454545456
 Indonesia,2023,NW,Experimental,2,2,1
 Mexico,2012,COE,Not reported,10,10,1
 Mexico,2013,COE,Not reported,15,15,1

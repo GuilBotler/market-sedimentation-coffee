@@ -72,7 +72,7 @@ event_id,event_name,event_type,country,year,program,entries,reported_process,mis
 5128a3c5edf58a16,2011,COE,Guatemala,2011,COE,29,0,29,0
 54e133d3a0bc6ff3,2014,COE,Honduras,2014,COE,22,0,22,0
 558daec13f90276f,2014,COE,El Salvador,2014,COE,29,0,29,0
-563b2176a64e6691,Costa Rica 2025,COE,Costa Rica,2025,COE,30,30,0,1
+563b2176a64e6691,Costa Rica 2025,COE,Costa Rica,2025,COE,30,20,10,0.6666666666666666
 5690e5dd7b7859d2,Brazil 2023,COE,Brazil,2023,COE,30,30,0,1
 56e67cb59fb81745,2015,COE,Costa Rica,2015,COE,35,0,35,0
 56f3d93e6d53724a,2018,COE Natural,Brazil,2018,COE,37,37,0,1
