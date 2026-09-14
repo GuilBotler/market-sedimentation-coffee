@@ -164,13 +164,33 @@ harmonize_competition_v2 <- function(data) {
     ) |>
     apply_known_source_corrections() |>
     dplyr::mutate(
+      process_label_status = process_label_status_v2(process),
       row_process_family = canonical_process_family_v2(process, process_group),
+      row_base_process = canonical_base_process_v2(process, process_group),
+      row_innovation_class = innovation_class_v2(process, process_group),
+      row_experimental_method = experimental_method_v2(process, process_group),
       declared_process_family = event_declared_process_family(event_type, event_name),
       process_family = dplyr::if_else(
         row_process_family == "Not reported" & !is.na(declared_process_family),
         declared_process_family, row_process_family
       ),
+      base_process = dplyr::case_when(
+        row_process_family != "Not reported" ~ row_base_process,
+        !is.na(declared_process_family) ~ declared_process_family,
+        TRUE ~ "Not reported"
+      ),
+      innovation_class = dplyr::case_when(
+        row_process_family != "Not reported" ~ row_innovation_class,
+        !is.na(declared_process_family) ~ "Conventional",
+        TRUE ~ "Not reported"
+      ),
+      experimental_method = dplyr::if_else(
+        innovation_class == "Experimental",
+        row_experimental_method,
+        NA_character_
+      ),
       process_classification_source = dplyr::case_when(
+        process_label_status == "invalid process label" ~ "invalid process label",
         row_process_family != "Not reported" & !is.na(process) & process != "" ~ "reported process",
         row_process_family != "Not reported" ~ "ACE table heading",
         !is.na(declared_process_family) ~ "ACE event title",
@@ -189,7 +209,10 @@ harmonize_competition_v2 <- function(data) {
       )
     ) |>
     dplyr::distinct(event_id, program, entry_key, .keep_all = TRUE) |>
-    dplyr::select(-row_process_family, -declared_process_family)
+    dplyr::select(
+      -row_process_family, -row_base_process, -row_innovation_class,
+      -row_experimental_method, -declared_process_family
+    )
 }
 
 harmonize_auction_v2 <- function(data) {
