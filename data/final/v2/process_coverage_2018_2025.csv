@@ -1,0 +1,78 @@
+country,year,entries,direct_process,event_title,not_reported,direct_coverage
+Brazil,2018,67,67,0,0,1
+Brazil,2019,27,27,0,0,1
+Brazil,2021,29,29,0,0,1
+Brazil,2022,24,24,0,0,1
+Brazil,2023,30,30,0,0,1
+Brazil,2024,27,27,0,0,1
+Brazil,2025,30,30,0,0,1
+Burundi,2018,29,29,0,0,1
+Burundi,2019,23,23,0,0,1
+Colombia,2018,27,27,0,0,1
+Colombia,2019,29,29,0,0,1
+Colombia,2021,23,23,0,0,1
+Colombia,2022,22,22,0,0,1
+Colombia,2023,28,28,0,0,1
+Costa Rica,2018,36,36,0,0,1
+Costa Rica,2019,28,28,0,0,1
+Costa Rica,2021,30,30,0,0,1
+Costa Rica,2022,22,22,0,0,1
+Costa Rica,2023,30,30,0,0,1
+Costa Rica,2024,30,30,0,0,1
+Costa Rica,2025,30,30,0,0,1
+Ecuador,2021,23,23,0,0,1
+Ecuador,2022,18,18,0,0,1
+Ecuador,2023,16,16,0,0,1
+El Salvador,2018,38,38,0,0,1
+El Salvador,2019,25,25,0,0,1
+El Salvador,2021,24,24,0,0,1
+El Salvador,2022,27,27,0,0,1
+El Salvador,2023,30,30,0,0,1
+El Salvador,2024,30,30,0,0,1
+El Salvador,2025,29,29,0,0,1
+Ethiopia,2021,30,30,0,0,1
+Ethiopia,2022,30,30,0,0,1
+Ethiopia,2024,27,27,0,0,1
+Guatemala,2018,34,34,0,0,1
+Guatemala,2019,20,20,0,0,1
+Guatemala,2021,28,28,0,0,1
+Guatemala,2022,30,30,0,0,1
+Guatemala,2023,28,28,0,0,1
+Guatemala,2024,28,28,0,0,1
+Guatemala,2025,30,30,0,0,1
+Honduras,2018,36,36,0,0,1
+Honduras,2019,30,30,0,0,1
+Honduras,2021,25,25,0,0,1
+Honduras,2022,25,25,0,0,1
+Honduras,2023,30,30,0,0,1
+Honduras,2024,29,29,0,0,1
+Honduras,2025,30,30,0,0,1
+Indonesia,2021,26,26,0,0,1
+Indonesia,2022,22,22,0,0,1
+Indonesia,2023,22,22,0,0,1
+Mexico,2018,29,28,0,1,0.9655172413793104
+Mexico,2019,28,28,0,0,1
+Mexico,2021,30,30,0,0,1
+Mexico,2022,30,30,0,0,1
+Mexico,2023,26,26,0,0,1
+Mexico,2024,30,30,0,0,1
+Mexico,2025,30,30,0,0,1
+Nicaragua,2018,35,35,0,0,1
+Nicaragua,2021,23,23,0,0,1
+Nicaragua,2022,26,26,0,0,1
+Nicaragua,2023,16,16,0,0,1
+Nicaragua,2024,30,30,0,0,1
+Nicaragua,2025,30,30,0,0,1
+Peru,2018,23,23,0,0,1
+Peru,2019,21,21,0,0,1
+Peru,2021,24,24,0,0,1
+Peru,2022,29,29,0,0,1
+Peru,2023,30,30,0,0,1
+Peru,2024,25,25,0,0,1
+Peru,2025,30,30,0,0,1
+Rwanda,2018,29,28,0,1,0.9655172413793104
+Taiwan,2024,20,20,0,0,1
+Taiwan,2025,27,27,0,0,1
+Thailand,2023,16,16,0,0,1
+Thailand,2024,27,27,0,0,1
+Thailand,2025,21,21,0,0,1

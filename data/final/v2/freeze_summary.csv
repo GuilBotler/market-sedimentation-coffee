@@ -1,0 +1,13 @@
+measure,value
+competition entries,5442
+auction lots,6036
+auction lots with price,5985
+auction lots with buyer,5877
+automatically matched auction lots,5670
+matched auction lots with price,5653
+unique competition entries represented in matched panel,5314
+ambiguous auction lots,3
+rank outside reported competition table,18
+auction program without competition table,119
+auction event without competition table,226
+inconsistent price-weight-value identities,39
