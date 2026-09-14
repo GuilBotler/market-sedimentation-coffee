@@ -81,6 +81,39 @@ identify_sparse_summary_tables_v2 <- function(data, overlap_threshold = 0.8,
     )
 }
 
+pick_valid_auction_rank_v2 <- function(data) {
+  candidates <- intersect(
+    c("rank", "ranking", "lot_number", "lot_no", "lot", "position"),
+    names(data)
+  )
+  out <- rep(NA_character_, nrow(data))
+  for (column in candidates) {
+    value <- stringr::str_squish(as.character(data[[column]]))
+    key <- normalize_rank(value)
+    valid <- stringr::str_detect(key, "^[0-9]+[AB]?$")
+    fill <- is.na(out) & !is.na(valid) & valid
+    out[fill] <- value[fill]
+  }
+  out
+}
+
+auction_weight_lb_v2 <- function(data) {
+  pounds <- ace_number(pick_column(data, c(
+    "weight_lb", "weight_lbs", "lot_lbs", "size_lbs", "weight"
+  )))
+  kilograms <- ace_number(pick_column(data, c(
+    "weight_kg", "weights_kg", "estimated_weight_kg"
+  )))
+  boxes_30kg <- ace_number(pick_column(data, "size_30kg_boxes"))
+  bags_69kg <- ace_number(pick_column(data, "size_69kg_bags"))
+  dplyr::coalesce(
+    pounds,
+    kilograms * 2.2046226218,
+    boxes_30kg * 30 * 2.2046226218,
+    bags_69kg * 69 * 2.2046226218
+  )
+}
+
 harmonize_competition_v2 <- function(data) {
   sparse_summaries <- identify_sparse_summary_tables_v2(data)
   data <- data |>
@@ -144,22 +177,33 @@ harmonize_auction_v2 <- function(data) {
     dplyr::transmute(
       event_id, event_name, event_type, country, year = as.integer(year), program,
       process_group,
-      rank = as.character(pick_column(data, c("rank", "ranking", "lot", "lot_number", "position"))),
+      rank = pick_valid_auction_rank_v2(data),
       score = ace_number(pick_column(data, c("score", "cupping_score", "final_score"))),
       farm = pick_column(data, c("farm_cws", "farm_name", "farm")),
       variety = pick_column(data, c("variety", "varietal", "variedad", "variedade")),
-      weight_lb = ace_number(pick_column(data, c("weight_lb", "weight_lbs", "weight", "size"))),
+      weight_lb = auction_weight_lb_v2(data),
       final_bid_usd_lb = ace_number(pick_column(data, c(
-        "final_bid_lb", "final_bid_usd_lb", "price_per_lb", "price_lb", "high_bid", "winning_bid"
+        "final_bid_lb", "final_bid_usd_lb", "price_per_lb", "price_lb",
+        "bid_lb", "high_bid_lb", "high_bid", "hight_bid", "highest_bid",
+        "final_bid", "bid", "winning_bid"
       ))),
       total_value_usd = ace_number(pick_column(data, c("total_value", "total_price", "value"))),
-      buyer = pick_column(data, c("company_name", "buyer", "winner", "winning_bidder")),
+      buyer = pick_column(data, c(
+        "company_name", "buyer", "winner", "winning_bidder", "high_bidder_s",
+        "high_bidder", "winner_details", "winners",
+        "high_bidder_company_name", "high_bidder_company_name_2"
+      )),
       source_url
     ) |>
     dplyr::mutate(
       program = tidyr::replace_na(program, "COE"),
       rank_key = normalize_rank(rank),
+      entry_rank = dplyr::if_else(
+        program == "COE" & stringr::str_detect(rank_key, "^[0-9]+[AB]$"),
+        stringr::str_remove(rank_key, "[AB]$"), rank_key
+      ),
       lot_key = paste(event_id, program, process_group, rank_key, sep = "|")
     ) |>
+    dplyr::filter(!is.na(rank), rank_key != "") |>
     dplyr::distinct(event_id, program, lot_key, .keep_all = TRUE)
 }

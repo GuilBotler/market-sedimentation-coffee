@@ -19,11 +19,14 @@ promote_first_row_to_header <- function(table_node) {
 classify_table_stage_v2 <- function(column_names) {
   nms <- tolower(column_names)
   auction_markers <- paste(
-    "final_bid", "price_per_lb", "price_lb", "high_bid", "winning_bid",
+    "final_bid", "price_per_lb", "price_lb", "high_bid", "hight_bid",
+    "highest_bid", "bid_lb", "^bid$", "winning_bid",
     "company_name", "buyer", "winner", "total_value", "total_price", sep = "|"
   )
   has_auction <- any(stringr::str_detect(nms, auction_markers))
-  has_rank <- any(nms %in% c("rank", "ranking", "lot", "lot_number", "position"))
+  has_rank <- any(nms %in% c(
+    "rank", "ranking", "lot", "lot_number", "lot_no", "position"
+  ))
   has_score <- any(stringr::str_detect(nms, "^score$|cupping_score|final_score"))
   if (has_auction) return("auction")
   if (has_rank && has_score) return("competition")
@@ -41,7 +44,9 @@ standardize_ace_table_v2 <- function(table_node, table_id, event_meta) {
   default_program <- ifelse(stringr::str_detect(event_meta$event_type, "NW"), "NW", "COE")
   program <- classify_program_v2(section, default_program)
 
-  if (!any(names(out) %in% c("rank", "ranking", "lot", "lot_number", "position"))) {
+  if (!any(names(out) %in% c(
+    "rank", "ranking", "lot", "lot_number", "lot_no", "position"
+  ))) {
     if (identical(program, "NW")) out$rank <- "NW" else return(tibble::tibble())
   }
 
