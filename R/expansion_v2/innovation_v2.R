@@ -93,8 +93,9 @@ build_base_process_country_year_v2 <- function(innovation_entries) {
     dplyr::arrange(country, year, base_process)
 }
 
-build_innovation_sample_summary_v2 <- function(entries, innovation_entries,
-                                                innovation_remuneration) {
+build_innovation_sample_summary_v2 <- function(
+    entries, innovation_entries, innovation_remuneration,
+    innovation_remuneration_entries) {
   eligible <- entries |>
     dplyr::filter(program == "COE", year >= 2018L)
 
@@ -107,7 +108,8 @@ build_innovation_sample_summary_v2 <- function(entries, innovation_entries,
       "conventional entries in innovation panel",
       "experimental entries in innovation panel",
       "experimental entries with unknown base process",
-      "innovation entries matched to a valid auction price"
+      "innovation entries represented in matched price panel",
+      "matched auction lots in innovation price panel"
     ),
     value = c(
       nrow(eligible),
@@ -120,6 +122,7 @@ build_innovation_sample_summary_v2 <- function(entries, innovation_entries,
         innovation_entries$innovation_class == "Experimental" &
           innovation_entries$base_process == "Not reported"
       ),
+      nrow(innovation_remuneration_entries),
       nrow(innovation_remuneration)
     )
   )
@@ -152,5 +155,45 @@ build_innovation_remuneration_v2 <- function(entry_lot_panel,
       by = c("event_id", "program", "entry_key")
     ) |>
     dplyr::filter(eligible_matched_price_sample %in% TRUE) |>
+    dplyr::arrange(country, year, entry_rank)
+}
+
+build_innovation_remuneration_entries_v2 <- function(
+    innovation_remuneration) {
+  innovation_remuneration |>
+    dplyr::group_by(event_id, program, entry_key) |>
+    dplyr::summarise(
+      country = dplyr::first(country),
+      year = dplyr::first(year),
+      entry_rank = dplyr::first(entry_rank),
+      farm = dplyr::first(farm),
+      score = dplyr::first(score),
+      process = dplyr::first(process),
+      base_process = dplyr::first(base_process),
+      innovation_class = dplyr::first(innovation_class),
+      experimental_method = dplyr::first(experimental_method),
+      experimental_technology = dplyr::first(experimental_technology),
+      auction_lots = dplyr::n(),
+      mean_price_usd_lb = mean(final_bid_usd_lb),
+      median_price_usd_lb = stats::median(final_bid_usd_lb),
+      min_price_usd_lb = min(final_bid_usd_lb),
+      max_price_usd_lb = max(final_bid_usd_lb),
+      lots_with_weight = sum(weight_reported %in% TRUE),
+      weight_coverage = lots_with_weight / auction_lots,
+      observed_weight_lb = dplyr::if_else(
+        lots_with_weight > 0L,
+        sum(weight_lb[weight_reported %in% TRUE]),
+        NA_real_
+      ),
+      weighted_mean_price_usd_lb = dplyr::if_else(
+        lots_with_weight > 0L,
+        stats::weighted.mean(
+          final_bid_usd_lb[weight_reported %in% TRUE],
+          weight_lb[weight_reported %in% TRUE]
+        ),
+        NA_real_
+      ),
+      .groups = "drop"
+    ) |>
     dplyr::arrange(country, year, entry_rank)
 }

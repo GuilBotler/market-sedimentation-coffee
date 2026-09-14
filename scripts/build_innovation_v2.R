@@ -37,10 +37,15 @@ innovation_remuneration <- build_innovation_remuneration_v2(
   entry_lot_panel,
   innovation_entries
 )
+innovation_remuneration_entries <-
+  build_innovation_remuneration_entries_v2(
+    innovation_remuneration
+  )
 innovation_sample_summary <- build_innovation_sample_summary_v2(
   entries,
   innovation_entries,
-  innovation_remuneration
+  innovation_remuneration,
+  innovation_remuneration_entries
 )
 
 output_dir <- "data/final/v2"
@@ -63,6 +68,10 @@ readr::write_csv(
 readr::write_csv(
   innovation_remuneration,
   file.path(output_dir, "innovation_remuneration_lots.csv")
+)
+readr::write_csv(
+  innovation_remuneration_entries,
+  file.path(output_dir, "innovation_remuneration_entries.csv")
 )
 readr::write_csv(
   innovation_sample_summary,

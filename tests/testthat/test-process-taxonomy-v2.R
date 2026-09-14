@@ -124,3 +124,31 @@ testthat::test_that("2018 technologies are left-censored", {
   testthat::expect_true(all(carbonic$appearance_after_baseline))
   testthat::expect_true(all(carbonic$first_observed_experimental_entry))
 })
+
+testthat::test_that("split auction lots are also summarized by entry", {
+  lots <- tibble::tibble(
+    event_id = "event-1",
+    program = "COE",
+    entry_key = "entry-1",
+    country = "Brazil",
+    year = 2024L,
+    entry_rank = "1",
+    farm = "Example farm",
+    score = 90,
+    process = "Natural Anaerobic",
+    base_process = "Natural",
+    innovation_class = "Experimental",
+    experimental_method = "Anaerobic",
+    experimental_technology = "Natural | Anaerobic",
+    final_bid_usd_lb = c(10, 20),
+    weight_reported = TRUE,
+    weight_lb = c(100, 200)
+  )
+
+  result <- build_innovation_remuneration_entries_v2(lots)
+
+  testthat::expect_equal(nrow(result), 1L)
+  testthat::expect_equal(result$auction_lots, 2L)
+  testthat::expect_equal(result$mean_price_usd_lb, 15)
+  testthat::expect_equal(result$weighted_mean_price_usd_lb, 50 / 3)
+})
