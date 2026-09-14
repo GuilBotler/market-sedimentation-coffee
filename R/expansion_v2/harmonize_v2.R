@@ -81,6 +81,27 @@ identify_sparse_summary_tables_v2 <- function(data, overlap_threshold = 0.8,
     )
 }
 
+canonical_auction_rank_v2 <- function(x) {
+  clean <- x |>
+    as.character() |>
+    stringi::stri_trans_general("Latin-ASCII") |>
+    stringr::str_squish() |>
+    stringr::str_to_upper() |>
+    stringr::str_replace_all("\\s+", "") |>
+    stringr::str_remove("^#")
+  parts <- stringr::str_match(
+    clean,
+    "^([0-9]+)(?:[.,]0+)?([AB])?$"
+  )
+  number <- suppressWarnings(as.integer(parts[, 2]))
+  suffix <- tidyr::replace_na(parts[, 3], "")
+  dplyr::if_else(
+    !is.na(number) & number > 0L,
+    paste0(number, suffix),
+    NA_character_
+  )
+}
+
 pick_valid_auction_rank_v2 <- function(data) {
   candidates <- intersect(
     c("rank", "ranking", "lot_number", "lot_no", "lot", "position"),
@@ -89,10 +110,9 @@ pick_valid_auction_rank_v2 <- function(data) {
   out <- rep(NA_character_, nrow(data))
   for (column in candidates) {
     value <- stringr::str_squish(as.character(data[[column]]))
-    key <- normalize_rank(value)
-    valid <- stringr::str_detect(key, "^[0-9]+[AB]?$")
-    fill <- is.na(out) & !is.na(valid) & valid
-    out[fill] <- value[fill]
+    key <- canonical_auction_rank_v2(value)
+    fill <- is.na(out) & !is.na(key)
+    out[fill] <- key[fill]
   }
   out
 }

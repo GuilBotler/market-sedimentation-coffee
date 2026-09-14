@@ -52,6 +52,13 @@ test_that("numeric lot number replaces an NW label in the rank column", {
   expect_equal(result$final_bid_usd_lb, 7.6)
 })
 
+test_that("decimal ranks are canonicalized and zero ranks are discarded", {
+  expect_equal(
+    canonical_auction_rank_v2(c("10.00", "5,00", "01a", "0", "Stats")),
+    c("10", "5", "1A", NA_character_, NA_character_)
+  )
+})
+
 test_that("split auction lots map to one competition entry", {
   entries <- tibble::tibble(
     event_id = "event-a", country = "Example", year = 2025L,
@@ -72,4 +79,5 @@ test_that("split auction lots map to one competition entry", {
   expect_equal(nrow(result), 2L)
   expect_true(all(result$entry_key == "entry-1"))
   expect_true(all(result$match_status == "matched: process group and rank"))
+  expect_true(all(is.na(result$unmatched_reason)))
 })
