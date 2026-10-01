@@ -118,6 +118,103 @@ The interface between the canonical demand model and the coevolutionary producer
 
 `Omega_j(d)` is exclusively a supply-side object in the coevolutionary model, where it denotes expected economic gain conditional on discovery. It has no counterpart in the canonical demand model.
 
+
+### Internal demand-model issue identified
+
+Before generalizing binary choice `{H,L}` to a multi-offer set `O_t`, the binary demand model itself requires clarification.
+
+The current formulation contains:
+
+- a deterministic conditional choice rule:
+  `A_it* = argmax_{a in {H,L}} E[U_i(a,q) | M_it]`,
+  with `H` chosen when `Delta U_i(M_it) > 0` and `L` otherwise;
+
+- an aggregate formulation using conditional choice probabilities:
+  `s_H = integral Pr(A_i = H | M) dF_t(M)`.
+
+The canonical demand document does not explicitly identify the source of non-degenerate choice randomness conditional on `M`.
+
+Therefore, the interpretation of `Pr(A_i = H | M)` must be clarified before a multi-offer probability vector is constructed.
+
+No additional random-utility shock, logit rule, taste shock or new stochastic-choice parameter has been accepted.
+
+
 ### Next theoretical task
 
 Construct the minimum mathematical generalization required to move from the binary demand model `{H,L}` to a choice over differentiated offers `a = (v,r)`, preserving the existing stochastic-memory mechanism and introducing no new structural parameters.
+
+### Binary demand model: unresolved meaning of memory-conditioned beliefs
+
+The binary demand model has been audited internally.
+
+The current formulation is underdetermined rather than necessarily contradictory.
+
+The written individual choice rule is deterministic conditional on the current memory state:
+
+`A_it* = argmax_{a in {H,L}} E[U_i(a,q) | M_it]`.
+
+The explicitly modeled consumer heterogeneity (`beta_i`, `lambda_i`, `C_i`, `delta_i`, initial conditions and stochastic encoding) primarily affects the formation and distribution of memory states.
+
+However, the model does not formally specify:
+
+- how `E[q_H - q_L | M]` is constructed;
+- whether that conditional expectation is common across consumers or consumer-specific;
+- whether the same state label `M` has common semantic content across individuals;
+- the relation between the Information Bottleneck relevance variable `Y` and product quality `q`;
+- the formal meaning of `F^H` and `F^L`;
+- the joint population structure needed to interpret `Pr(A = H | M)` as a non-degenerate population conditional probability.
+
+Therefore, exact overlap between high- and low-quality choosers at the same memory state cannot currently be derived from the written equations.
+
+No additional taste heterogeneity, random-utility shock, logit/probit rule or stochastic-choice parameter has been accepted.
+
+The next theoretical decision is to clarify the economic meaning of the memory state `M` and of the conditional belief `E[q | M]`.
+
+### Binary demand model closure
+
+The common-state interpretation of consumer memory has been adopted.
+
+`M` is a common decision-relevant memory state. Individual heterogeneity operates through the process that generates and updates memory states, not through an additional stochastic choice mechanism conditional on the current state.
+
+For the binary model, define:
+
+`g(M) = E[q_H - q_L | M]`
+
+and
+
+`Delta U(M) = g(M) - (p_H - p_L)`.
+
+The choice rule is:
+
+- choose `H` if `Delta U(M) > 0`;
+- choose `L` otherwise.
+
+Thus:
+
+`R_H = {M : Delta U(M) > 0}`
+
+`R_L = {M : Delta U(M) <= 0}`
+
+and aggregate demand is:
+
+`s_H = F_t(R_H)`.
+
+The conditional probability `Pr(A = H | M)` is therefore degenerate under the binary canonical model.
+
+### Revised market-fragmentation interpretation
+
+Semi-separation requires positive mass in both choice regions:
+
+`0 < F_t(R_H) < 1`.
+
+The previously written exact-overlap condition between H- and L-choosers is not compatible with deterministic choice conditional on a common memory state and will be removed from the formal model.
+
+Quasi-pooling is provisionally understood as the absence of a separating gap in memory space around the differentiation threshold.
+
+The exact regularity conditions required for quasi-pooling still need to be formally established.
+
+The four original fragmentation mechanisms remain:
+- memory affects choice;
+- memory is persistent;
+- the choice rule is nonlinear;
+- updating costs are heterogeneous.
