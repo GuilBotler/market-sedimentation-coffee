@@ -118,103 +118,122 @@ The interface between the canonical demand model and the coevolutionary producer
 
 `Omega_j(d)` is exclusively a supply-side object in the coevolutionary model, where it denotes expected economic gain conditional on discovery. It has no counterpart in the canonical demand model.
 
+### Binary demand model: current closure
 
-### Internal demand-model issue identified
+The binary demand model has been re-examined to distinguish three objects that had previously been conflated:
 
-Before generalizing binary choice `{H,L}` to a multi-offer set `O_t`, the binary demand model itself requires clarification.
+1. the persistent memory / representation state;
+2. the stochastic realization of recognition or differentiation conditional on that state;
+3. the realized product choice.
 
-The current formulation contains:
+The current interpretation is:
 
-- a deterministic conditional choice rule:
-  `A_it* = argmax_{a in {H,L}} E[U_i(a,q) | M_it]`,
-  with `H` chosen when `Delta U_i(M_it) > 0` and `L` otherwise;
+`information → memory / representation → stochastic recognition → realized choice`.
 
-- an aggregate formulation using conditional choice probabilities:
-  `s_H = integral Pr(A_i = H | M) dF_t(M)`.
+`M_it` is a persistent decision-relevant memory / representation state.
 
-The canonical demand document does not explicitly identify the source of non-degenerate choice randomness conditional on `M`.
+The local optima already present in the stochastic-memory model are interpreted as local optima of memory / representation. They are not fixed preferences for particular products and are not fixed realized actions.
 
-Therefore, the interpretation of `Pr(A_i = H | M)` must be clarified before a multi-offer probability vector is constructed.
+Consumers may remain near a local memory optimum for substantial periods while their realized choices vary.
 
-No additional random-utility shock, logit rule, taste shock or new stochastic-choice parameter has been accepted.
+### Stochastic recognition and choice
 
+Preference is not treated as an exogenous primitive taste for high or low quality.
 
-### Next theoretical task
+The consumer's effective evaluation of a product depends on the capacity to recognize or differentiate relevant attributes.
 
-Construct the minimum mathematical generalization required to move from the binary demand model `{H,L}` to a choice over differentiated offers `a = (v,r)`, preserving the existing stochastic-memory mechanism and introducing no new structural parameters.
+That recognition process is stochastic conditional on memory.
 
-### Binary demand model: unresolved meaning of memory-conditioned beliefs
+Therefore:
 
-The binary demand model has been audited internally.
+- two consumers with the same or similar memory state may make different realized choices;
+- the same consumer may make slightly different choices at different times while remaining at the same memory state / local optimum;
+- such choice variation does not by itself imply movement between memory states or market segments.
 
-The current formulation is underdetermined rather than necessarily contradictory.
+Hence the conditional choice probability
 
-The written individual choice rule is deterministic conditional on the current memory state:
+`Pr(A = a | M)`
 
-`A_it* = argmax_{a in {H,L}} E[U_i(a,q) | M_it]`.
+may be genuinely non-degenerate.
 
-The explicitly modeled consumer heterogeneity (`beta_i`, `lambda_i`, `C_i`, `delta_i`, initial conditions and stochastic encoding) primarily affects the formation and distribution of memory states.
+Its stochasticity must be derived from the recognition / differentiation mechanism conditional on memory, not from an ad hoc taste shock, logit/probit error or unrelated random-utility term.
 
-However, the model does not formally specify:
+No specific parametric distribution for recognition has yet been accepted.
 
-- how `E[q_H - q_L | M]` is constructed;
-- whether that conditional expectation is common across consumers or consumer-specific;
-- whether the same state label `M` has common semantic content across individuals;
-- the relation between the Information Bottleneck relevance variable `Y` and product quality `q`;
-- the formal meaning of `F^H` and `F^L`;
-- the joint population structure needed to interpret `Pr(A = H | M)` as a non-degenerate population conditional probability.
+### Local persistence and transitions
 
-Therefore, exact overlap between high- and low-quality choosers at the same memory state cannot currently be derived from the written equations.
+A consumer can remain close to a local memory / representation optimum while generating stochastic realized choices.
 
-No additional taste heterogeneity, random-utility shock, logit/probit rule or stochastic-choice parameter has been accepted.
+A transition between local optima is a more persistent change:
 
-The next theoretical decision is to clarify the economic meaning of the memory state `M` and of the conditional belief `E[q | M]`.
+`M_i^(1)* → M_i^(2)*`.
 
-### Binary demand model closure
-
-The common-state interpretation of consumer memory has been adopted.
-
-`M` is a common decision-relevant memory state. Individual heterogeneity operates through the process that generates and updates memory states, not through an additional stochastic choice mechanism conditional on the current state.
-
-For the binary model, define:
-
-`g(M) = E[q_H - q_L | M]`
-
-and
-
-`Delta U(M) = g(M) - (p_H - p_L)`.
-
-The choice rule is:
-
-- choose `H` if `Delta U(M) > 0`;
-- choose `L` otherwise.
+Such a transition changes the consumer's persistent representation / capacity to differentiate and therefore changes the distribution of subsequent choices.
 
 Thus:
 
-`R_H = {M : Delta U(M) > 0}`
+- stochastic variation within a local optimum is not itself sedimentation or desedimentation;
+- migration between local optima represents a change in the persistent cognitive / informational state;
+- sedimentation does not imply immobility.
 
-`R_L = {M : Delta U(M) <= 0}`
+### Implications for aggregate demand
 
-and aggregate demand is:
+Aggregate demand continues to depend on the distribution of memory states:
 
-`s_H = F_t(R_H)`.
+`F_t(M)`,
 
-The conditional probability `Pr(A = H | M)` is therefore degenerate under the binary canonical model.
+but `F_t(M)` alone is not sufficient to determine realized demand unless the conditional choice rule is also specified.
 
-### Revised market-fragmentation interpretation
+For the binary model:
 
-Semi-separation requires positive mass in both choice regions:
+`s_H = integral Pr(A = H | M) dF_t(M)`.
 
-`0 < F_t(R_H) < 1`.
+The previously adopted deterministic reduction
 
-The previously written exact-overlap condition between H- and L-choosers is not compatible with deterministic choice conditional on a common memory state and will be removed from the formal model.
+`s_H = F_t(R_H)`
 
-Quasi-pooling is provisionally understood as the absence of a separating gap in memory space around the differentiation threshold.
+is no longer canonical.
 
-The exact regularity conditions required for quasi-pooling still need to be formally established.
+The conditional probability `Pr(A = H | M)` must instead be derived from the stochastic recognition mechanism.
 
-The four original fragmentation mechanisms remain:
-- memory affects choice;
-- memory is persistent;
-- the choice rule is nonlinear;
-- updating costs are heterogeneous.
+### Implications for semi-separation and quasi-pooling
+
+The previous deterministic closure and the associated rejection of overlap are withdrawn.
+
+Under stochastic recognition:
+
+- persistent memory states can generate overlapping realized choices;
+- consumers in the same or similar memory states may make different realized choices;
+- persistent market segmentation must therefore be distinguished from period-by-period choice realization.
+
+The exact mathematical definitions of semi-separation and quasi-pooling must now be re-derived under this stochastic-recognition interpretation.
+
+No final overlap condition has yet been accepted.
+
+### Current interpretation of market sedimentation
+
+Market sedimentation is provisionally characterized by persistence of multiple local memory / representation states in the population, together with persistent differences in the choice distributions induced by those states.
+
+Consumers may:
+
+- vary their realized choices while remaining within one local optimum;
+- remain for long periods near one local optimum;
+- occasionally transition from one local optimum to another.
+
+Therefore, sedimentation is a property of persistent distributions of representations and induced choice probabilities, not a requirement that individuals repeatedly choose the same product.
+
+### Next theoretical task
+
+Before generalizing the binary model to multiple offers, formally specify the minimal stochastic-recognition bridge:
+
+`M → recognition / differentiation → Pr(A | M)`.
+
+The derivation must:
+
+- preserve the existing stochastic-memory and local-optimum mechanism;
+- introduce no primitive taste heterogeneity;
+- introduce no ad hoc random-utility shock;
+- avoid choosing a parametric distribution before it is theoretically justified;
+- clarify how recognition of product differences enters the existing utility / choice formulation.
+
+Only after this bridge is closed should the model return to the generalization from `{H,L}` to the multi-offer set `O_t`.
