@@ -222,6 +222,26 @@ Consumers may:
 
 Therefore, sedimentation is a property of persistent distributions of representations and induced choice probabilities, not a requirement that individuals repeatedly choose the same product.
 
+### PROPOSAL — NOT YET ACCEPTED: memory and recognition variance
+
+A candidate formalization is that memory affects the precision of recognition rather than mechanically shifting its mean.
+
+Let `Delta q` denote the relevant product-quality difference and let `Delta q_tilde` denote the realized perceived / recognized difference. A possible representation is:
+
+`Delta q_tilde | M ~ D(Delta q, sigma^2(M))`,
+
+with better or more informative memory associated with lower recognition variance, for example `sigma'(M) < 0` under a scalar ordering of memory quality.
+
+The intended intuition is:
+
+- memory does not create an intrinsic preference for high quality;
+- lower-information states imply noisier recognition of the relevant difference;
+- higher-information states imply more precise differentiation;
+- stochastic choice can therefore arise from stochastic recognition conditional on memory;
+- if the objectively relevant difference exceeds the price difference, greater recognition precision can increase the probability of choosing the differentiated product; if it does not, greater precision can reduce that probability.
+
+This proposal is not yet part of the canonical model. No distributional family for `D`, no functional form for `sigma(M)`, and no claim that memory affects only variance rather than other features of the recognition distribution has been accepted.
+
 ### Next theoretical task
 
 Before generalizing the binary model to multiple offers, formally specify the minimal stochastic-recognition bridge:
